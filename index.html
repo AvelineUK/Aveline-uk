@@ -9,27 +9,30 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div class="logo-navigation">
-        <nav>
-            <ul class="sidebar">
-                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <ul>
-                <li><a href="index.html"><img src="images/logo.png" height="40px"></a></li>
-                <li class="hideOnMobile"><a href="index.html">Home</a></li>
-                <li class="hideOnMobile"><a href="work.html">Work</a></li>
-                <li class="hideOnMobile"><a href="services.html">Services</a></li>
-                <li class="hideOnMobile"><a href="pricing.html">Pricing</a></li>
-                <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-            </ul>
-        </nav>
+    <div class="nav-container"></div>
+        <div class="logo-navigation">
+            <nav>
+                <ul class="sidebar">
+                    <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <ul>
+                    <li><a href="index.html"><img src="images/logo.png" height="32px"></a></li>
+                    <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                    <li class="hideOnMobile"><a href="work.html">Work</a></li>
+                    <li class="hideOnMobile"><a href="services.html">Services</a></li>
+                    <li class="hideOnMobile"><a href="pricing.html">Pricing</a></li>
+                    <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+                    <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8;"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
+        <div class="divider1"></div>
         <div class="hero">
             <div class="hero-lr">
                 <div class="hero-left">
@@ -39,11 +42,25 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ab odit recusandae aliquam veniam voluptate ex saepe placeat eos atque. Facilis reiciendis nesciunt maxime maiores eius quis autem commodi ut? 
                     </div>
                 <div class="hero-right">
-                    <img src="images/face.png">
+                    <img src="images/image.png">
                 </div>
             </div>
         </div>
-
+            </div>
+            <div class="divider"></div>
+        <div class="hero">
+            <div class="hero-lr">
+                <div class="hero-left">
+                    <h1>Professional websites.<br>
+                    For small business.<br>
+                    No upfront costs.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ab odit recusandae aliquam veniam voluptate ex saepe placeat eos atque. Facilis reiciendis nesciunt maxime maiores eius quis autem commodi ut? 
+                    </div>
+                <div class="hero-right">
+                    <img src="images/image.png">
+                </div>
+            </div>
+        </div>
     <script src="functions/functions.js"></script>
 </body>
 </html>
