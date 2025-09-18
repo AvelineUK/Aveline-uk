@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Lato', sans-serif;
-    background-color: lightgray;
+    background-color: #F9FAF8;
     padding-top: 75px;
 }
 
@@ -238,8 +238,8 @@ body {
     border: none;
     background: linear-gradient(135deg, #667eea, #764ba2, #667eea, #764ba2);
     background-size: 300% 300%;
-    color: #F9FAF8;
-    padding: 20px 40px;
+    color: white;
+    padding: 20px 42px;
     border-radius: 25px;
     font-size: 1.125rem;
     font-weight: bold;
@@ -312,9 +312,7 @@ body {
 
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
-    25% { background-position: 100% 50%; }
-    50% { background-position: 100% 100%; }
-    75% { background-position: 0% 100%; }
+    50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
