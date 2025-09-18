@@ -21,21 +21,22 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
     z-index: 1000000;
     transition: all 0.3s ease;
     border-radius: 15px;
-    width: auto;
+    width: 75%;
+    max-width: 769px;
+    margin: 0 auto; /* This centers the nav bar. */
     padding: 0px 12px;
 }
 
-        /* Scrolled state - full width and top */
+/* Scrolled state - full width and top */
 .logo-navigation.scrolled {
     top: 0;
     left: 0;
     right: 0;
+    width: 100%; /* Ensure it's full width on scroll. */
+    max-width: 100%; /* This is important to override the above max-width. */
     border-radius: 0;
 }
 
@@ -60,7 +61,7 @@ body {
     position: relative;
     display: inline-block;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 15px;
     line-height: 75px;
     overflow: hidden;
     transition: color 0.3s ease;
@@ -263,39 +264,77 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hideOnMobile { display: none; }
-    .menu-button { display: block; }
-    .divider1 { margin: 0px 0px 0px 0px; }
-    .hero, .hero-lr { flex-direction: column; }
-    .hero-left, .hero-right { width: 100%; transform: translateY(50px); }
-    .hero-right img { width: 70%; max-width: 300px; }
-    .logo-navigation img { width: 100%; max-height: 26px; }
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+    .divider1 {
+        margin: 0px 0px 0px 0px;
+    }
+    .hero,
+    .hero-lr {
+        flex-direction: column;
+    }
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        transform: translateY(50px);
+    }
+    .hero-right img {
+        width: 70%;
+        max-width: 300px;
+    }
+    .logo-navigation img {
+        width: 100%;
+        max-height: 26px;
+    }
 
-/* Mobile: always full width, no insets */
+    /* Mobile: always full width, no insets */
     .logo-navigation {
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
         border-radius: 0 !important;
-}
+        width: 100%;
+        max-width: 100%;
+    }
 
-/* Lock top corners, animate bottom only */
+    /* Lock top corners, animate bottom only */
     .hero {
         padding: 10px;
         border-radius: 0 0 25% 25%;
         animation: morph-bottom 15s linear infinite alternate;
-}
-    .hero h1 { text-align: center; }
+    }
+    .hero h1 {
+        text-align: center;
+    }
 
-/* Slide in for mobile */
-    .hero-left, .hero-right {
+    /* Slide in for mobile */
+    .hero-left,
+    .hero-right {
         animation: slideInUp 1s ease-out forwards;
-}
-@keyframes slideInUp {
-        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 
-@media (max-width: 400px) {
-    .sidebar { width: 100%; }
+/* Add an inset on desktop */
+@media (min-width: 769px) {
+    .logo-navigation {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        width: auto;
+    }
+    .logo-navigation.scrolled {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
 }
