@@ -1,3 +1,5 @@
+/* Sidebar functionality */
+
         const sidebar = document.querySelector('.sidebar');
         const navbar = document.querySelector('.logo-navigation');
 
@@ -33,3 +35,28 @@
                 lastScrollTop = scrollTop;
             }
         });
+
+/* Close sidebar when clicking outside of it */
+
+document.addEventListener('click', (event) => {
+    // Check if sidebar is open
+    if (sidebar.classList.contains('active')) {
+        // Check if the click was outside the sidebar and not on the menu button
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnMenuButton = event.target.closest('.menu-button');
+        
+        // If click is outside sidebar and not on menu button, close sidebar
+        if (!isClickInsideSidebar && !isClickOnMenuButton) {
+            hideSidebar();
+        }
+    }
+});
+
+/* Close sidebar when clicking navigation links */
+
+sidebar.addEventListener('click', (event) => {
+    // If it's a navigation link (not the close button), close the sidebar
+    if (event.target.tagName === 'A' && !event.target.closest('li:first-child')) {
+        hideSidebar();
+    }
+});
