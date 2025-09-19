@@ -11,22 +11,23 @@
             sidebar.classList.remove('active');
         }
 
-        // Hide sidebar on desktop resize
+/* Hide sidebar on desktop resize */
+
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 sidebar.classList.remove('active');
                 navbar.style.transform = 'translateY(0)';
             }
         });
 
-        // Handle scroll behavior for navbar - desktop only
+/* Handle scroll behavior for navbar - desktop only */
+
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
-            // Only apply scroll behavior on desktop (> 768px)
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 
-                if (scrollTop > 50) { // After scrolling 50px
+                if (scrollTop > 50) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
@@ -36,27 +37,76 @@
             }
         });
 
-/* Close sidebar when clicking outside of it */
-
 document.addEventListener('click', (event) => {
-    // Check if sidebar is open
     if (sidebar.classList.contains('active')) {
-        // Check if the click was outside the sidebar and not on the menu button
         const isClickInsideSidebar = sidebar.contains(event.target);
         const isClickOnMenuButton = event.target.closest('.menu-button');
-        
-        // If click is outside sidebar and not on menu button, close sidebar
         if (!isClickInsideSidebar && !isClickOnMenuButton) {
             hideSidebar();
         }
     }
 });
 
-/* Close sidebar when clicking navigation links */
+document.addEventListener('click', function (e) {
+  const a = e.target.closest && e.target.closest('a[href="#"]');
+  if (!a) return;
+  e.preventDefault();
+  if (a.closest('.menu-button')) {
+    showSidebar();
+    return;
+  }
 
-sidebar.addEventListener('click', (event) => {
-    // If it's a navigation link (not the close button), close the sidebar
-    if (event.target.tagName === 'A' && !event.target.closest('li:first-child')) {
-        hideSidebar();
-    }
+  if (a.closest('.sidebar')) {
+    hideSidebar();
+    return;
+  }
+}, true);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".logo-navigation");
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > 50) {
+    navbar.classList.add("scrolled");
+  }
+});
+
+document.documentElement.classList.add("no-transition");
+
+window.addEventListener("load", () => {
+  document.documentElement.classList.remove("no-transition");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".logo-navigation");
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop <= 50) {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// Outer FAQ dropdown
+const faqDropdown = document.querySelector('.faq-dropdown');
+const faqToggle = faqDropdown.querySelector('.faq-toggle');
+
+faqToggle.addEventListener('click', () => {
+  faqDropdown.classList.toggle('active');
+});
+
+// Inner accordion questions
+const faqItems = faqDropdown.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  btn.addEventListener('click', () => {
+    // Close all other items first
+    faqItems.forEach(i => {
+      if (i !== item) {
+        i.classList.remove('active');
+      }
+    });
+    // Toggle the clicked one
+    item.classList.toggle('active');
+  });
 });
