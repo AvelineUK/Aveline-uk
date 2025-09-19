@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Outer FAQ dropdown
+
 const faqDropdown = document.querySelector('.faq-dropdown');
 const faqToggle = faqDropdown.querySelector('.faq-toggle');
 
@@ -95,6 +96,7 @@ faqToggle.addEventListener('click', () => {
 });
 
 // Inner accordion questions
+
 const faqItems = faqDropdown.querySelectorAll('.faq-item');
 
 faqItems.forEach(item => {
@@ -110,3 +112,11 @@ faqItems.forEach(item => {
     item.classList.toggle('active');
   });
 });
+
+function smoothScrollTo(target) {
+    window.scrollTo({
+        top: target,
+        behavior: 'smooth'
+    });
+}
+
