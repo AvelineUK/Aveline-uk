@@ -66,7 +66,7 @@
         margin: 0;
     }
 
-    .hero{
+    .hero {
         margin: 0px;
     }
 
@@ -232,5 +232,19 @@
     .prices {
         grid-template-columns: 320px;
         max-width: 480px;
+  }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        flex-direction: column; /* stack vertically */
+        align-items: stretch;
+        max-width: 90%;
+  }
+
+    .summary,
+    .links,
+    .contact-us {
+        width: 100%; /* take full width when stacked */
   }
 }
