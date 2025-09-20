@@ -1,122 +1,79 @@
-/* Sidebar functionality */
+if ('addEventListener' in document) {
+	document.addEventListener('DOMContentLoaded', function() {
+		FastClick.attach(document.body);
+	}, false);
+}
 
-        const sidebar = document.querySelector('.sidebar');
-        const navbar = document.querySelector('.logo-navigation');
+const sidebar = document.querySelector('.sidebar');
+const navbar = document.querySelector('.logo-navigation');
 
-        function showSidebar() {
-            sidebar.classList.add('active');
-        }
-
-        function hideSidebar() {
-            sidebar.classList.remove('active');
-        }
+const showSidebar = () => sidebar.classList.add('active');
+const hideSidebar = () => sidebar.classList.remove('active');
 
 /* Hide sidebar on desktop resize */
+const handleResize = () => {
+  if (window.innerWidth > 1024) {
+    hideSidebar();
+    navbar.style.transform = 'translateY(0)';
+  }
+};
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024) {
-                sidebar.classList.remove('active');
-                navbar.style.transform = 'translateY(0)';
-            }
-        });
+window.addEventListener('resize', handleResize);
 
-/* Handle scroll behavior for navbar - desktop only */
+/* Update navbar scroll state */
+const updateNavbarScrollState = () => {
+  if (window.innerWidth > 1024) {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    navbar.classList.toggle('scrolled', scrollTop > 50);
+  }
+};
 
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            if (window.innerWidth > 1024) {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                
-                lastScrollTop = scrollTop;
-            }
-        });
+window.addEventListener('scroll', updateNavbarScrollState);
+window.addEventListener('DOMContentLoaded', updateNavbarScrollState);
 
+/* Ensure correct navbar state on Home click */
+const homeLink = document.querySelector('.logo-navigation li:first-child a');
+if (homeLink) {
+  homeLink.addEventListener('click', () => {
+    setTimeout(updateNavbarScrollState, 100);
+  });
+}
+
+/* Hide sidebar when clicking outside */
 document.addEventListener('click', (event) => {
-    if (sidebar.classList.contains('active')) {
-        const isClickInsideSidebar = sidebar.contains(event.target);
-        const isClickOnMenuButton = event.target.closest('.menu-button');
-        if (!isClickInsideSidebar && !isClickOnMenuButton) {
-            hideSidebar();
-        }
-    }
+  if (sidebar.classList.contains('active') && !sidebar.contains(event.target) && !event.target.closest('.menu-button')) {
+    hideSidebar();
+  }
 });
 
-document.addEventListener('click', function (e) {
-  const a = e.target.closest && e.target.closest('a[href="#"]');
-  if (!a) return;
+/* Menu link behavior */
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href="#"]');
+  if (!link) return;
   e.preventDefault();
-  if (a.closest('.menu-button')) {
-    showSidebar();
-    return;
-  }
 
-  if (a.closest('.sidebar')) {
+  if (link.closest('.menu-button')) {
+    showSidebar();
+  } else if (link.closest('.sidebar')) {
     hideSidebar();
-    return;
   }
 }, true);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".logo-navigation");
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+/* Page fade overlay logic */
+window.addEventListener('load', () => {
+  updateNavbarScrollState(); // ✅ ensures correct state on refresh
+  document.documentElement.classList.remove('no-transition');
 
-  if (scrollTop > 50) {
-    navbar.classList.add("scrolled");
+  const overlay = document.getElementById('page-fade-overlay');
+  if (!overlay) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    overlay.remove();
+    return;
   }
-});
 
-document.documentElement.classList.add("no-transition");
-
-window.addEventListener("load", () => {
-  document.documentElement.classList.remove("no-transition");
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".logo-navigation");
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop <= 50) {
-    navbar.classList.remove("scrolled");
-  }
-});
-
-// Outer FAQ dropdown
-
-const faqDropdown = document.querySelector('.faq-dropdown');
-const faqToggle = faqDropdown.querySelector('.faq-toggle');
-
-faqToggle.addEventListener('click', () => {
-  faqDropdown.classList.toggle('active');
-});
-
-// Inner accordion questions
-
-const faqItems = faqDropdown.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-  const btn = item.querySelector('.faq-question');
-  btn.addEventListener('click', () => {
-    // Close all other items first
-    faqItems.forEach(i => {
-      if (i !== item) {
-        i.classList.remove('active');
-      }
-    });
-    // Toggle the clicked one
-    item.classList.toggle('active');
+  requestAnimationFrame(() => {
+    overlay.classList.add('fade-out');
+    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
   });
 });
-
-function smoothScrollTo(target) {
-    window.scrollTo({
-        top: target,
-        behavior: 'smooth'
-    });
-}
-
