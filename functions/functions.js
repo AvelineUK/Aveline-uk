@@ -23,7 +23,6 @@ const updateNavbarScrollState = () => {
 };
 
 window.addEventListener('scroll', updateNavbarScrollState);
-window.addEventListener('DOMContentLoaded', updateNavbarScrollState);
 
 /* Ensure correct navbar state on Home click */
 const homeLink = document.querySelector('.logo-navigation li:first-child a');
