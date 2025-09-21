@@ -64,32 +64,6 @@
 	}
 }
 
-@keyframes morph2 {
-	0% {
-		border-radius: 12% 18% 10% 20% / 10% 15% 12% 8%;
-	}
-
-	20% {
-		border-radius: 18% 12% 20% 8% / 15% 10% 8% 20%;
-	}
-
-	40% {
-		border-radius: 10% 20% 12% 18% / 20% 8% 15% 10%;
-	}
-
-	60% {
-		border-radius: 15% 10% 18% 12% / 8% 20% 10% 15%;
-	}
-
-	80% {
-		border-radius: 20% 8% 15% 10% / 12% 18% 20% 8%;
-	}
-
-	100% {
-		border-radius: 12% 18% 10% 20% / 10% 15% 12% 8%;
-	}
-}
-
 @keyframes gradientShift {
 	0% {
 		background-position: 0% 50%;
@@ -248,6 +222,24 @@
 	}
 }
 
+@media (max-width: 640px) {
+  /* Force hover styles on by default */
+	.cards a .card {
+		background-color: #1e3c72;
+		color: #F9FAF8;
+		border: 3px solid #1e3c72;
+  }
+
+  /* Flip images: show "hover" version by default */
+	.card .speed.hover {
+		opacity: 1;
+  }
+
+	.card .speed.default {
+		opacity: 0;
+  }
+}
+
 @media (max-width: 1024px) {
 	.details-left {
 		display: none;
@@ -270,21 +262,21 @@
 	}
 }
 
-/* Works Desktop: 3 columns */
+/* Works desktop: fixed 3 columns */
 
-/* tablet and small desktop: 3 flexible columns */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .works {
-		grid-template-columns: repeat(3, 1fr);
-		max-width: 100%;
-  }
-}
-
-/* large desktop: fixed 3 columns */
 @media (min-width: 1281px) {
   .works {
 		grid-template-columns: repeat(3, 400px);
 		max-width: 1280px;
+  }
+}
+
+/* Works tablet and small desktop: 3 flexible columns */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .works {
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 100%;
   }
 }
 
@@ -311,12 +303,12 @@
 @media (min-width: 1025px) {
 	.footer {
 		grid-template-columns:
-			minmax(360px, 576px)
 			/* left column (wider) */
-			minmax(200px, 320px)
+			minmax(400px, 640px)
 			/* middle column */
+			minmax(200px, 320px)
+			/* right column */
 			minmax(200px, 320px);
-		/* right column */
 	}
 }
 
@@ -326,6 +318,19 @@
 	.footer {
 		grid-template-columns: minmax(280px, 400px);
         gap: 1rem;
+		text-align: center;
+	}
+}
+
+@media (max-width: 1024px) {
+	.footer p, footer-contact-p {
+		text-align: center;
+	}
+}
+
+@media (max-width: 1024px) {
+	.footer-contact {
+		align-items: center;
 	}
 }
 
