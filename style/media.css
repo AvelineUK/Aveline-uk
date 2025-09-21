@@ -4,6 +4,11 @@
 	font-display: swap;
 }
 
+@keyframes fadeInNav {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 /* Animations (no px values to convert) */
 
 @keyframes slideInLeft {
@@ -92,7 +97,7 @@
 
 /* Responsive */
 
-@media (max-width: 64rem) { /* 1024px / 16 */
+@media (max-width: 64rem) {
 	.hideOnMobile {
 		display: none;
 	}
@@ -117,7 +122,7 @@
 	.hero-left,
 	.hero-right {
 		width: 100%;
-		transform: translateY(3.125rem); /* 50px / 16 */
+		transform: translateY(3.125rem);
 	}
 
 	.hero-right img {
@@ -127,7 +132,7 @@
 
 	.logo-navigation img {
 		width: 100%;
-		max-height: 1.625rem; /* 26px / 16 */
+		max-height: 1.625rem;
 	}
 
 	.cta1 {
@@ -145,7 +150,7 @@
 	}
 
 	.hero {
-		padding: 0.625rem; /* 10px / 16 */
+		padding: 0.625rem;
 		border-radius: 0 0 25% 25%;
 		animation: morph-bottom 15s linear infinite alternate;
 	}
@@ -160,9 +165,9 @@
 	}
 }
 
-@media (min-width: 64.0625rem) { /* 1025px / 16 */
+@media (min-width: 64.0625rem) {
 	.logo-navigation {
-		top: 1.25rem; /* 20px / 16 */
+		top: 1.25rem;
 		left: 1.25rem;
 		right: 1.25rem;
 		width: auto;
@@ -182,24 +187,24 @@
 	}
 }
 
-@media (min-width: 80.0625rem) { /* 1281px / 16 */
+@media (min-width: 80.0625rem) {
 	.cards {
-		grid-template-columns: repeat(4, 18rem); /* 288px / 16 */
-		max-width: 56.25rem; /* 900px / 16 */
+		grid-template-columns: repeat(4, 18rem);
+		max-width: 56.25rem;
 	}
 }
 
-@media (min-width: 40.0625rem) and (max-width: 80rem) { /* 641px /16 - 1280px /16 */
+@media (min-width: 40.0625rem) and (max-width: 80rem) {
 	.cards {
 		grid-template-columns: repeat(2, 18rem);
-		max-width: 37.5rem; /* 600px /16 */
+		max-width: 37.5rem;
 	}
 }
 
-@media (max-width: 40rem) { /* 640px / 16 */
+@media (max-width: 40rem) {
 	.cards {
 		grid-template-columns: 18rem;
-		max-width: 18.75rem; /* 300px /16 */
+		max-width: 18.75rem;
 	}
 }
 
@@ -207,7 +212,7 @@
 	.cards a .card {
 		background-color: #1e3c72;
 		color: #F9FAF8;
-		border: 0.1875rem solid #1e3c72; /* 3px / 16 */
+		border: 0.1875rem solid #1e3c72;
 	}
 
 	.card .speed.hover {
@@ -231,7 +236,7 @@
 
 @media (min-width: 64.0625rem) {
 	.details-right-table {
-		grid-template-columns: repeat(2, minmax(15.625rem, 1fr)); /* 250px /16 */
+		grid-template-columns: repeat(2, minmax(15.625rem, 1fr));
 	}
 }
 
@@ -243,8 +248,8 @@
 
 @media (min-width: 80.0625rem) {
 	.works {
-		grid-template-columns: repeat(3, 25rem); /* 400px /16 */
-		max-width: 80rem; /* 1280px /16 */
+		grid-template-columns: repeat(3, 25rem);
+		max-width: 80rem;
 	}
 }
 
@@ -258,7 +263,7 @@
 @media (max-width: 64rem) {
 	.works {
 		grid-template-columns: repeat(1, 1fr);
-		width: 59.375rem; /* 950px /16? Wait you had 25rem max-width, keeping that */
+		width: 59.375rem;
 		max-width: 25rem;
 	}
 }
@@ -266,14 +271,14 @@
 @media (min-width: 64.0625rem) {
 	.prices {
 		grid-template-columns: repeat(2, 25rem);
-		max-width: 60rem; /* 960px /16 */
+		max-width: 60rem;
 	}
 }
 
 @media (max-width: 64rem) {
 	.prices {
-		grid-template-columns: 20rem; /* 320px /16 */
-		max-width: 30rem; /* 480px /16 */
+		grid-template-columns: 20rem;
+		max-width: 30rem;
 	}
 }
 
