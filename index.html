@@ -246,5 +246,15 @@
          </ul>
       </div>
       <script src="functions/functions.js"></script>
+      <script>
+         window.addEventListener("DOMContentLoaded", () => {
+            const hero = document.querySelector(".hero");
+            if (hero) {
+               requestAnimationFrame(() => {
+               hero.classList.add("fade-in");
+         });
+      }
+   });
+</script>
    </body>
 </html>

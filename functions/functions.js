@@ -23,7 +23,6 @@ const updateNavbarScrollState = () => {
 };
 
 window.addEventListener('scroll', updateNavbarScrollState);
-window.addEventListener('DOMContentLoaded', updateNavbarScrollState);
 
 /* Ensure correct navbar state on Home click */
 const homeLink = document.querySelector('.logo-navigation li:first-child a');
@@ -52,22 +51,3 @@ document.addEventListener('click', (e) => {
     hideSidebar();
   }
 }, true);
-
-/* Page fade overlay logic */
-window.addEventListener('load', () => {
-  updateNavbarScrollState(); // ✅ ensures correct state on refresh
-  document.documentElement.classList.remove('no-transition');
-
-  const overlay = document.getElementById('page-fade-overlay');
-  if (!overlay) return;
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    overlay.remove();
-    return;
-  }
-
-  requestAnimationFrame(() => {
-    overlay.classList.add('fade-out');
-    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
-  });
-});
