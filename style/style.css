@@ -78,10 +78,6 @@ ul {
 
 /* Logo Navigation */
 
-.no-transition * {
-	transition: none !important;
-}
-
 .logo-navigation {
 	background-color: #1e3c72;
 	backdrop-filter: blur(0.0625rem);
@@ -97,6 +93,7 @@ ul {
 	top: 1.25rem;
 	left: 1.25rem;
 	right: 1.25rem;
+	height: 4.6875rem;
 }
 
 /* Scrolled state - full width and top */
