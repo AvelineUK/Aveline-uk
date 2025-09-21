@@ -1,9 +1,3 @@
-if ('addEventListener' in document) {
-	document.addEventListener('DOMContentLoaded', function() {
-		FastClick.attach(document.body);
-	}, false);
-}
-
 const sidebar = document.querySelector('.sidebar');
 const navbar = document.querySelector('.logo-navigation');
 

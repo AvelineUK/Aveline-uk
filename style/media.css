@@ -272,20 +272,20 @@
 
 /* Works Desktop: 3 columns */
 
-@media (min-width: 1281px) {
-	.works {
-		grid-template-columns: repeat(3, 304px);
-		max-width: 900px;
-	}
+/* tablet and small desktop: 3 flexible columns */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .works {
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 100%;
+  }
 }
 
-/* Works Tablet and Mobile: 1 column */
-
-@media (max-width: 1280px) {
-	.works {
-		grid-template-columns: 304px;
-		max-width: 432px;
-	}
+/* large desktop: fixed 3 columns */
+@media (min-width: 1281px) {
+  .works {
+		grid-template-columns: repeat(3, 400px);
+		max-width: 1280px;
+  }
 }
 
 /* Tiers Desktop: 2 columns */
