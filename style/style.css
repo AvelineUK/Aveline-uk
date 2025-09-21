@@ -117,6 +117,7 @@ ul {
 .logo-navigation li {
 	height: 4.6875rem;
 	list-style-type: none;
+	font-family: Source Sans M, Arial, Helvetica, sans-serif;
 }
 
 .logo-navigation a {
