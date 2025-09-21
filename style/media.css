@@ -280,6 +280,14 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .works {
+		grid-template-columns: repeat(1, 1fr);
+		width: 95%;
+		max-width: 25rem;
+  }
+}
+
 /* Tiers Desktop: 2 columns */
 
 @media (min-width: 1025px) {
