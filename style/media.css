@@ -106,12 +106,13 @@
 		display: block;
 	}
 
-	.divider1 {
-		margin: 0;
+	.spacing {
+		padding: 0%;
 	}
 
 	.hero {
 		margin: 0rem;
+		transform: translateY(0rem);
 	}
 
 	.hero,
