@@ -1,3 +1,8 @@
+/* Add this to your existing styles.css file */
+.no-transition .logo-navigation {
+    transition: none !important;
+}
+
 /* Overall scrollbar */
 ::-webkit-scrollbar {
 	width: 0.75rem;
@@ -94,6 +99,7 @@ ul {
 	left: 1.25rem;
 	right: 1.25rem;
 	height: 4.6875rem;
+	transform: translateZ(500px);
 }
 
 /* Scrolled state - full width and top */
@@ -272,8 +278,9 @@ ul {
 	margin: 0% 1.25% 0% 1.25%;
 	filter: drop-shadow(1rem 2rem 3rem rgba(0, 0, 0, 1));
 	opacity: 0;
-	transform: translateY(1.25rem);
+	transform: translateZ(500px);
 	transition: opacity 2s ease, transform 2s ease;
+	will-change: opacity, transform;
 }
 
 /* Fade-in class */
@@ -358,8 +365,7 @@ ul {
 	filter: drop-shadow(1rem 2rem 3rem rgba(0, 0, 0, 1));
 }
 
-.divider,
-.divider1 {
+.divider {
 	margin: 50px;
 }
 
@@ -910,7 +916,7 @@ ul {
 	padding: 0rem 0.5rem 0rem 0.5rem;
 	box-sizing: border-box;
 	max-width: 36rem;
-	padding-top: 1rem;
+	padding-top: 2rem;
 }
 
 .footer-services h2,
