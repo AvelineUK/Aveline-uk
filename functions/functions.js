@@ -1,7 +1,8 @@
+/* Hiding & Showing Sidebar */
+
 const sidebar = document.querySelector('.sidebar');
 const navbar = document.querySelector('.logo-navigation');
 const mainContent = document.querySelector('body');
-
 const showSidebar = () => sidebar.classList.add('active');
 const hideSidebar = () => sidebar.classList.remove('active');
 
@@ -20,7 +21,6 @@ const handleResize = () => {
   }
   setBodyPadding();
 };
-
 window.addEventListener('resize', handleResize);
 
 /* Update navbar scroll state */
@@ -57,7 +57,6 @@ document.addEventListener('click', (e) => {
   const link = e.target.closest('a[href="#"]');
   if (!link) return;
   e.preventDefault();
-
   if (link.closest('.menu-button')) {
     showSidebar();
   } else if (link.closest('.sidebar')) {
@@ -65,30 +64,26 @@ document.addEventListener('click', (e) => {
   }
 }, true);
 
-/* IMMEDIATE NAVBAR STATE CHECK - PREVENTS FLASH */
+/* IMMEDIATE NAVBAR STATE CHECK - PREVENTS FLASH! */
 
 (function() {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   const navbar = document.querySelector('.logo-navigation');
-  
   if (navbar && window.innerWidth > 1024 && scrollTop > 50) {
     navbar.classList.add('scrolled');
   }
 })();
 
-/* Initial setup on page load */
+/* Initial fade-in on page load */
 
 window.addEventListener('DOMContentLoaded', () => {
   document.documentElement.classList.add('no-transition');
-
   updateNavbarScrollState();
   setBodyPadding();
-  
   requestAnimationFrame(() => {
     document.documentElement.classList.remove('no-transition');
   });
 });
-
         window.addEventListener("DOMContentLoaded", () => {
             const hero = document.querySelector(".hero");
             if (hero) {
