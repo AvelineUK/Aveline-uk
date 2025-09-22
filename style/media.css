@@ -260,7 +260,7 @@
 @media (max-width: 64rem) {
     .works {
         grid-template-columns: repeat(1, 1fr);
-        width: 59.375rem;
+        width: 90%;
         max-width: 25rem;
     }
 }
