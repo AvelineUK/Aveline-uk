@@ -538,7 +538,7 @@ ul {
 }
 
 .details-right-title h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #1e3c72;
     font-weight: 700;
     margin-top: -0.5rem;
@@ -648,7 +648,7 @@ ul {
 }
 
 .work-title-h h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #1e3c72;
     font-weight: 700;
     margin-top: 0.25rem;
@@ -807,8 +807,8 @@ ul {
     margin-right: auto;
 }
 
-.prices-title-text h1 {
-    font-size: clamp(1.5rem, 5vw, 3rem);
+.prices-title-text h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .prices-title-text p {
