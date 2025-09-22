@@ -86,3 +86,12 @@ window.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.remove('no-transition');
   });
 });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const hero = document.querySelector(".hero");
+            if (hero) {
+                requestAnimationFrame(() => {
+                    hero.classList.add("fade-in");
+                });
+            }
+        });
