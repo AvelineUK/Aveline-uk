@@ -709,41 +709,64 @@ ul {
 }
 
 .work-text h3 {
-	margin-bottom: .125rem;
+	margin: .5rem 0rem .5rem 0rem;
 	font-size: 1.375rem;
+}
+
+.work-text p {
+	margin: 0.5rem 0rem 0.5rem 0rem;
+	line-height: 1.75rem;
 }
 
 .work-button {
 	border: none;
 	color: #F9FAF8;
-	padding: .5rem 1rem;
-	border-radius: .75rem;
+	padding: 1.25rem 2.5rem;
+	border-radius: 1rem;
 	font-size: 1rem;
 	font-weight: bold;
 	text-decoration: none;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
-	transition: color 0.4s ease;
+	background: #1e3c72;
 }
 
-.work-button::before {
+/* Slide in (left → right) */
+.work-button::before,
+.work-button::after {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: #1e3c72;
 	z-index: 0;
-	transition: transform 0.5s ease, background 0.5s ease;
+	transform: scaleX(0);
+	transition: transform 0.2s ease;
 }
 
-.work-button:hover::before {
+.work-button::before {
 	background: #43b7ff;
+	transform-origin: left;
+}
+
+.work-button::after {
+	background: #1e3c72;
+	transform-origin: right;
+}
+
+/* Hover state = show the blue overlay */
+.work-button:hover::before {
+	transform: scaleX(1);
+}
+
+/* On hover out = blue disappears right → left */
+.work-button:not(:hover)::after {
+	transform: scaleX(1);
 }
 
 .work-button span {
 	position: relative;
 	z-index: 1;
-	transition: color 0.4s ease;
+	transition: color 0.2s ease;
 }
 
 .work-button:hover span {
