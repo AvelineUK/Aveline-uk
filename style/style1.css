@@ -398,11 +398,15 @@ ul {
     margin-right: auto;
 }
 
-.services-text h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+.services-text h2,
+.details-right-title h2,
+.work-title-h h2,
+.prices-title-text h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #1e3c72;
     font-weight: 700;
-    margin-top: -0.5rem;
+    line-height: 4rem;
+    margin-bottom: .5rem;
 }
 
 .services-text h4 {
@@ -448,7 +452,7 @@ ul {
     background-color: #1e3c72;
     color: #F9FAF8;
     border: 3px solid #1e3c72;
-    transform: translate(-0rem, -0.5rem);
+    transform: translate(-0.25rem, -0.5rem);
     filter: drop-shadow(0.5rem 1rem 1.5rem rgba(0, 0, 0, 1));
 }
 
@@ -535,14 +539,6 @@ ul {
     margin: 0 auto;
     padding-right: 2.5rem;
     box-sizing: border-box;
-}
-
-.details-right-title h2 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: #1e3c72;
-    font-weight: 700;
-    margin-top: 0.25rem;
-    line-height: 4rem;
 }
 
 .details-right-title h4 {
@@ -648,19 +644,12 @@ ul {
     padding-left: 1rem;
 }
 
-.work-title-h h2 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: #1e3c72;
-    font-weight: 700;
-    margin-top: 0.25rem;
-    line-height: 4rem;
-}
-
 .work-title-h h4 {
     font-size: clamp(0.9rem, 2vw, 1.2rem);
     color: rgb(128, 128, 128);
     font-weight: 500;
     letter-spacing: 0.125rem;
+    text-align: left;
 }
 
 .work-title-text p {
@@ -677,6 +666,7 @@ ul {
     box-sizing: border-box;
     grid-template-columns: 1fr;
     max-width: 25rem;
+    margin-top: 3rem;
 }
 
 .work {
@@ -704,12 +694,11 @@ ul {
     height: auto;
     display: block;
     border-radius: 0.75rem;
-    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease,
-        transform 0.5s ease, box-shadow 0.5s ease;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .work-text img:hover {
-    transform: translate(-0rem, -0.5rem);
+    transform: translate(-0.25rem, -0.5rem);
     box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, .8);
 }
 
@@ -788,11 +777,9 @@ ul {
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 4rem auto 3rem auto;
     max-width: 1000px;
     border-radius: 1rem;
-    margin-top: 4rem;
 }
 
 .prices-title-text {
@@ -802,8 +789,7 @@ ul {
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .prices-title-text h1 {
@@ -827,11 +813,7 @@ ul {
 }
 
 .prices-title-text h2 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: #1e3c72;
-    font-weight: 700;
-    margin-top: 0.25rem;
-    line-height: 4rem;
+    text-align: center;
 }
 
 .prices-title-text p {
@@ -840,39 +822,45 @@ ul {
 
 .prices {
     display: grid;
-    gap: 10%;
+    gap: 4rem;
     justify-content: center;
     margin: 0 auto;
     width: 100%;
     max-width: 1000px;
     padding: 0 1rem;
     grid-template-columns: repeat(auto-fit, 12.5rem);
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
 }
 
 .tier {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding: 0.25rem;
+    padding: 0.25rem 1rem;
     box-sizing: border-box;
     background: #1e3c72;
-    animation: morph 10s linear infinite alternate;
     color: #F9FAF8;
     position: relative;
     z-index: 1;
     filter: drop-shadow(0.5rem 1rem 1.5rem rgba(0, 0, 0, .8));
+    max-width: 24rem;
+    margin: 0 auto 2rem 0;
+    border-radius: 1.5rem;
+    text-wrap: nowrap;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.tier:hover {
+    transform: translate(-0.5rem, -1rem);
+    box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, .5);
 }
 
 .tier-text {
-    width: 95%;
+    width: 100%;
     text-align: center;
-    padding: 10px;
-    border-radius: 12px;
-    border: 3px solid #3882F6;
+    padding: 1rem 1rem;
     box-sizing: border-box;
-    margin: 5px 0px;
 }
 
 .tier-text h2 {
@@ -882,21 +870,68 @@ ul {
     font-weight: 700;
     margin-top: .75rem;
     line-height: 4rem;
+}
 
+.tier-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.tier-text li {
+    position: relative;
+    padding: 0.5rem 8rem 0.5rem 0;
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+    font-size: 1.0625rem;
+}
+
+.tier-text li.tick::after {
+    content: "✔";
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    color: green;
+    font-weight: bold;
+    width: 1.25rem;
+    text-align: center;
+}
+
+.tier-text li.cross::after {
+    content: "🛇";
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    color: grey;
+    width: 1.25rem;
+    text-align: center;
 }
 
 .tier-text:nth-child(2) {
     display: flex;
-    justify-content: center;
     text-align: left;
-    padding: 2rem 1rem;
     line-height: 1.75rem;
+}
+
+.tier-text:nth-child(3) {
+    display: flex;
+    line-height: 1.75rem;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 0rem;
+}
+
+.tier-text:nth-child(3) h2 {
+    font-size: 3rem;
+    line-height: 3rem;
 }
 
 .tier-text:last-child {
     display: flex;
     justify-content: center;
-    padding: 2rem 0rem;
+    padding: 1rem 0 2rem 0;
 }
 
 /* Footer */
@@ -909,6 +944,13 @@ ul {
     background: #1e3c72;
     color: #F9FAF8;
     box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, .8);
+    padding-top: 2rem;
+    border-radius: 6rem 6rem 0rem 0rem;
+}
+
+.footer-services img {
+    margin: 0rem auto 1rem auto;
+    width: 90%;
 }
 
 .footer-services,

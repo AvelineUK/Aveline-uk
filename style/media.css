@@ -93,7 +93,15 @@
 
 /* Responsive */
 
-@media (max-width: 64rem) {
+@media (max-width: 64rem) {    
+    .services-text h2,
+    .details-right-title h2,
+    .work-title-h h2,
+    .prices-title-text h2 {
+        line-height: 3rem;
+        margin-bottom: .25rem;
+    }
+
     .hideOnMobile {
         display: none;
     }
@@ -335,6 +343,22 @@
     }
 }
 
+@media (max-width: 64rem) {
+    .tier {
+        margin: 0 auto;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0rem .125rem;
+    }
+}
+
+@media (max-width: 64rem) {
+    .tier-text li {
+        font-size: 1rem;
+    }
+}
+
 @media (min-width: 64.0625rem) {
     .footer {
         grid-template-columns:
@@ -356,6 +380,12 @@
     .footer p,
     footer-contact-p {
         text-align: center;
+    }
+}
+
+@media (max-width: 64rem) {
+    .footer-services img{
+        width: 90%;
     }
 }
 
