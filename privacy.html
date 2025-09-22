@@ -14,7 +14,8 @@
     <link rel="preload" href="fonts/SourceSans3.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="canonical" href="https://example.com/page">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style1.css">
+    <link rel="stylesheet" href="style/style2.css">
     <link rel="stylesheet" href="style/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +23,7 @@
 </head>
 <script>
     (function() {
-        // Add no-transition class immediately
         document.documentElement.classList.add('no-transition');
-        // Function to set initial navbar state
         function setInitialNavbarState() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const navbar = document.querySelector('.logo-navigation');
@@ -36,13 +35,11 @@
                 }
             }
         }
-        // Set state immediately when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', setInitialNavbarState);
         } else {
             setInitialNavbarState();
         }
-        // Also set on page show (handles back/forward navigation)
         window.addEventListener('pageshow', setInitialNavbarState);
     })();
 </script>
@@ -83,8 +80,8 @@
                </nav>
             </section>
          </div>
-         <section class="terms">
-            <div class="terms-text">
+         <section class="legal">
+            <div class="legal-text">
                <h1>Privacy Policy</h1>
                <p>Effective date: #</p>
                <p>This Privacy Policy explains how I handle information on this website.</p>

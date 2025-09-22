@@ -12,7 +12,8 @@
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://example.com/page">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style1.css">
+    <link rel="stylesheet" href="style/style2.css">
     <link rel="stylesheet" href="style/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +21,7 @@
 </head>
 <script>
     (function() {
-        // Add no-transition class immediately
         document.documentElement.classList.add('no-transition');
-        // Function to set initial navbar state
         function setInitialNavbarState() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const navbar = document.querySelector('.logo-navigation');
@@ -34,13 +33,11 @@
                 }
             }
         }
-        // Set state immediately when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', setInitialNavbarState);
         } else {
             setInitialNavbarState();
         }
-        // Also set on page show (handles back/forward navigation)
         window.addEventListener('pageshow', setInitialNavbarState);
     })();
 </script>
@@ -244,8 +241,9 @@
         <div class="divider"></div>
         <section class="prices-title">
             <div class="prices-title-text">
-                <h1>Text here</h1>
-                <p>More text here.</p>
+                <h4>WHAT I DO</h4>
+                <h1>TEXT HERE</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic ad, repellendus consectetur enim nam modi animi natus, ea eius praesentium facere commodi dolor ipsa, temporibus rem odio aut perferendis earum?</p>
             </div>
         </section>
         <div class="divider"></div>

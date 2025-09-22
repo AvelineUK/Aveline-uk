@@ -314,6 +314,13 @@
     }
 }
 
+@media (max-width: 64rem) {
+    .prices-title {
+        width: 90%;
+        padding: 0.625rem;
+    }
+}
+
 @media (min-width: 64.0625rem) {
     .prices {
         grid-template-columns: repeat(2, 25rem);
