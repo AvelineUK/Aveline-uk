@@ -541,7 +541,8 @@ ul {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #1e3c72;
     font-weight: 700;
-    margin-top: -0.5rem;
+    margin-top: 0.25rem;
+    line-height: 4rem;
 }
 
 .details-right-title h4 {
@@ -809,6 +810,10 @@ ul {
 
 .prices-title-text h2 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #1e3c72;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    line-height: 4rem;
 }
 
 .prices-title-text p {
@@ -824,7 +829,7 @@ ul {
     max-width: 1000px;
     padding: 0 1rem;
     grid-template-columns: repeat(auto-fit, 12.5rem);
-    padding-bottom: 12rem;
+    padding-bottom: 8rem;
 }
 
 .tier {
@@ -843,7 +848,7 @@ ul {
 }
 
 .tier-text {
-    width: 90%;
+    width: 95%;
     text-align: center;
     padding: 10px;
     border-radius: 12px;
@@ -853,21 +858,26 @@ ul {
 }
 
 .tier-text h2 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
     text-shadow: 0.0625rem 0.0625rem 0.125rem black;
+    color: #F9FAF8;
+    font-weight: 700;
+    margin-top: .75rem;
+    line-height: 4rem;
+
 }
 
 .tier-text:nth-child(2) {
     display: flex;
     justify-content: center;
     text-align: left;
-    padding-top: 50px;
+    padding: 2rem 1rem;
 }
 
 .tier-text:last-child {
     display: flex;
     justify-content: center;
-    padding: 50px 0px;
+    padding: 2rem 0rem;
 }
 
 .terms {
@@ -883,7 +893,7 @@ ul {
     max-width: 1000px;
     border-radius: 1rem;
     margin-top: 6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     border: solid;
     border-color: #1e3c72;
 }
