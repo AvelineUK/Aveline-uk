@@ -74,7 +74,7 @@ h4 {
 
 p {
 	font-family: 'Source Sans 3', 'Lato', sans-serif;
-	font-size: 1.0625rem;
+	font-size: 1rem;
 }
 
 ul {
@@ -411,7 +411,7 @@ ul {
 }
 
 .services-text p {
-	font-size: 1.0625rem;
+	font-size: 1rem;
 	text-align: center;
 	line-height: 1.75rem;
 }
@@ -463,7 +463,7 @@ ul {
 }
 
 .card-text p {
-	font-size: 1.0625rem;
+	font-size: 1rem;
 }
 
 .speed {
@@ -549,7 +549,7 @@ ul {
 }
 
 .details-right-title p {
-	font-size: 1.0625rem;
+	font-size: 1rem;
 	font-weight: 400;
 	margin-bottom: 1rem;
 	line-height: 1.75rem;
@@ -593,8 +593,8 @@ ul {
 }
 
 .card2-text p {
-	line-height: 1.5rem;
-	font-size: 1.0625rem;
+	line-height: 1.75rem;
+	font-size: 1rem;
 }
 
 .card2-text img {
@@ -660,7 +660,7 @@ ul {
 }
 
 .work-title-text p {
-	font-size: 1.0625rem;
+	font-size: 1rem;
 	line-height: 1.75rem;
 }
 
@@ -722,7 +722,7 @@ ul {
 	border: none;
 	color: #F9FAF8;
 	padding: 1.25rem 2.5rem;
-	border-radius: 1rem;
+	border-radius: 2rem;
 	font-size: 1rem;
 	font-weight: bold;
 	text-decoration: none;
@@ -808,7 +808,7 @@ ul {
 }
 
 .prices-title-text p {
-	font-size: 1.125rem;
+	font-size: 1rem;
 }
 
 .prices {
@@ -961,7 +961,7 @@ ul {
 .footer-navigation li {
 	list-style: none;
 	line-height: 1.75rem;
-	font-size: 1.0625rem;
+	font-size: 1rem;
 }
 
 .footer-navigation li,
