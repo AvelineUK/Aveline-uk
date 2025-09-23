@@ -335,6 +335,7 @@
 
     .hero h4 {
         text-align: center;
+        line-height: 2;
     }
 
     .hero p {
