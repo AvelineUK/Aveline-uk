@@ -27,7 +27,7 @@
 }
 
 .legal-text h1 {
-    font-size: clamp(1.75rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #1e3c72;
     font-weight: 700;
     text-align: center;
@@ -36,7 +36,7 @@
 }
 
 .legal-text h2 {
-    font-size: clamp(0.75rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     color: #1e3c72;
     font-weight: 500;
     letter-spacing: 0.125rem;
@@ -63,28 +63,31 @@
 }
 
 .dropdown {
-    margin-bottom: .625rem;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, .8);
-    background: #F9FAF8;
+    margin-bottom: 1rem;
+    background: #f9f8eb;
     overflow: hidden;
     transition: all 1s ease;
 }
 
 .dropdown-header {
-    background: #1e3c72;
+    background-color: #1e3c72;
     color: #F9FAF8;
-    padding: 1.25rem;
+    padding: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 1s ease;
     user-select: none;
+    border-color: #1e3c72 !important;
+    border: solid;
 }
 
 .dropdown-header:hover {
-    background: #1e3c72;
+    background-color: #f9f8eb;
+    color: #1e3c72;
+    border-color: #1e3c72;
+    border: solid;
 }
 
 .dropdown-header h3 {
@@ -95,9 +98,9 @@
 .dropdown-arrow {
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid F9FAF8;
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-top: .5rem solid F9FAF8;
     transition: transform 1s ease;
 }
 
@@ -109,11 +112,18 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #F9FAF8;
+    background-color: #1e3c72;
 }
 
 .dropdown.active .dropdown-content {
     max-height: 32rem;
+}
+
+.dropdown.active .dropdown-header {
+	background-color: #f9f8eb;
+	color: #1e3c72;
+    border-color: #1e3c72;
+    border: solid;
 }
 
 .dropdown-inner {
@@ -123,16 +133,20 @@
 }
 
 .dropdown-inner p {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    color: #F9FAF8;
 }
 
 .dropdown-inner ul {
     margin-left: 1.25rem;
     margin-bottom: 1rem;
+    color: #F9FAF8;
 }
 
 .dropdown-inner li {
     margin-bottom: 8px;
+    color: #F9FAF8;
 }
 
 .pdropdown-title-text {
@@ -143,6 +157,12 @@
 .pdropdown-title-text p {
     width: 90%;
     margin: 0 auto;
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.prices-title-text p, li {
+    font-size: 1.125rem;
 }
 
 /* Smooth animation for opening/closing */
@@ -154,4 +174,24 @@
 
 .dropdown.active .dropdown-content {
     opacity: 1;
+}
+
+.dropdown-container-2{
+    width: 60%;
+    min-width: 18.75rem;
+    margin: 0 auto 6rem auto;
+}
+
+.sp {
+    margin-bottom: 6rem;
+}
+
+.sp h1 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.spm {
+    margin-top: 6rem;
+    width: 80%;
 }
