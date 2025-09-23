@@ -659,10 +659,10 @@ ul {
 
 .works {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-evenly;
     margin: 0 auto;
-    width: 100%;
+    width: 95%;
     box-sizing: border-box;
     grid-template-columns: 1fr;
     max-width: 25rem;
