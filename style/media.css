@@ -244,10 +244,12 @@
     }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
     .details-left {
         display: none;
     }
+}
+@media (max-width: 80rem) {
 
     .details-right {
         width: 100%;
@@ -258,27 +260,45 @@
     }
 }
 
-@media (min-width: 64.0625rem) {
+@media (min-width: 80.0625rem) {
     .details-right-table {
         grid-template-columns: repeat(2, minmax(15.625rem, 1fr));
     }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
     .details-right-table {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
     .details-right-title h2, h4, p {
         text-align: center;
     }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
     .card2-text p {
         text-align: left;
+    }
+}
+
+@media (max-width: 64rem) {
+    .work-title-h,
+    .work-title,
+    .work-title-text {
+        flex-direction: column;
+        width: 90%;
+    }
+}
+
+@media (max-width: 64rem) {
+    .work-title-h,
+    .work-title,
+    .work-title h4 {
+        text-align: center;
+        border-right: 0rem;
     }
 }
 
