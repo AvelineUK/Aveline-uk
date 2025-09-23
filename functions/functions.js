@@ -6,7 +6,7 @@ const mainContent = document.querySelector('body');
 const showSidebar = () => sidebar.classList.add('active');
 const hideSidebar = () => sidebar.classList.remove('active');
 
-/* Update body padding based on navbar height */
+/* Navbar transition from "wide" to "narrow" */
 
 const setBodyPadding = () => {
   const navbarHeight = navbar.offsetHeight;

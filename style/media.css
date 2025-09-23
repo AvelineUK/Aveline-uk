@@ -1,10 +1,15 @@
+/* ==========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+
 @keyframes fadeInNav {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes slideInLeft {
@@ -21,60 +26,6 @@
     }
 }
 
-@keyframes morph {
-    0% {
-        border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-    }
-    20% {
-        border-radius: 50% 60% 30% 70% / 60% 40% 50% 60%;
-    }
-    40% {
-        border-radius: 70% 50% 60% 40% / 30% 70% 50% 60%;
-    }
-    60% {
-        border-radius: 40% 70% 50% 60% / 60% 50% 70% 30%;
-    }
-    80% {
-        border-radius: 60% 30% 70% 50% / 50% 60% 40% 70%;
-    }
-    100% {
-        border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-    }
-}
-
-@keyframes morph-bottom {
-    0% {
-        border-radius: 0 0 70% 30% / 0 0 40% 50%;
-    }
-    20% {
-        border-radius: 0 0 50% 60% / 0 0 50% 60%;
-    }
-    40% {
-        border-radius: 0 0 60% 40% / 0 0 50% 60%;
-    }
-    60% {
-        border-radius: 0 0 50% 60% / 0 0 70% 30%;
-    }
-    80% {
-        border-radius: 0 0 70% 50% / 0 0 40% 70%;
-    }
-    100% {
-        border-radius: 0 0 60% 40% / 0 0 40% 50%;
-    }
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 @keyframes slideInUp {
     to {
         opacity: 1;
@@ -82,23 +33,82 @@
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+@keyframes morph {
+    0% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+    20% { border-radius: 50% 60% 30% 70% / 60% 40% 50% 60%; }
+    40% { border-radius: 70% 50% 60% 40% / 30% 70% 50% 60%; }
+    60% { border-radius: 40% 70% 50% 60% / 60% 50% 70% 30%; }
+    80% { border-radius: 60% 30% 70% 50% / 50% 60% 40% 70%; }
+    100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+}
+
+@keyframes morph-bottom {
+    0% { border-radius: 0 0 70% 30% / 0 0 40% 50%; }
+    20% { border-radius: 0 0 50% 60% / 0 0 50% 60%; }
+    40% { border-radius: 0 0 60% 40% / 0 0 50% 60%; }
+    60% { border-radius: 0 0 50% 60% / 0 0 70% 30%; }
+    80% { border-radius: 0 0 70% 50% / 0 0 40% 70%; }
+    100% { border-radius: 0 0 60% 40% / 0 0 40% 50%; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* ==========================================================================
+   GLOBAL STYLES - ALL SCREEN SIZES
+   ========================================================================== */
+
+.bottom ul {
+    flex-direction: column;
+}
+
+.bottom ul li:first-child {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ==========================================================================
+   SMALL MOBILE - MAX-WIDTH 40REM
+   ========================================================================== */
+
+@media (max-width: 40rem) {
+    .cards {
+        grid-template-columns: 18rem;
+        max-width: 18.75rem;
     }
-    to {
-        opacity: 1;
+    .hero h1 {
+        line-height: 1.2;
     }
 }
 
-/* Responsive */
 
-@media (max-width: 64rem) {    
+/* ==========================================================================
+   TABLET - 40.0625REM TO 80REM
+   ========================================================================== */
+
+@media (min-width: 40.0625rem) and (max-width: 80rem) {
+    .cards {
+        grid-template-columns: repeat(2, 18rem);
+        max-width: 37.5rem;
+    }
+}
+
+
+/* ==========================================================================
+   MOBILE/TABLET - MAX-WIDTH 64REM
+   ========================================================================== */
+
+@media (max-width: 64rem) {
+    /* Global Mobile Styles */
     .services-text h2,
     .details-right-title h2,
     .work-title-h h2,
     .prices-title-text h2 {
-        line-height: 3rem;
+        line-height: 1.2;
         margin-bottom: .25rem;
     }
 
@@ -110,115 +120,13 @@
         display: block;
     }
 
-    .spacing {
-        padding: 0%;
-    }
-
-    .hero {
-        margin: 0rem;
-        transform: translateY(0rem);
-    }
-
-    .hero,
-    .hero-lr {
-        flex-direction: column;
-    }
-
-    .hero-left,
-    .hero-right {
-        width: 100%;
-        transform: translateY(3.125rem);
-    }
-
-    .hero-right img {
-        width: 70%;
-        max-width: 0rem;
-    }
-
-    .logo-navigation img {
-        width: 100%;
-        max-height: 1.625rem;
-    }
-
-    .cta1 {
-        display: flex;
-        justify-content: center;
-    }
-
-    .cta-b {
-        font-size: 1.25rem;
-        padding: 1rem 2rem;
-    }
-
-    .logo-navigation {
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        border-radius: 0 !important;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero {
-        padding: 0.625rem;
-        border-radius: 0 0 25% 25%;
-        animation: morph-bottom 15s linear infinite alternate;
-    }
-
-    .hero h1 {
-        text-align: center;
-    }
-
-    .hero-left,
-    .hero-right {
-        animation: slideInUp 1s ease-out forwards;
-    }
-}
-
-@media (min-width: 64.0625rem) {
-    .logo-navigation {
-        top: 1.25rem;
-        left: 1.25rem;
-        right: 1.25rem;
-        width: auto;
-    }
-
-    .logo-navigation.scrolled {
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-}
-
-@media (max-width: 64rem) {
+    /* Services Section Mobile */
     .services {
         width: 90%;
         padding: 0.625rem;
     }
-}
 
-@media (min-width: 80.0625rem) {
-    .cards {
-        grid-template-columns: repeat(4, 18rem);
-        max-width: 56.25rem;
-    }
-}
-
-@media (min-width: 40.0625rem) and (max-width: 80rem) {
-    .cards {
-        grid-template-columns: repeat(2, 18rem);
-        max-width: 37.5rem;
-    }
-}
-
-@media (max-width: 40rem) {
-    .cards {
-        grid-template-columns: 18rem;
-        max-width: 18.75rem;
-    }
-}
-
-@media (max-width: 64rem) {
+    /* Cards Section Mobile */
     .cards a .card {
         background-color: #1e3c72;
         color: #F9FAF8;
@@ -233,62 +141,16 @@
         opacity: 0;
     }
 
-    .card-text h3{
+    .card-text h3 {
         text-align: center;
     }
-}
 
-@media (max-width: 64rem) {
+    /* Details Section Mobile */
     .details {
         margin-top: 4rem;
     }
-}
 
-@media (max-width: 80rem) {
-    .details-left {
-        display: none;
-    }
-}
-@media (max-width: 80rem) {
-
-    .details-right {
-        width: 100%;
-    }
-
-    .details-right-title {
-        padding-right: 0rem;
-    }
-    
-    .details-right p {
-        text-align: center;
-    }
-}
-
-@media (min-width: 80.0625rem) {
-    .details-right-table {
-        grid-template-columns: repeat(2, minmax(15.625rem, 1fr));
-    }
-}
-
-@media (max-width: 80rem) {
-    .details-right-table {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 80rem) {
-    .details-right-title h2, h4, p {
-        text-align: center;
-    }
-}
-
-@media (max-width: 80rem) {
-    .card2-text p {
-        text-align: left;
-    }
-}
-
-@media (max-width: 64rem) {
+    /* Work Section Mobile */
     .work-title-h,
     .work-title,
     .work-title-text {
@@ -296,33 +158,20 @@
         width: 90%;
         padding-left: 0rem;
     }
-}
 
-@media (max-width: 64rem) {
     .work-title-h,
     .work-title,
     .work-title h4 {
         text-align: center;
         border-right: 0rem;
     }
-}
 
-@media (min-width: 64.0625rem) {
-    .works {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 90rem;
-    }
-}
-
-@media (max-width: 64rem) {
     .works {
         grid-template-columns: repeat(1, 1fr);
         width: 90%;
         max-width: 25rem;
     }
-}
 
-@media (max-width: 64rem) {
     .work-text {
         text-align: center;
     }
@@ -330,37 +179,23 @@
     .work-text p {
         text-align: ju;
     }
-}
 
-@media (max-width: 64rem) {
     .work-button {
         font-size: 1rem;
         padding: 1rem 2rem;
     }
-}
 
-@media (max-width: 64rem) {
+    /* Pricing Section Mobile */
     .prices-title {
         width: 90%;
         padding: 0.625rem;
     }
-}
 
-@media (min-width: 64.0625rem) {
-    .prices {
-        grid-template-columns: repeat(2, 25rem);
-        max-width: 60rem;
-    }
-}
-
-@media (max-width: 64rem) {
     .prices {
         grid-template-columns: 20rem;
         max-width: 30rem;
     }
-}
 
-@media (max-width: 64rem) {
     .tier {
         margin: 0 auto;
         align-items: center;
@@ -368,15 +203,65 @@
         margin-right: 1rem;
         padding: 0rem .125rem;
     }
-}
 
-@media (max-width: 64rem) {
     .tier-text li {
         font-size: 1rem;
     }
+
+    /* Footer Mobile */
+    .footer {
+        grid-template-columns: minmax(17.5rem, 25rem);
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer p,
+    footer-contact-p {
+        text-align: center;
+    }
+
+    .footer-services img {
+        width: 90%;
+    }
+
+    .footer-contact {
+        align-items: center;
+    }
 }
 
+
+/* ==========================================================================
+   DESKTOP - MIN-WIDTH 64.0625REM
+   ========================================================================== */
+
 @media (min-width: 64.0625rem) {
+    /* Navigation Desktop */
+    .logo-navigation {
+        top: 1.25rem;
+        left: 1.25rem;
+        right: 1.25rem;
+        width: auto;
+    }
+
+    .logo-navigation.scrolled {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    /* Work Section Desktop */
+    .works {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 90rem;
+    }
+
+    /* Pricing Section Desktop */
+    .prices {
+        grid-template-columns: repeat(2, 25rem);
+        max-width: 60rem;
+    }
+
+    /* Footer Desktop */
     .footer {
         grid-template-columns:
             minmax(25rem, 40rem)
@@ -385,39 +270,120 @@
     }
 }
 
-@media (max-width: 64rem) {
-    .footer {
-        grid-template-columns: minmax(17.5rem, 25rem);
-        gap: 1rem;
-        text-align: center;
-    }
-}
 
-@media (max-width: 64rem) {
-    .footer p,
-    footer-contact-p {
-        text-align: center;
-    }
-}
+/* ==========================================================================
+   TABLET/DESKTOP - MAX-WIDTH 80REM
+   ========================================================================== */
 
-@media (max-width: 64rem) {
-    .footer-services img{
-        width: 90%;
+@media (max-width: 80rem) {
+    /* Navigation Mobile */
+    .logo-navigation {
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        border-radius: 0 !important;
+        width: 100%;
+        max-width: 100%;
     }
-}
 
-@media (max-width: 64rem) {
-    .footer-contact {
-        align-items: center;
+    .logo-navigation img {
+        width: 100%;
+        max-height: 1.625rem;
     }
-}
 
-@media (min-width: 0rem) {
-    .bottom ul {
+    /* Hero Section Mobile */
+    .hero {
+        margin: 0rem;
+        transform: translateY(0rem);
+        padding: 0.625rem;
+        border-radius: 0 0 25% 25%;
+        animation: morph-bottom 15s linear infinite alternate;
+    }
+
+    .hero,
+    .hero-lr {
         flex-direction: column;
     }
 
-    .bottom ul li:first-child {
-        margin-bottom: 0.5rem;
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        animation: slideInUp 1s ease-out forwards;
+        transform: translateY(3.125rem);
+    }
+
+    .hero-right img {
+        width: 70%;
+        max-width: 0rem;
+    }
+
+    .hero h1 {
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .hero h4 {
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        text-align: center;
+    }
+
+    .cta1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cta-b {
+        font-size: 1.25rem;
+        padding: 1rem 2rem;
+    }
+
+    /* Details Section - Hide Left Image */
+    .details-left {
+        display: none;
+    }
+
+    .details-right {
+        width: 100%;
+    }
+
+    .details-right-title {
+        padding-right: 0rem;
+    }
+
+    .details-right p {
+        text-align: center;
+    }
+
+    .details-right-table {
+        grid-template-columns: 1fr;
+    }
+
+    .details-right-title h2, h4, p {
+        text-align: center;
+    }
+
+    .card2-text p {
+        text-align: left;
+    }
+}
+
+
+/* ==========================================================================
+   LARGE DESKTOP - MIN-WIDTH 80.0625REM
+   ========================================================================== */
+
+@media (min-width: 80.0625rem) {
+    .cards {
+        grid-template-columns: repeat(4, 18rem);
+        max-width: 56.25rem;
+    }
+
+    .details-right-table {
+        grid-template-columns: repeat(1, minmax(15.625rem, 1fr));
     }
 }
