@@ -2,9 +2,8 @@
    KEYFRAME ANIMATIONS
    ========================================================================== */
 
-@keyframes fadeInNav {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes navFadeIn {
+  to { opacity: 1; }
 }
 
 @keyframes fadeIn {
@@ -85,7 +84,6 @@
     }
 }
 
-
 /* ==========================================================================
    TABLET - 40.0625REM TO 80REM
    ========================================================================== */
@@ -96,7 +94,6 @@
         max-width: 37.5rem;
     }
 }
-
 
 /* ==========================================================================
    MOBILE/TABLET - MAX-WIDTH 64REM
@@ -109,6 +106,15 @@
     .work-title-h h2,
     .prices-title-text h2 {
         line-height: 1.2;
+        margin-bottom: .5rem;
+        font-size: 2rem;
+    }
+
+    .services-text h4,
+    .details-right-title h4,
+    .work-title-h h4,
+    .prices-title-text h4 {
+        margin-top: -.5rem;
         margin-bottom: .25rem;
     }
 
@@ -124,6 +130,10 @@
     .services {
         width: 90%;
         padding: 0.625rem;
+    }
+
+    .services-text p{
+        text-align: left;
     }
 
     /* Cards Section Mobile */
@@ -150,6 +160,10 @@
         margin-top: 4rem;
     }
 
+    .card2-text h3 {
+        font-size: 1.25rem;
+    }
+
     /* Work Section Mobile */
     .work-title-h,
     .work-title,
@@ -157,13 +171,17 @@
         flex-direction: column;
         width: 90%;
         padding-left: 0rem;
+        border-right: 0rem;
     }
 
     .work-title-h,
     .work-title,
     .work-title h4 {
         text-align: center;
-        border-right: 0rem;
+    }
+
+    .work-title-text p {
+        text-align: left;
     }
 
     .works {
@@ -177,7 +195,7 @@
     }
 
     .work-text p {
-        text-align: ju;
+        text-align: left;
     }
 
     .work-button {
@@ -211,7 +229,6 @@
     /* Footer Mobile */
     .footer {
         grid-template-columns: minmax(17.5rem, 25rem);
-        gap: 1rem;
         text-align: center;
     }
 
@@ -220,15 +237,10 @@
         text-align: center;
     }
 
-    .footer-services img {
-        width: 90%;
-    }
-
     .footer-contact {
         align-items: center;
     }
 }
-
 
 /* ==========================================================================
    DESKTOP - MIN-WIDTH 64.0625REM
@@ -264,12 +276,11 @@
     /* Footer Desktop */
     .footer {
         grid-template-columns:
-            minmax(25rem, 40rem)
-            minmax(12.5rem, 20rem)
-            minmax(12.5rem, 20rem);
+            minmax(25rem, 30rem)
+            minmax(10rem, 12rem)
+            minmax(12.5rem, 15rem);
     }
 }
-
 
 /* ==========================================================================
    TABLET/DESKTOP - MAX-WIDTH 80REM
@@ -348,7 +359,7 @@
     }
 
     .details-right {
-        width: 100%;
+        width: 90%;
     }
 
     .details-right-title {
@@ -356,14 +367,14 @@
     }
 
     .details-right p {
-        text-align: center;
+        text-align: left;
     }
 
     .details-right-table {
         grid-template-columns: 1fr;
     }
 
-    .details-right-title h2, h4, p {
+    .details-right-title h2, h4 {
         text-align: center;
     }
 
@@ -371,7 +382,6 @@
         text-align: left;
     }
 }
-
 
 /* ==========================================================================
    LARGE DESKTOP - MIN-WIDTH 80.0625REM
