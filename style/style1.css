@@ -519,12 +519,12 @@ ul {
 
 .details-left img {
     width: 85%;
-    min-width: 300px;
+    min-width: 18.75rem;
     height: auto;
     display: block;
     margin: 0 auto;
-    border-radius: 150px;
-    flex-wrap: nowrap;
+    border-radius: 25%;
+    flex-wrap: 4rem;
 }
 
 .details-right {
@@ -594,7 +594,7 @@ ul {
 
 .card2-text p {
     line-height: 1.75rem;
-    font-size: 1.0625rem;
+    font-size: 1rem;
 }
 
 .card2-text img {
@@ -614,7 +614,7 @@ ul {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1280px;
+    max-width: 80rem;
     border-radius: 1rem;
     margin-top: 4rem;
     margin-bottom: 4rem;
@@ -659,7 +659,7 @@ ul {
 
 .works {
     display: grid;
-    gap: 1%;
+    gap: 2rem;
     justify-content: space-evenly;
     margin: 0 auto;
     width: 100%;
@@ -777,7 +777,7 @@ ul {
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin: 4rem auto 3rem auto;
+    margin: 5rem auto 3rem auto;
     max-width: 1000px;
     border-radius: 1rem;
 }

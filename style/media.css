@@ -256,7 +256,6 @@
     .details-right p {
         text-align: center;
     }
-
 }
 
 @media (min-width: 64.0625rem) {
@@ -283,17 +282,10 @@
     }
 }
 
-@media (min-width: 80.0625rem) {
-    .works {
-        grid-template-columns: repeat(3, 25rem);
-        max-width: 80rem;
-    }
-}
-
-@media (min-width: 64.0625rem) and (max-width: 80rem) {
+@media (min-width: 64.0625rem) {
     .works {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 100%;
+        max-width: 90rem;
     }
 }
 
