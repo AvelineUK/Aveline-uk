@@ -207,19 +207,21 @@
     .prices-title {
         width: 90%;
         padding: 0.625rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     .prices {
         grid-template-columns: 20rem;
-        max-width: 30rem;
+        max-width: 40rem;
     }
 
     .tier {
-        margin: 0 auto;
         align-items: center;
         margin-left: 1rem;
         margin-right: 1rem;
         padding: 0rem .125rem;
+        margin-bottom: -.5rem;
     }
 
     .tier-text li {
@@ -230,6 +232,7 @@
     .footer {
         grid-template-columns: minmax(17.5rem, 25rem);
         text-align: center;
+        gap: .5rem;
     }
 
     .footer p,
@@ -295,6 +298,7 @@
         border-radius: 0 !important;
         width: 100%;
         max-width: 100%;
+        animation: navFadeIn 0s ease forwards;
     }
 
     .logo-navigation img {
@@ -313,7 +317,7 @@
 
     .hero,
     .hero-lr {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .hero-left,
@@ -325,7 +329,8 @@
 
     .hero-right img {
         width: 70%;
-        max-width: 0rem;
+        max-width: 20rem;
+        margin-bottom: -1.5rem;
     }
 
     .hero h1 {
@@ -342,11 +347,14 @@
         font-size: 1.125rem;
         line-height: 1.5rem;
         text-align: center;
+        margin-right: 5%;
+        margin-left: 5%;
     }
 
     .cta1 {
         display: flex;
         justify-content: center;
+        padding-bottom: 6rem;
     }
 
     .cta-b {

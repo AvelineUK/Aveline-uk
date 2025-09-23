@@ -103,6 +103,29 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/* Dropdown functionality */
+
 document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const header = dropdown.querySelector('.dropdown-header');
+                
+                header.addEventListener('click', function() {
+                    const currentDropdown = this.parentElement;
+                    const isCurrentlyActive = currentDropdown.classList.contains('active');
+                    
+                    // Close all dropdowns
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                    
+                    // If the clicked dropdown wasn't active, open it
+                    if (!isCurrentlyActive) {
+                        currentDropdown.classList.add('active');
+                    }
+                });
+            });
+        });

@@ -46,7 +46,7 @@ body {
 
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(1.875px);
     transition: opacity 1s ease, transform 1s ease;
 }
 
@@ -325,7 +325,7 @@ ul {
 }
 
 .hero-left p {
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0 2rem 0;
     font-size: 1.25rem;
     line-height: 1.5;
     font-weight: 400;
