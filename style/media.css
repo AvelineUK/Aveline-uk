@@ -255,6 +255,10 @@
         width: 100%;
     }
 
+    .details-right-title {
+        padding-right: 0rem;
+    }
+    
     .details-right p {
         text-align: center;
     }
@@ -290,6 +294,7 @@
     .work-title-text {
         flex-direction: column;
         width: 90%;
+        padding-left: 0rem;
     }
 }
 
@@ -323,7 +328,7 @@
     }
 
     .work-text p {
-        text-align: left;
+        text-align: ju;
     }
 }
 
