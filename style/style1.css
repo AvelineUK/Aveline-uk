@@ -17,7 +17,7 @@
 
 /* Handle (scroll thumb) */
 ::-webkit-scrollbar-thumb {
-    background-color: #3882F6;
+    background-color: #3882f6;
     /* color of the scroll thumb */
     border-radius: 0.75rem;
     border: 0.75rem solid #1e3c72;
@@ -34,7 +34,7 @@
     padding: 0;
     box-sizing: border-box;
     scrollbar-width: auto;
-    scrollbar-color: #3882F6 #1e3c72;
+    scrollbar-color: #3882f6 #1e3c72;
     /* thumb color, track color */
 }
 
@@ -66,7 +66,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #F9FAF8;
+    background-color: #f9faf8;
     padding-top: 4.5rem;
     display: flex;
     flex-direction: column;
@@ -89,12 +89,16 @@ ul {
     font-family: "Source Sans 3", "Lato", sans-serif;
 }
 
+img {
+    user-select: none;
+}
+
 /* Logo Navigation */
 
 .logo-navigation {
     background-color: #1e3c72;
     backdrop-filter: blur(0.0625rem);
-    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, .81);
+    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.81);
     position: fixed;
     z-index: 1000000;
     transition: all 0.3s ease, opacity 2s ease;
@@ -110,6 +114,7 @@ ul {
     transform: translateZ(500px);
     opacity: 0;
     animation: navFadeIn 3s ease forwards;
+    user-select: none;
 }
 
 /* Scrolled state - full width and top */
@@ -123,7 +128,7 @@ ul {
     border-radius: 0;
 }
 
-.logo-navigation nav > ul:not(.sidebar) {
+.logo-navigation nav>ul:not(.sidebar) {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -134,7 +139,7 @@ ul {
     height: 4.6875rem;
     list-style-type: none;
     font-family: Oswald, sans-serif;
-    letter-spacing: .125rem;
+    letter-spacing: 0.125rem;
 }
 
 .logo-navigation a {
@@ -151,7 +156,7 @@ ul {
     line-height: 4.6875rem;
     overflow: hidden;
     transition: color 0.5s ease;
-    color: #F9FAF8;
+    color: #f9faf8;
     font-weight: 400;
     font-size: 1.0625rem;
     text-transform: uppercase;
@@ -179,16 +184,12 @@ ul {
     opacity: 1;
 }
 
-.logo-navigation
-    nav
-    > ul:not(.sidebar)
-    li:not(:first-child):not(.menu-button)
-    a:hover::after {
+.logo-navigation nav>ul:not(.sidebar) li:not(:first-child):not(.menu-button) a:hover::after {
     width: 55%;
 }
 
 .logo-navigation li:not(:first-child):not(.menu-button) a:hover {
-    color: #F9FAF8;
+    color: #f9faf8;
 }
 
 /* Logo */
@@ -202,7 +203,7 @@ ul {
     align-items: center;
     height: 100%;
     padding: 0 1.25rem;
-    color: #F9FAF8;
+    color: #f9faf8;
 }
 
 .logo-navigation li:first-child img {
@@ -264,14 +265,14 @@ ul {
     height: 3.125rem;
     padding: 0 1.25rem;
     text-decoration: none;
-    color: #F9FAF8;
+    color: #f9faf8;
 }
 
 /* Responsive menu button */
 
 .menu-button {
     display: none;
-    fill: #F9FAF8;
+    fill: #f9faf8;
 }
 
 /* Hero section */
@@ -284,11 +285,11 @@ ul {
     border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
     animation: morph 10s linear infinite alternate;
     padding: 6.25rem;
-    color: #F9FAF8;
+    color: #f9faf8;
     position: relative;
     z-index: 1;
-    margin: 5% .25% 0% .25%;
-    filter: drop-shadow(1rem 2rem 3rem rgba(0, 0, 0, .8));
+    margin: 5% 0.25% 0% 0.25%;
+    filter: drop-shadow(1rem 2rem 3rem rgba(0, 0, 0, 0.8));
     opacity: 0;
     transform: translateZ(500px);
     transition: opacity 3s ease, transform 3s ease;
@@ -343,14 +344,14 @@ ul {
     border-radius: 1rem;
     background: transparent;
     padding: 20px;
-    color: #F9FAF8;
+    color: #f9faf8;
     opacity: 0;
     position: relative;
 }
 
 .cta-b {
     border: none;
-    background: linear-gradient(90deg, #F9FAF8, #d4af37, #F9FAF8, #d4af37);
+    background: linear-gradient(90deg, #f9faf8, #d4af37, #f9faf8, #d4af37);
     background-size: 300% 300%;
     color: #1e3c72;
     padding: 1rem 2rem;
@@ -419,7 +420,7 @@ ul {
     color: #1e3c72;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .services-text h4 {
@@ -450,7 +451,7 @@ ul {
 .card {
     aspect-ratio: 1 / 1;
     display: flex;
-    background-color: #F9FAF8;
+    background-color: #f9faf8;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -464,7 +465,7 @@ ul {
 
 .cards a:hover .card {
     background-color: #1e3c72;
-    color: #F9FAF8;
+    color: #f9faf8;
     border: 3px solid #1e3c72;
     transform: translateY(-0.25rem) scale(1.02);
     filter: drop-shadow(0.5rem 1rem 1.5rem rgba(0, 0, 0, 1));
@@ -586,7 +587,7 @@ ul {
     border: 0.0625rem solid #1e3c72;
     border-radius: 1rem;
     box-sizing: border-box;
-    background-color: #F9FAF8;
+    background-color: #f9faf8;
 }
 
 .card2-text {
@@ -706,12 +707,13 @@ ul {
     height: auto;
     display: block;
     border-radius: 0.75rem;
-    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease,
+        transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .work-text img:hover {
     transform: translateY(-0.25rem) scale(1.02);
-    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, .8);
+    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.8);
 }
 
 .work-text h3 {
@@ -726,7 +728,7 @@ ul {
 
 .work-button {
     border: none;
-    color: #F9FAF8;
+    color: #f9faf8;
     padding: 1.25rem 2.5rem;
     border-radius: 2rem;
     font-size: 1.0625rem;
@@ -846,20 +848,21 @@ ul {
     padding: 0.25rem 1rem;
     box-sizing: border-box;
     background: #1e3c72;
-    color: #F9FAF8;
+    color: #f9faf8;
     position: relative;
     z-index: 1;
-    filter: drop-shadow(0.5rem 1rem 1.5rem rgba(0, 0, 0, .8));
+    filter: drop-shadow(0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.8));
     max-width: 24rem;
     margin: 0 auto 2rem 0;
     border-radius: 1.5rem;
     text-wrap: nowrap;
-    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease,
+        transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .tier:hover {
     transform: translateY(-0.25rem) scale(1.02);
-    box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, .5);
+    box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.5);
 }
 
 .tier-text {
@@ -872,9 +875,9 @@ ul {
 .tier-text h2 {
     font-size: clamp(2rem, 5vw, 2.8rem);
     text-shadow: 0.0625rem 0.0625rem 0.125rem black;
-    color: #F9FAF8;
+    color: #f9faf8;
     font-weight: 700;
-    margin-top: .75rem;
+    margin-top: 0.75rem;
     line-height: 1.2;
 }
 
@@ -947,8 +950,8 @@ ul {
     justify-content: center;
     grid-template-columns: 2fr 1fr 1fr;
     background: #1e3c72;
-    color: #F9FAF8;
-    box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, .8);
+    color: #f9faf8;
+    box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.8);
     padding-top: 2rem;
     border-radius: 6rem 6rem 0rem 0rem;
     padding-left: 4rem;
@@ -1017,7 +1020,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     background: #1e3c72;
-    color: #F9FAF8;
+    color: #f9faf8;
     padding-bottom: 1rem;
     text-align: center;
     flex-direction: column;
@@ -1110,14 +1113,14 @@ a {
 
 .dropdown {
     margin-bottom: 1rem;
-    background: #F9FAF8;
+    background: #f9faf8;
     overflow: hidden;
     transition: all 1s ease;
 }
 
 .dropdown-header {
     background-color: #1e3c72;
-    color: #F9FAF8;
+    color: #f9faf8;
     padding: 1rem;
     cursor: pointer;
     display: flex;
@@ -1130,7 +1133,7 @@ a {
 }
 
 .dropdown-header:hover {
-    background-color: #F9FAF8;
+    background-color: #f9faf8;
     color: #1e3c72;
     border-color: #1e3c72;
     border: solid;
@@ -1144,9 +1147,9 @@ a {
 .dropdown-arrow {
     width: 0;
     height: 0;
-    border-left: .5rem solid transparent;
-    border-right: .5rem solid transparent;
-    border-top: .5rem solid F9FAF8;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.5rem solid F9FAF8;
     transition: transform 1s ease;
 }
 
@@ -1166,8 +1169,8 @@ a {
 }
 
 .dropdown.active .dropdown-header {
-	background-color: #F9FAF8;
-	color: #1e3c72;
+    background-color: #f9faf8;
+    color: #1e3c72;
     border-color: #1e3c72;
     border: solid;
 }
@@ -1181,18 +1184,18 @@ a {
 .dropdown-inner p {
     margin-bottom: 1rem;
     font-size: 1.125rem;
-    color: #F9FAF8;
+    color: #f9faf8;
 }
 
 .dropdown-inner ul {
     margin-left: 1.25rem;
     margin-bottom: 1rem;
-    color: #F9FAF8;
+    color: #f9faf8;
 }
 
 .dropdown-inner li {
     margin-bottom: 8px;
-    color: #F9FAF8;
+    color: #f9faf8;
 }
 
 .pdropdown-title-text {
@@ -1207,14 +1210,14 @@ a {
     text-align: center;
 }
 
-.prices-title-text p, li {
+.prices-title-text p,
+li {
     font-size: 1.125rem;
 }
 
 /* Smooth animation for opening/closing */
 .dropdown-content {
-    transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 1s ease;
+    transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
     opacity: 0;
 }
 
@@ -1222,14 +1225,14 @@ a {
     opacity: 1;
 }
 
-.dropdown-container-2{
+.dropdown-container-2 {
     width: 60%;
     min-width: 18.75rem;
     margin: 0 auto 6rem auto;
 }
 
 .sp {
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
 }
 
 .sp h1 {
@@ -1258,11 +1261,12 @@ a {
     margin-bottom: 6rem;
     border: solid;
     border-color: #1e3c72;
+    user-select: none;
 }
 
 .form-container {
     background: transparent;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 1rem;
     width: 100%;
     max-width: 32rem;
@@ -1293,7 +1297,7 @@ a {
 
 .form-group label {
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     color: #333;
     font-weight: 500;
     font-size: 1rem;
@@ -1342,8 +1346,8 @@ textarea.form-input {
 }
 
 .submit-btn:hover {
-    transform: translateY(-.25rem);
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.4);
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
 }
 
 .submit-btn:active {
@@ -1390,7 +1394,7 @@ textarea.form-input {
 }
 
 .submit-btn.loading::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 20px;
     height: 20px;
