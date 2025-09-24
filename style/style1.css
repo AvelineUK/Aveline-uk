@@ -1266,8 +1266,8 @@ li {
     user-select: none;
 }
 
-.cf h1 {
-    padding-bottom: -1rem;
+.cf h1{
+    margin-bottom: .5rem;
 }
 
 .cf h2 {
@@ -1281,30 +1281,14 @@ li {
     padding: 0.5rem;
     border-radius: 1rem;
     width: 100%;
-    max-width: 32rem;
-}
-
-.form-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.form-header h2 {
-    color: #333;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.form-header p {
-    color: #666;
-    font-size: 1rem;
+    max-width: 30rem;
 }
 
 .form-group {
     margin-bottom: 24px;
     position: relative;
-    font-family: Source Sans M, Lato, sans-serif;
+    font-family: Oswald, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
 }
 
 .form-group label {

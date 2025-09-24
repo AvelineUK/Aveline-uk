@@ -91,7 +91,7 @@ form.addEventListener('submit', function(e) {
           // Redirect to home page after 5 seconds
           setTimeout(() => {
               window.location.href = 'index.html';
-          }, 10000);
+          }, 60000);
       }, 2000);
     }
 });
@@ -167,7 +167,7 @@ function handleNetlifySuccess() {
         // Redirect to home page after 10 seconds
         setTimeout(() => {
             window.location.href = 'index.html';
-        }, 10000);
+        }, 60000);
     }, 2000);
 }
 
