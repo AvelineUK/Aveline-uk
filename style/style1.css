@@ -1231,6 +1231,8 @@ li {
     margin: 0 auto 6rem auto;
 }
 
+/* Services and Contact */
+
 .sp {
     margin-bottom: 2rem;
 }
@@ -1262,6 +1264,16 @@ li {
     border: solid;
     border-color: #1e3c72;
     user-select: none;
+}
+
+.cf h1 {
+    padding-bottom: -1rem;
+}
+
+.cf h2 {
+    line-height: 1.2;
+    padding-bottom: 1.5rem;
+    text-align: center;
 }
 
 .form-container {
@@ -1409,14 +1421,4 @@ textarea.form-input {
 
 .submit-btn.loading .btn-text {
     opacity: 0;
-}
-
-.cf h1 {
-    padding-bottom: -1rem;
-}
-
-.cf h2 {
-    line-height: 1.2;
-    padding-bottom: 1.5rem;
-    text-align: center;
 }
