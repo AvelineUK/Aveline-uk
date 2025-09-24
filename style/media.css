@@ -157,9 +157,9 @@
 
     /* Cards Section Mobile */
     .cards a .card {
-        background-color: #1e3c72;
+        background-color: #152e5c;
         color: #F9FAF8;
-        border: 0.1875rem solid #1e3c72;
+        border: 0.1875rem solid #152e5c;
     }
 
     .card .speed.hover {

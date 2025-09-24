@@ -10,7 +10,7 @@
 
 /* Track (background) */
 ::-webkit-scrollbar-track {
-    background: #1e3c72;
+    background: #152e5c;
     /* color of the track */
     border-radius: 0.75rem;
 }
@@ -20,7 +20,7 @@
     background-color: #3882f6;
     /* color of the scroll thumb */
     border-radius: 0.75rem;
-    border: 0.75rem solid #1e3c72;
+    border: 0.75rem solid #152e5c;
     /* adds padding around thumb */
 }
 
@@ -34,7 +34,7 @@
     padding: 0;
     box-sizing: border-box;
     scrollbar-width: auto;
-    scrollbar-color: #3882f6 #1e3c72;
+    scrollbar-color: #3882f6 #152e5c;
     /* thumb color, track color */
 }
 
@@ -96,7 +96,7 @@ img {
 /* Logo Navigation */
 
 .logo-navigation {
-    background-color: #1e3c72;
+    background-color: #152e5c;
     backdrop-filter: blur(0.0625rem);
     box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.81);
     position: fixed;
@@ -281,7 +281,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    background: #1e3c72;
+    background: #152e5c;
     border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
     animation: morph 10s linear infinite alternate;
     padding: 6.25rem;
@@ -353,7 +353,7 @@ img {
     border: none;
     background: linear-gradient(90deg, #f9faf8, #d4af37, #f9faf8, #d4af37);
     background-size: 300% 300%;
-    color: #1e3c72;
+    color: #152e5c;
     padding: 1rem 2rem;
     border-radius: 1.5rem;
     font-size: 1.5rem;
@@ -421,7 +421,7 @@ img {
 .work-title-h h1,
 .prices-title-text h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: #1e3c72;
+    color: #152e5c;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.5rem;
@@ -449,7 +449,7 @@ img {
     max-width: 1000px;
     padding: 0 16px;
     grid-template-columns: repeat(auto-fit, 200px);
-    color: #1e3c72;
+    color: #152e5c;
 }
 
 .card {
@@ -459,7 +459,7 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 3px solid #1e3c72;
+    border: 3px solid #152e5c;
     border-radius: 1rem;
     padding: 4px;
     box-sizing: border-box;
@@ -468,9 +468,9 @@ img {
 }
 
 .cards a:hover .card {
-    background-color: #1e3c72;
+    background-color: #152e5c;
     color: #f9faf8;
-    border: 3px solid #1e3c72;
+    border: 3px solid #152e5c;
     transform: translateY(-0.25rem) scale(1.02);
     filter: drop-shadow(0.5rem 1rem 1.5rem rgba(0, 0, 0, 1));
 }
@@ -588,7 +588,7 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 0.0625rem solid #1e3c72;
+    border: 0.0625rem solid #152e5c;
     border-radius: 1rem;
     box-sizing: border-box;
     background-color: #f9faf8;
@@ -606,7 +606,7 @@ img {
     font-weight: 500;
     font-size: 1.5rem;
     align-items: center;
-    color: #1e3c72;
+    color: #152e5c;
 }
 
 .card2-text p {
@@ -645,7 +645,7 @@ img {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    border-right: 0.0625rem solid #1e3c72;
+    border-right: 0.0625rem solid #152e5c;
     padding-right: 1rem;
 }
 
@@ -741,7 +741,7 @@ img {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    background: #1e3c72;
+    background: #152e5c;
 }
 
 /* Slide in (left → right) */
@@ -761,7 +761,7 @@ img {
 }
 
 .work-button::after {
-    background: #1e3c72;
+    background: #152e5c;
     transform-origin: right;
 }
 
@@ -782,7 +782,7 @@ img {
 }
 
 .work-button:hover span {
-    color: #1e3c72;
+    color: #152e5c;
 }
 
 /* Pricing */
@@ -812,7 +812,7 @@ img {
 
 .prices-title-text h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
-    color: #1e3c72;
+    color: #152e5c;
     font-weight: 700;
     margin-top: -0.5rem;
 }
@@ -851,7 +851,7 @@ img {
     align-items: center;
     padding: 0.25rem 1rem;
     box-sizing: border-box;
-    background: #1e3c72;
+    background: #152e5c;
     color: #f9faf8;
     position: relative;
     z-index: 1;
@@ -953,11 +953,10 @@ img {
     display: grid;
     justify-content: center;
     grid-template-columns: 2fr 1fr 1fr;
-    background: #1e3c72;
+    background: #152e5c;
     color: #f9faf8;
     box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.8);
     padding-top: 2rem;
-    border-radius: 6rem 6rem 0rem 0rem;
     padding-left: 4rem;
     padding-right: 4rem;
     gap: 3rem;
@@ -1023,7 +1022,7 @@ a {
     padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    background: #1e3c72;
+    background: #152e5c;
     color: #f9faf8;
     padding-bottom: 1rem;
     text-align: center;
@@ -1066,7 +1065,7 @@ a {
     margin-top: 6rem;
     margin-bottom: 6rem;
     border: solid;
-    border-color: #1e3c72;
+    border-color: #152e5c;
 }
 
 .legal-text {
@@ -1081,7 +1080,7 @@ a {
 
 .legal-text h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: #1e3c72;
+    color: #152e5c;
     font-weight: 700;
     text-align: center;
     margin-bottom: 2rem;
@@ -1090,7 +1089,7 @@ a {
 
 .legal-text h2 {
     font-size: clamp(1rem, 2vw, 1.5rem);
-    color: #1e3c72;
+    color: #152e5c;
     font-weight: 500;
     letter-spacing: 0.125rem;
     margin-bottom: 1rem;
@@ -1123,7 +1122,7 @@ a {
 }
 
 .dropdown-header {
-    background-color: #1e3c72;
+    background-color: #152e5c;
     color: #f9faf8;
     padding: 1rem;
     cursor: pointer;
@@ -1132,14 +1131,14 @@ a {
     align-items: center;
     transition: all 1s ease;
     user-select: none;
-    border-color: #1e3c72 !important;
+    border-color: #152e5c !important;
     border: solid;
 }
 
 .dropdown-header:hover {
     background-color: #f9faf8;
-    color: #1e3c72;
-    border-color: #1e3c72;
+    color: #152e5c;
+    border-color: #152e5c;
     border: solid;
 }
 
@@ -1165,7 +1164,7 @@ a {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #1e3c72;
+    background-color: #152e5c;
 }
 
 .dropdown.active .dropdown-content {
@@ -1174,8 +1173,8 @@ a {
 
 .dropdown.active .dropdown-header {
     background-color: #f9faf8;
-    color: #1e3c72;
-    border-color: #1e3c72;
+    color: #152e5c;
+    border-color: #152e5c;
     border: solid;
 }
 
@@ -1266,7 +1265,7 @@ li {
     margin-top: 6rem;
     margin-bottom: 6rem;
     border: solid;
-    border-color: #1e3c72;
+    border-color: #152e5c;
     user-select: none;
 }
 
@@ -1332,7 +1331,7 @@ textarea.form-input {
 
 .submit-btn {
     width: 100%;
-    background: #1e3c72;
+    background: #152e5c;
     color: white;
     border: none;
     padding: 16px 24px;
