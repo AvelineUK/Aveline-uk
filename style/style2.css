@@ -64,7 +64,7 @@
 
 .dropdown {
     margin-bottom: 1rem;
-    background: #f9f8eb;
+    background: #F9FAF8;
     overflow: hidden;
     transition: all 1s ease;
 }
@@ -84,7 +84,7 @@
 }
 
 .dropdown-header:hover {
-    background-color: #f9f8eb;
+    background-color: #F9FAF8;
     color: #1e3c72;
     border-color: #1e3c72;
     border: solid;
@@ -120,7 +120,7 @@
 }
 
 .dropdown.active .dropdown-header {
-	background-color: #f9f8eb;
+	background-color: #F9FAF8;
 	color: #1e3c72;
     border-color: #1e3c72;
     border: solid;
