@@ -129,3 +129,67 @@ document.querySelectorAll('.fade-in').forEach(el => {
                 });
             });
         });
+
+/* Contact Form functionality */
+
+const form = document.getElementById('contactForm');
+const submitBtn = form.querySelector('.submit-btn');
+
+// Form validation
+function validateField(field, errorId, validationFn) {
+    const value = field.value.trim();
+    const errorElement = document.getElementById(errorId);
+    const isValid = validationFn(value);
+    
+    if (isValid) {
+        field.classList.remove('error');
+        errorElement.classList.remove('show');
+    } else {
+        field.classList.add('error');
+        errorElement.classList.add('show');
+    }
+    
+    return isValid;
+}
+
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return email.length > 0 && emailRegex.test(email);
+}
+
+function validatePhone(phone) {
+    if (phone.length === 0) return true; // Optional field
+    const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,}$/;
+    return phoneRegex.test(phone);
+}
+
+// Real-time validation
+form.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('blur', function() {
+        const fieldName = this.name;
+        
+        switch(fieldName) {
+            case 'name':
+                validateField(this, 'nameError', value => value.length > 0);
+                break;
+            case 'email':
+                validateField(this, 'emailError', validateEmail);
+                break;
+            case 'subject':
+                validateField(this, 'subjectError', value => value.length > 0);
+                break;
+            case 'message':
+                validateField(this, 'messageError', value => value.length > 10);
+                break;
+        }
+    });
+    
+    // Remove error state when typing
+    input.addEventListener('input', function() {
+        if (this.classList.contains('error')) {
+            this.classList.remove('error');
+            const errorId = this.name + 'Error';
+            document.getElementById(errorId).classList.remove('show');
+        }
+    });
+});
