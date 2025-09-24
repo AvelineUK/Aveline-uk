@@ -415,7 +415,11 @@ img {
 .services-text h2,
 .details-right-title h2,
 .work-title-h h2,
-.prices-title-text h2 {
+.prices-title-text h2,
+.services-text h1,
+.details-right-title h1,
+.work-title-h h1,
+.prices-title-text h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #1e3c72;
     font-weight: 700;

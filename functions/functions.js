@@ -118,11 +118,9 @@ document.querySelectorAll('.fade-in').forEach(el => {
                 header.addEventListener('click', function() {
                     const currentDropdown = this.parentElement;
                     const isCurrentlyActive = currentDropdown.classList.contains('active');
-                    
-                    // Close all dropdowns
+
                     dropdowns.forEach(d => d.classList.remove('active'));
-                    
-                    // If the clicked dropdown wasn't active, open it
+
                     if (!isCurrentlyActive) {
                         currentDropdown.classList.add('active');
                     }
