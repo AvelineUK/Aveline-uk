@@ -11,6 +11,7 @@ body {
 }
 
 /* Header */
+
 .header {
     position: fixed;
     top: 0;
@@ -27,6 +28,7 @@ body {
 }
 
 /* Hamburger Menu */
+
 .hamburger {
     width: 30px;
     height: 24px;
@@ -47,6 +49,7 @@ body {
 }
 
 /* Logo */
+
 .logo {
     color: white;
     font-size: 24px;
@@ -55,6 +58,7 @@ body {
 }
 
 /* Navigation Sidebar */
+
 .nav-sidebar {
     position: fixed;
     top: 70px;
@@ -74,6 +78,7 @@ body {
 }
 
 /* Navigation Menu */
+
 .nav-menu {
     list-style: none;
     padding: 0;
@@ -115,6 +120,7 @@ body {
 }
 
 /* Main Content - flex to accommodate sidebar */
+
 .main-content {
     margin-top: 70px;
     margin-left: 0;
@@ -125,6 +131,7 @@ body {
 }
 
 /* When nav is open, content flexes to accommodate sidebar */
+
 body.nav-open .main-content {
     margin-left: 200px;
     width: calc(100% - 200px);
@@ -151,15 +158,20 @@ body.nav-open .main-content {
 /* Responsive */
 /* Body transform when menu is open - only push content slightly */
 
+@media (max-width: 1024px) {
+
+    /* On smaller screens, sidebar overlays instead of pushing content */
+
+    body.nav-open .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-sidebar {
         width: 180px;
         left: -180px;
-    }
-
-    body.nav-open .main-content {
-        margin-left: 180px;
-        width: calc(100% - 180px);
     }
 
     .content-wrapper h1 {
@@ -175,11 +187,6 @@ body.nav-open .main-content {
     .nav-sidebar {
         width: 160px;
         left: -160px;
-    }
-
-    body.nav-open .main-content {
-        margin-left: 160px;
-        width: calc(100% - 160px);
     }
 
     .header {
