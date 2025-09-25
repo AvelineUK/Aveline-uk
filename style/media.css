@@ -127,6 +127,15 @@
         line-height: 1.2;
         margin-bottom: .5rem;
         font-size: 2rem;
+        text-align: center;
+    }
+
+    .services-text h1,
+    .details-right-title h1,
+    .work-title-h h1,
+    .prices-title-text h1,
+    .prices-title-text p {
+        text-align: center;
     }
 
     .services-text h4,
@@ -240,11 +249,14 @@
         margin-left: 1rem;
         margin-right: 1rem;
         padding: 0rem .125rem;
-        margin-bottom: -.5rem;
     }
 
     .tier-text li {
         font-size: 1rem;
+    }
+
+    .offer {
+        width: 100%;
     }
 
     /* Footer Mobile */

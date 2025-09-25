@@ -26,7 +26,7 @@ function validateEmail(email) {
 }
 
 function validatePhone(phone) {
-    if (phone.length === 0) return true; // Optional field
+    if (phone.length === 0) return true;
     const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,}$/;
     return phoneRegex.test(phone);
 }

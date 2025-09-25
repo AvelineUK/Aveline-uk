@@ -516,7 +516,7 @@ img {
 }
 
 .details {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -531,7 +531,7 @@ img {
 .details-left {
     width: 40%;
     display: block;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     text-align: center;
 }
@@ -547,14 +547,14 @@ img {
 }
 
 .details-right {
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
 }
 
 .details-right-title {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -579,7 +579,7 @@ img {
     gap: 0.5rem;
     justify-content: center;
     margin: 0 auto;
-    width: 100%;
+    width: 90%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -841,7 +841,7 @@ img {
     max-width: 1000px;
     padding: 0 1rem;
     grid-template-columns: repeat(auto-fit, 12.5rem);
-    padding-bottom: 4rem;
+    padding-bottom: .5rem;
 }
 
 .tier {
@@ -945,6 +945,20 @@ img {
     display: flex;
     justify-content: center;
     padding: 1rem 0 2rem 0;
+}
+
+.offer {
+    text-align: center;
+    width: 30%;
+    padding-bottom: 6rem;
+    font-family: Source Sans M, Lato, sans-serif;
+    font-size: .75rem;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.offer a {
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -1144,7 +1158,7 @@ a {
 
 .dropdown-header h3 {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .dropdown-arrow {
@@ -1238,6 +1252,7 @@ li {
 
 .sp {
     margin-bottom: 2rem;
+    width: 90%;
 }
 
 .sp h1 {
@@ -1247,7 +1262,15 @@ li {
 
 .spm {
     margin-top: 6rem;
-    width: 70%;
+    width: 100%;
+}
+
+.ls, .rs {
+    width: 40%;
+}
+
+.ls img{
+    width: 90%;
 }
 
 .fc {
