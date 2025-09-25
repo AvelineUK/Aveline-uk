@@ -156,11 +156,10 @@ body.nav-open .main-content {
 }
 
 /* Responsive */
-/* Body transform when menu is open - only push content slightly */
 
 @media (max-width: 1024px) {
 
-    /* On smaller screens, sidebar overlays instead of pushing content */
+/* On smaller screens, sidebar overlays instead of pushing content */
 
     body.nav-open .main-content {
         margin-left: 0;
