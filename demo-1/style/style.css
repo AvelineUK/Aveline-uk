@@ -293,17 +293,6 @@ body.nav-open .test-section {
     font-size: clamp(.9rem, 3vw, 1.2rem);
 }
 
-.parallax2-content {
-    display: flex;
-    text-align: center;
-    color: white;
-    background-color: transparent;
-    position: relative; 
-    z-index: 2;
-    gap: 2rem;
-    border: solid;
-}
-
 .button-container {
     display: grid;
     grid-template-columns: repeat(3, max-content);
@@ -367,12 +356,36 @@ body.nav-open .test-section {
     text-align: center;
 }
 
+.p2wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    padding: 2rem;
+}
+
+.parallax2-content {
+    display: flex;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    position: relative; 
+    z-index: 2;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 480px;
+}
+
 .image-container {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    max-width: 480px;
+    min-width: 320px;
     overflow: hidden;
-    border-radius: 0px;
     cursor: pointer;
+    position: relative;
+    border-radius: 1.25rem;
 }
 
 .image-container img {
@@ -388,7 +401,24 @@ body.nav-open .test-section {
 }
 
 .rotate-zoom:hover img {
-    transform: scale(1.1) rotate(2deg);
+    transform: scale(1.1);
+}
+
+.overlay-content {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10; 
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 0rem 0rem 1.25rem 1.25rem;
+}
+
+.overlay-content h2 {
+    font-size: 2rem;
+    user-select: none;
 }
 
 /* Footer */
@@ -422,6 +452,16 @@ footer {
     justify-items: center;
     margin-bottom: 0 auto 2rem auto;
 }
+
+.p2wrapper {
+    flex-direction: column;
+    align-items: center;
+}
+
+.parallax2-content {
+    max-width: 90%;
+}
+
 }
 
 @media (max-width: 768px) {
@@ -475,4 +515,5 @@ body.nav-open footer {
     min-width: 10rem;
     margin: 0 auto;
 }
+
 }

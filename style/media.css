@@ -148,7 +148,7 @@
 
 @media (min-width: 43rem) and (max-width: 53.9375rem) {
     .prices {
-        grid-template-columns: repeat(2, minmax(20rem, 1fr));
+        grid-template-columns: repeat(2, 20rem);
     }
 }
 
