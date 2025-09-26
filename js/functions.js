@@ -103,11 +103,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* Dropdown functionality */
-
 document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
+
+/* Dropdown functionality */
 
         document.addEventListener('DOMContentLoaded', function() {
             const dropdowns = document.querySelectorAll('.dropdown');
