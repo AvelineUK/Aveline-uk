@@ -520,7 +520,6 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
     margin-left: auto;
     margin-right: auto;
     gap: 10px;
@@ -529,11 +528,12 @@ img {
 }
 
 .details-left {
-    width: 40%;
+    width: 35%;
     display: block;
     justify-content: flex-start;
     align-items: flex-start;
     text-align: center;
+    position: relative;
 }
 
 .details-left img {
@@ -544,10 +544,12 @@ img {
     margin: 0 auto;
     border-radius: 25%;
     flex-wrap: 4rem;
+    position: sticky;
+    top: 5rem;
 }
 
 .details-right {
-    width: 40%;
+    width: 55%;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -576,7 +578,7 @@ img {
 
 .details-right-table {
     display: grid;
-    gap: 0.5rem;
+    gap: 2rem;
     justify-content: center;
     margin: 0 auto;
     width: 90%;
@@ -834,7 +836,7 @@ img {
 
 .prices {
     display: grid;
-    gap: 4rem;
+    gap: 1.5rem;
     justify-content: center;
     margin: 0 auto;
     width: 100%;

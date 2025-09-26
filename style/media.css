@@ -88,7 +88,6 @@
     margin-bottom: 0.5rem;
 }
 
-
 /* ==========================================================================
    SMALL MOBILE - MAX-WIDTH 40REM
    ========================================================================== */
@@ -111,6 +110,65 @@
     .cards {
         grid-template-columns: repeat(2, 18rem);
         max-width: 37.5rem;
+    }
+}
+
+/* ==========================================================================
+   PRICING - MOBILE (BELOW 43REM) - SINGLE COLUMN
+   ========================================================================== */
+
+@media (max-width: 42.9375rem) {
+    .prices-title {
+        width: 90%;
+        padding: 0.625rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .prices {
+        grid-template-columns: 20rem;
+        max-width: 40rem;
+    }
+
+    .tier {
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0rem .125rem;
+    }
+
+    .offer {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   PRICING - TABLET (43REM TO 54REM) - TWO COLUMNS FLEXIBLE
+   ========================================================================== */
+
+@media (min-width: 43rem) and (max-width: 53.9375rem) {
+    .prices {
+        grid-template-columns: repeat(2, minmax(20rem, 1fr));
+    }
+}
+
+/* ==========================================================================
+   TIER TEXT SIZE - (54REM AND BELOW)
+   ========================================================================== */
+
+@media (max-width: 54rem) {
+    .tier-text li {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   PRICING - DESKTOP (54REM AND UP) - TWO COLUMNS FIXED
+   ========================================================================== */
+
+@media (min-width: 54rem) {
+    .prices {
+        grid-template-columns: repeat(2, 25rem);
     }
 }
 
@@ -231,34 +289,6 @@
         padding: 1rem 2rem;
     }
 
-    /* Pricing Section Mobile */
-    .prices-title {
-        width: 90%;
-        padding: 0.625rem;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .prices {
-        grid-template-columns: 20rem;
-        max-width: 40rem;
-    }
-
-    .tier {
-        align-items: center;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        padding: 0rem .125rem;
-    }
-
-    .tier-text li {
-        font-size: 1rem;
-    }
-
-    .offer {
-        width: 100%;
-    }
-
     /* Footer Mobile */
     .footer {
         grid-template-columns: minmax(17.5rem, 25rem);
@@ -311,12 +341,6 @@
     .works {
         grid-template-columns: repeat(3, 1fr);
         max-width: 90rem;
-    }
-
-    /* Pricing Section Desktop */
-    .prices {
-        grid-template-columns: repeat(2, 25rem);
-        max-width: 60rem;
     }
 
     /* Footer Desktop */
