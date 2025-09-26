@@ -51,3 +51,16 @@ document.querySelectorAll('.fade-in1').forEach(el => {
 document.querySelectorAll('.fade-in2').forEach(el => {
     observer.observe(el);
 });
+
+// Scroller
+
+document.addEventListener('DOMContentLoaded', function () {
+  const track = document.getElementById('scrollerTrack');
+  if (!track) return;
+
+  // guard: only duplicate if not already duplicated
+  if (!track.dataset.duplicated) {
+    track.innerHTML = track.innerHTML + track.innerHTML;
+    track.dataset.duplicated = 'true';
+  }
+});

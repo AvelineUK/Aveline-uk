@@ -1,3 +1,7 @@
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +15,13 @@ body {
     font-family: "Poiret One", sans-serif;
 }
 
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
 h1, h2, h3, h4, li {
     text-transform: uppercase;
+    user-select: none;
 }
 
 h4 {
@@ -23,27 +32,17 @@ p {
     font-family: "Raleway", sans-serif;
 }
 
+/* ==========================================================================
+   GENERAL UTILITY CLASSES
+   ========================================================================== */
+
 img, svg, li {
     user-select: none;
 }
 
-.blur-overlay {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 500;
-}
-
-body.nav-open .blur-overlay {
-    opacity: 1;
-}
+/* ==========================================================================
+   ANIMATIONS & TRANSITIONS
+   ========================================================================== */
 
 .fade-in1 {
     opacity: 0;
@@ -65,6 +64,32 @@ body.nav-open .blur-overlay {
     transform: translateY(0);
 }
 
+/* ==========================================================================
+   OVERLAY EFFECTS
+   ========================================================================== */
+
+.blur-overlay {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 500;
+}
+
+body.nav-open .blur-overlay {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   PARALLAX BACKGROUNDS
+   ========================================================================== */
+
 .parallax1 {
     background-image: url("../images/image1.jpg");
     background-attachment: fixed;
@@ -85,16 +110,19 @@ body.nav-open .blur-overlay {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 640px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     z-index: -2;
 }
 
-/* Header */
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
 
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -129,7 +157,6 @@ body.nav-open .blur-overlay {
 }
 
 /* Phone CTA Styling */
-
 .phone-cta {
     display: flex;
     flex-direction: column;
@@ -172,7 +199,6 @@ body.nav-open .blur-overlay {
 .nav-sidebar {
     position: fixed;
     top: 70px;
-    height: 100vh;
     left: -200px;
     width: 200px;
     height: calc(100vh - 70px);
@@ -183,11 +209,9 @@ body.nav-open .blur-overlay {
 
 .nav-sidebar.active {
     left: 0;
-    background: black;
 }
 
 /* Navigation Menu */
-
 .nav-menu {
     list-style: none;
     padding: 0;
@@ -229,6 +253,10 @@ body.nav-open .blur-overlay {
     fill: white;
 }
 
+/* ==========================================================================
+   MAIN CONTENT LAYOUT
+   ========================================================================== */
+
 /* Main Content */
 .main-content {
     flex: 1;
@@ -239,7 +267,6 @@ body.nav-open .blur-overlay {
 }
 
 /* REALLY IMPORTANT!!! */
-
 .main-content h1, 
 .main-content p,
 .test-section {
@@ -265,18 +292,22 @@ body.nav-open .test-section {
     margin: 1rem auto;
 }
 
+/* ==========================================================================
+   PARALLAX CONTENT SECTIONS
+   ========================================================================== */
+
 .parallax1-content {
     text-align: center;
     color: white;
     padding: 2rem;
     position: relative; 
     z-index: 2;
-    width: 60%;
+    width: 90%;
     background: rgba(0, 0, 0, 0.67);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    font-size: clamp(1.2rem, 5vw, 2rem);
+    font-size: clamp(1.2rem, 5vw, 3rem);
     font-weight: 300;
     line-height: 1.2;
     min-width: 1152px;
@@ -284,14 +315,47 @@ body.nav-open .test-section {
 }
 
 .parallax1-content h4 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 3vw, 2.25rem);
 }
 
 .parallax1-content p {
     margin-bottom: 2rem;
     width: 70%;
-    font-size: clamp(.9rem, 3vw, 1.2rem);
+    font-size: clamp(.9rem, 3vw, 1.5rem);
 }
+
+.parallax2-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.p2wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.parallax2-content {
+    display: flex;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    position: relative; 
+    z-index: 2;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
 
 .button-container {
     display: grid;
@@ -345,43 +409,14 @@ body.nav-open .test-section {
     filter: invert(1);
 }
 
-.test-section {
-    background: red;
-    z-index: 10;
-    position: relative;
-    padding: 80px 0;
-    width: 100%;
-    margin: 0;
-    color: black;
-    text-align: center;
-}
-
-.p2wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    flex: 1;
-    padding: 2rem;
-}
-
-.parallax2-content {
-    display: flex;
-    text-align: center;
-    color: white;
-    background-color: transparent;
-    position: relative; 
-    z-index: 2;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    max-width: 480px;
-}
+/* ==========================================================================
+   IMAGE COMPONENTS
+   ========================================================================== */
 
 .image-container {
     width: 100%;
-    max-width: 480px;
-    min-width: 320px;
+    max-width: 450px;
+    min-width: 300px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
@@ -418,10 +453,27 @@ body.nav-open .test-section {
 
 .overlay-content h2 {
     font-size: 2rem;
-    user-select: none;
 }
 
-/* Footer */
+/* ==========================================================================
+   TEST SECTIONS
+   ========================================================================== */
+
+.test-section {
+    background: red;
+    z-index: 10;
+    position: relative;
+    padding: 80px 0;
+    width: 100%;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
 footer {
     color: white;
     text-align: center;
@@ -432,7 +484,9 @@ footer {
     background: black;
 }
 
-/* Responsive */
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
 
 @media (max-width: 1280px) {
 
@@ -456,10 +510,7 @@ footer {
 .p2wrapper {
     flex-direction: column;
     align-items: center;
-}
-
-.parallax2-content {
-    max-width: 90%;
+    padding: 1rem;
 }
 
 }
