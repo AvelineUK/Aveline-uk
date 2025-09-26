@@ -294,11 +294,14 @@ body.nav-open .test-section {
 }
 
 .parallax2-content {
+    display: flex;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     position: relative; 
     z-index: 2;
+    gap: 2rem;
+    border: solid;
 }
 
 .button-container {

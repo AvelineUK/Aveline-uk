@@ -45,7 +45,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-// Observe both fade-in1 and fade-in2 elements with the same observer
 document.querySelectorAll('.fade-in1').forEach(el => {
     observer.observe(el);
 });
