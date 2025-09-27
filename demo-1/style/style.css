@@ -118,6 +118,21 @@ body.nav-open .blur-overlay {
     z-index: -2;
 }
 
+.parallax3 {
+    background-image: url("../images/obsidian.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 /* ==========================================================================
    HEADER & NAVIGATION
    ========================================================================== */
@@ -351,6 +366,7 @@ body.nav-open .test-section {
     justify-content: center;
     align-items: center;
     max-width: 450px;
+    overflow: hidden;
 }
 
 /* ==========================================================================
@@ -409,6 +425,8 @@ body.nav-open .test-section {
     filter: invert(1);
 }
 
+/* Replace your existing IMAGE COMPONENTS section with this updated version */
+
 /* ==========================================================================
    IMAGE COMPONENTS
    ========================================================================== */
@@ -427,32 +445,45 @@ body.nav-open .test-section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease; 
+    transition: transform 0.4s ease, filter 0.4s ease; 
     display: block;
 }
 
-.image-container:hover img {
+.parallax2-content:hover .image-container img {
     transform: scale(1.1);
+    filter: brightness(0.3);
 }
 
 .rotate-zoom:hover img {
     transform: scale(1.1);
+    filter: brightness(0.3);
 }
 
 .overlay-content {
     position: absolute;
-    bottom: 0px;
+    bottom: -100%;
     left: 0px;
     right: 0px;
     z-index: 10; 
     color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 20px;
     border-radius: 0rem 0rem 1.25rem 1.25rem;
+    transition: bottom 0.4s ease;
+    text-align: center;
+}
+
+.parallax2-content:hover .overlay-content {
+    bottom: 0;
 }
 
 .overlay-content h2 {
     font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.overlay-content h2,
+.overlay-content p {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* ==========================================================================
