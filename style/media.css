@@ -368,11 +368,6 @@
         animation: navFadeIn 0s ease forwards;
     }
 
-    .logo-navigation img {
-        width: 100%;
-        max-height: 1.625rem;
-    }
-
     /* Hero Section Mobile */
     .hero {
         margin: 0rem;
