@@ -36,7 +36,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-/* Scroll-triggered fade-in */
+// Scroll-triggered fade-in
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -53,7 +53,7 @@ document.querySelectorAll('.fade-in2').forEach(el => {
 });
 
 // Lightbox functionality
-class PinterestLightbox {
+class MasonryLightbox {
     constructor() {
         this.lightbox = document.getElementById('lightbox');
         this.lightboxImg = document.getElementById('lightbox-img');
@@ -160,5 +160,5 @@ class PinterestLightbox {
 
 // Initialize lightbox when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new PinterestLightbox();
+    new MasonryLightbox();
 });

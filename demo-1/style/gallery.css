@@ -159,13 +159,16 @@
     border: none;
     border-radius: 50%;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    line-height: 1;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
 }
 
 .lightbox-close:hover {
