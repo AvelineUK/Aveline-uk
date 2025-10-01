@@ -526,13 +526,14 @@ body.nav-open .test-section {
 }
 
 .team-portrait-back {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 1);
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    border: 3px solid white;
 }
 
 .team-portrait-back h3 {
