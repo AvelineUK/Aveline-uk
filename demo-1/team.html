@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Hair Salon</title>
+    <title>Meet the Team - Hair Salon</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="style/gallery.css">
+    <link rel="stylesheet" href="style/scroller.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="parallax-container">
+    <div class="parallax-layer" id="layer1"></div>
+</div>
     <header class="header">
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -78,136 +81,45 @@
             </li>
         </ul>
     </nav>
-
-    <div class="parallax3"></div>
-    <main class="gallery-content">
+    <main class="main-content">
         <div class="blur-overlay"></div>
-        
-        <div class="gallery-header fade-in1">
-            <h1 class="gallery-title">Our Work</h1>
-            <p class="gallery-subtitle">A showcase of our finest hair designs and styling</p>
-        </div>
-
-        <div class="masonry-gallery fade-in1" id="gallery">
-
-            <div class="gallery-item fade-in1" data-src="images/gallery1.jpg">
-                <img src="images/gallery1.jpg" alt="Hair Design 1">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
+        <div class="content-wrapper">
+            <section class="parallaxT">
+                <div class="team2">
+                    <div class="team2-header fade-in1">
+                        <h1 class="team2-title">Meet our Team</h1>
+                        <p class="team2-subtitle">Here are our amazing staff members!</p>
+                    </div>
+                        <div class="team-wrapper1 fade-in2">
+                            <div class="left-portrait"><img src="images/person1.jpg" width="100%"></div>
+                            <div class="right-desc"><p>Description</p></div>
+                        </div>
+                        <div class="team-wrapper2 fade-in2">
+                            <div class="right-portrait"><p>Description</p></div>
+                            <div class="left-desc"><img src="images/person2.jpg" width="100%"></div>
+                        </div>
+                        <div class="team-wrapper1 fade-in2">
+                            <div class="left-portrait"><img src="images/person3.jpg" width="100%"></div>
+                            <div class="right-desc"><p>Description</p></div>
+                        </div>
+                        <div class="team-wrapper2 fade-in2">
+                            <div class="right-portrait"><p>Description</p></div>
+                            <div class="left-desc"><img src="images/person4.jpg" width="100%"></div>
+                        </div>
+                        <div class="team-wrapper1 fade-in2">
+                            <div class="left-portrait"><img src="images/person5.jpg" width="100%"></div>
+                            <div class="right-desc"><p>Description</p></div>
+                        </div>
+                        <div class="team-wrapper2 fade-in2">
+                            <div class="right-portrait"><p>Description</p></div>
+                            <div class="left-desc"><img src="images/person6.jpg" width="100%"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery2.jpg">
-                <img src="images/gallery2.jpg" alt="Hair Design 2">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery3.jpg">
-                <img src="images/gallery3.jpg" alt="Hair Design 3">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery4.jpg">
-                <img src="images/gallery4.jpg" alt="Hair Design 4">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery5.jpg">
-                <img src="images/gallery5.jpg" alt="Hair Design 5">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery6.jpg">
-                <img src="images/gallery6.jpg" alt="Hair Design 6">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery7.jpg">
-                <img src="images/gallery7.jpg" alt="Hair Design 7">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery8.jpg">
-                <img src="images/gallery8.jpg" alt="Hair Design 8">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery9.jpg">
-                <img src="images/gallery9.jpg" alt="Hair Design 9">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery10.jpg">
-                <img src="images/gallery10.jpg" alt="Hair Design 10">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery11.jpg">
-                <img src="images/gallery11.jpg" alt="Hair Design 11">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery12.jpg">
-                <img src="images/gallery12.jpg" alt="Hair Design 12">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-            <div class="gallery-item fade-in1" data-src="images/gallery13.jpg">
-                <img src="images/gallery13.jpg" alt="Hair Design 13">
-                <div class="gallery-overlay">
-                    <h3>Title</h3>
-                    <p>Description</p>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
-            <button class="lightbox-close" id="lightbox-close">&times;</button>
-            <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
-            <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
-            <div class="lightbox-counter" id="lightbox-counter">1 / 12</div>
-        </div>
+            </section>
+        </div>            
     </div>
-
+</main>
 <section class="top-footer fade-in1">
     <div class="map-embed"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6824.844747744705!2d-0.13575213843239545!3d51.50184102691409!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760520cd5b5eb5%3A0xa26abf514d902a7!2sBuckingham%20Palace!5e0!3m2!1sen!2suk!4v1759286654707!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="right-left">
