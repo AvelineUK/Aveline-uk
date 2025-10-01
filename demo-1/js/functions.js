@@ -162,3 +162,20 @@ class MasonryLightbox {
 document.addEventListener('DOMContentLoaded', () => {
     new MasonryLightbox();
 });
+
+/* Testimonial functionality */
+
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial-item');
+const testimonialInterval = 5000; // 5 seconds
+
+function rotateTestimonials() {
+    testimonials[currentTestimonial].classList.remove('active');
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    testimonials[currentTestimonial].classList.add('active');
+}
+
+// Start the rotation if testimonials exist
+if (testimonials.length > 0) {
+    setInterval(rotateTestimonials, testimonialInterval);
+}

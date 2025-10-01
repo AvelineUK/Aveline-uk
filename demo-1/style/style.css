@@ -46,7 +46,7 @@ img, svg, li {
 
 .fade-in1 {
     opacity: 0;
-    transition: opacity 2s ease, transform 2s ease;
+    transition: opacity 3s ease, transform 3s ease;
 }
 
 .fade-in1.visible {
@@ -90,7 +90,10 @@ body.nav-open .blur-overlay {
    PARALLAX BACKGROUNDS
    ========================================================================== */
 
-.parallax1 {
+.parallax1,
+.parallax1a,
+.parallax1b,
+.parallax1c {
     background-image: url("../images/image1.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -100,22 +103,17 @@ body.nav-open .blur-overlay {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
     z-index: -2;
 }
 
-.parallax2 {
-    background-image: url("../images/image2.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    z-index: -2;
+.parallax1a,
+.parallax1b,
+.parallax1c {
+    min-height: 480px;
+    border: solid;
+    border-color: red;
 }
 
 .parallax3 {
@@ -211,6 +209,7 @@ body.nav-open .blur-overlay {
 }
 
 /* Navigation Sidebar */
+
 .nav-sidebar {
     position: fixed;
     top: 70px;
@@ -227,6 +226,7 @@ body.nav-open .blur-overlay {
 }
 
 /* Navigation Menu */
+
 .nav-menu {
     list-style: none;
     padding: 0;
@@ -308,7 +308,7 @@ body.nav-open .test-section {
 }
 
 /* ==========================================================================
-   PARALLAX CONTENT SECTIONS
+   CONTENT SECTIONS
    ========================================================================== */
 
 .parallax1-content {
@@ -339,23 +339,59 @@ body.nav-open .test-section {
     font-size: clamp(.9rem, 3vw, 1.5rem);
 }
 
-.parallax2-title {
+.gallery-home {
+    background-image: url(../images/obsidian.jpg);
+}
+
+.about, .team, .testimonials {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    position: relative; 
+    z-index: 2;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.67);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    font-size: clamp(1.2rem, 5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 8rem 0;
+}
+
+.about {
+    margin: 0 auto 8rem auto;
+}
+
+.about-title {
     text-align: center;
     font-size: clamp(2rem, 5vw, 3.5rem);
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: black;
+    color: rgb(255, 255, 255);
+    padding-bottom: 1rem;
 }
 
-.p2wrapper {
+.services-home-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    padding: 2rem 0 1rem 0;
+}
+
+.shwrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     flex: 1;
+    padding: 2rem 0 4rem 0;
 }
 
-.parallax2-content {
+.services-home-content {
     display: flex;
     text-align: center;
     color: white;
@@ -367,6 +403,81 @@ body.nav-open .test-section {
     align-items: center;
     max-width: 450px;
     overflow: hidden;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-title {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.team-wrapper {
+    display: flex;
+}
+
+.left-portrait {
+    width: 30%;
+    border: solid;
+    border-color: red;
+}
+
+.right-desc {
+    width: 70%;
+    border: solid;
+    border-color: red;
+}
+
+.right-portrait {
+    width: 70%;
+    border: solid;
+    border-color: red;
+}
+
+.left-desc {
+    width: 30%;
+    border: solid;
+    border-color: red;
+}
+
+.testimonial-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.testimonial-carousel {
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-item {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+    width: 100%;
+}
+
+.testimonial-item.active {
+    opacity: 1;
+}
+
+.testimonial-quote {
+    font-size: clamp(2rem, 3vw, 5rem);
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    position: relative;
+}
+
+.testimonial-author {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    opacity: 0.8;
 }
 
 /* ==========================================================================
@@ -425,8 +536,6 @@ body.nav-open .test-section {
     filter: invert(1);
 }
 
-/* Replace your existing IMAGE COMPONENTS section with this updated version */
-
 /* ==========================================================================
    IMAGE COMPONENTS
    ========================================================================== */
@@ -449,7 +558,7 @@ body.nav-open .test-section {
     display: block;
 }
 
-.parallax2-content:hover .image-container img {
+.services-home-content:hover .image-container img {
     transform: scale(1.1);
     filter: brightness(0.3);
 }
@@ -472,7 +581,7 @@ body.nav-open .test-section {
     text-align: center;
 }
 
-.parallax2-content:hover .overlay-content {
+.services-home-content:hover .overlay-content {
     bottom: 0;
 }
 
@@ -487,23 +596,33 @@ body.nav-open .test-section {
 }
 
 /* ==========================================================================
-   TEST SECTIONS
-   ========================================================================== */
-
-.test-section {
-    background: red;
-    z-index: 10;
-    position: relative;
-    padding: 80px 0;
-    width: 100%;
-    margin: 0;
-    color: black;
-    text-align: center;
-}
-
-/* ==========================================================================
    FOOTER
    ========================================================================== */
+
+.top-footer {
+    display: flex;
+    min-height: 300px;
+    color: white;
+    margin-left: 0;
+    width: 100%;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    background: black;
+    gap: 2rem;
+}
+
+.map-embed {
+    flex: 2;
+    border: solid;
+    border-color: red;
+}
+
+.right-right, .right-left {
+    flex: 1;
+    border: solid;
+    border-color: red;
+    padding-top: 2rem;
+    overflow: hidden;
+}
 
 footer {
     color: white;
@@ -538,7 +657,7 @@ footer {
     margin-bottom: 0 auto 2rem auto;
 }
 
-.p2wrapper {
+.shwrapper {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
@@ -548,7 +667,7 @@ footer {
 
 @media (max-width: 768px) {
 
-body.nav-open .main-content, footer {
+body.nav-open .main-content, .top-footer, footer {
     margin-left: 0 !important;
     width: 100% !important;
 }
@@ -588,6 +707,38 @@ body.nav-open footer {
     margin: 2rem;
 }
 
+.about {
+    margin-bottom: 4rem;
+}
+
+.left-portrait {
+    width: 50%;
+    border: solid;
+    border-color: red;
+}
+
+.right-desc {
+    width: 50%;
+    border: solid;
+    border-color: red;
+}
+
+.right-portrait {
+    width: 50%;
+    border: solid;
+    border-color: red;
+}
+
+.left-desc {
+    width: 50%;
+    border: solid;
+    border-color: red;
+}
+
+.team, .testimonials {
+    margin: 4rem 0;
+}
+
 .button-container {
     gap: 1rem;
 }
@@ -596,6 +747,21 @@ body.nav-open footer {
     width: 30%;
     min-width: 10rem;
     margin: 0 auto;
+}
+
+.top-footer {
+    gap: 0rem;
+}
+
+.map-embed {
+    display: none;
+}
+
+.right-right, .right-left {
+    width: 50%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    overflow: hidden;
 }
 
 }

@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../images/obsidian.jpg");
+    background-image: url(../images/obsidian.jpg);
+    padding: 2rem 0 4rem 0;
 }
 
 .scroller-section {
@@ -16,7 +17,8 @@
     font-size: clamp(2rem, 5vw, 3.5rem);
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: white;
+    color: rgb(255, 255, 255);
+    padding-bottom: 3rem;
 }
 
 .scroller-scroller {
@@ -91,7 +93,7 @@
 }
 
 .scroller-item:hover .scroller-overlay {
-    transform: translateY(20px);
+    transform: translateY(0);
 }
 
 .scroller-overlay h3 {
@@ -118,6 +120,7 @@
 }
 
 /* Infinite scroll animation */
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
