@@ -60,7 +60,6 @@ class MasonryLightbox {
         this.lightboxClose = document.getElementById('lightbox-close');
         this.lightboxPrev = document.getElementById('lightbox-prev');
         this.lightboxNext = document.getElementById('lightbox-next');
-        this.lightboxCounter = document.getElementById('lightbox-counter');
         
         this.galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
         this.currentIndex = 0;
@@ -112,7 +111,6 @@ class MasonryLightbox {
         const imgSrc = item.dataset.src;
         
         this.lightboxImg.src = imgSrc;
-        this.updateCounter();
         this.lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -146,16 +144,12 @@ class MasonryLightbox {
         
         setTimeout(() => {
             this.lightboxImg.src = imgSrc;
-            this.updateCounter();
             
             // Fade in
             this.lightboxImg.style.opacity = '1';
         }, 150);
     }
     
-    updateCounter() {
-        this.lightboxCounter.textContent = `${this.currentIndex + 1} / ${this.galleryItems.length}`;
-    }
 }
 
 // Initialize lightbox when DOM is loaded
