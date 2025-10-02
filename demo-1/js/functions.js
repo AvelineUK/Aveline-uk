@@ -179,3 +179,21 @@ function rotateTestimonials() {
 if (testimonials.length > 0) {
     setInterval(rotateTestimonials, testimonialInterval);
 }
+
+// Contact Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide the form
+            contactForm.style.display = 'none';
+            
+            // Show the thank you message
+            thankYouMessage.style.display = 'block';
+        });
+    }
+});

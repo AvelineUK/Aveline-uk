@@ -131,8 +131,6 @@ body.nav-open .blur-overlay {
 .parallax1b,
 .parallax1c {
     min-height: 480px;
-    border: solid;
-    border-color: red;
 }
 
 .parallax3 {
@@ -455,6 +453,7 @@ body.nav-open .test-section {
     margin: 20px 0 40px 0;
     background: transparent;
     min-height: calc(100vh - 70px);
+    width: 75%;
 }
 
 .team2-header {
@@ -489,12 +488,13 @@ body.nav-open .test-section {
     gap: 2rem;
     width: 100%;
     justify-items: center;
+    padding-bottom: 1.5rem;
 }
 
 .team-wrapper3 .team-portrait {
     width: 100%;
     max-width: 250px;
-    height: 250px;
+    aspect-ratio: 1 / 1;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -556,35 +556,6 @@ body.nav-open .test-section {
     display: block;
 }
 
-.left-portrait {
-    width: 30%;
-    border: solid;
-    border-color: red;
-}
-
-.right-desc {
-    width: 70%;
-    border: solid;
-    border-color: red;
-}
-
-.right-portrait {
-    width: 70%;
-    border: solid;
-    border-color: red;
-}
-
-.left-desc {
-    width: 30%;
-    border: solid;
-    border-color: red;
-}
-
-.left-portrait img, .right-portrait img, .left-desc img, .right-desc img {
-    border-radius: 200px;
-    width: 80%;
-}
-
 .testimonial-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
@@ -620,6 +591,204 @@ body.nav-open .test-section {
 .testimonial-author {
     font-size: clamp(1rem, 2vw, 1.5rem);
     opacity: 0.8;
+}
+
+.left-portrait {
+    width: 30%;
+    margin-bottom: 2rem;
+}
+
+.right-desc {
+    width: 70%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.right-portrait {
+    width: 70%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.left-desc {
+    width: 30%;
+    margin-bottom: 2rem;
+}
+
+.right-desc, .right-portrait {
+    text-align: left;
+}
+
+.right-desc h3, .right-portrait h3 {
+    font-size: 1.5rem;
+}
+
+.left-portrait img, .right-portrait img, .left-desc img, .right-desc img {
+    border-radius: 200px;
+    width: 75%;
+}
+
+.contact {
+    flex: 1;
+    margin: 20px 0 40px 0;
+    background: transparent;
+    min-height: calc(100vh - 70px);
+    width: 75%;
+}
+
+.contact-wrapper1, .contact-wrapper2 {
+    display: flex;
+    min-height: 300px;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-wrapper2 {
+    margin-bottom: 4rem;
+}
+
+.contact-1-left, .contact-1-center, .contact-1-right, .contact-2-left, .contact-2-right {
+    flex: 1;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+.contact-1-left, .contact-1-center, .contact-1-right, .contact-2-right {
+    padding: 1rem;
+}
+
+.contact-1-left, .contact-1-center {
+    overflow: hidden;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.contact-1-left ul, .contact-1-center ul {
+    padding-bottom: 1rem;
+}
+
+.contact-1-left li, .contact-1-center li {
+    line-height: 2.25rem;
+}
+
+.contact-1-left h3, .contact-1-center h3, .contact-1-right h3, .contact-2-left h3, .contact-2-right h3 {
+    line-height: 4rem;
+    font-family: "Poiret One", sans-serif;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Form Styles */
+
+.contact-form {
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form h3 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    margin-bottom: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: "Poiret One", sans-serif;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid white;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1rem;
+    font-family: "Raleway", sans-serif;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    color: black;
+    font-size: 1.2rem;
+    font-family: "Poiret One", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    border: 2px solid white;
+}
+
+.submit-btn:hover {
+    background: black;
+    color: white;
+    border: 2px solid white;
+}
+
+.thank-you-message {
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.thank-you-message h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.thank-you-message p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+.cdtwrapper {
+    display: flex;
+    gap: 0rem;
+    width: 100%;
+}
+
+.cdays {
+    width: 40%;
+    text-align: left;
+}
+
+.ctimes {
+    width: 60%;
 }
 
 /* ==========================================================================
@@ -797,16 +966,12 @@ body.nav-open .test-section {
 
 .map-embed {
     flex: 5;
-    border: solid;
-    border-color: red;
 }
 
 .right-right, .right-left {
-    border: solid;
-    border-color: red;
     padding-top: 2rem;
     overflow: hidden;
-    font-size: clamp(1.2rem, 2vw, 1.75rem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .right-left {
@@ -817,6 +982,16 @@ body.nav-open .test-section {
     flex: 3;
 }
 
+.right-right h4, .right-left h4 {
+    line-height: 4rem;
+    font-family: "Poiret One", sans-serif;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+.right-right p, .right-left p {
+    line-height: 4rem;
+}
+
 .right-right ul, .right-left ul {
     padding-bottom: 1rem;
 }
@@ -825,18 +1000,18 @@ body.nav-open .test-section {
     line-height: 2.25rem;
 }
 
-.right-right p, .right-left p {
-    line-height: 4rem;
-    font-family: "Poiret One", sans-serif;
-}
-
 .dtwrapper {
     display: flex;
     gap: 0rem;
 }
 
 .days {
-    width: 50%;
+    width: 40%;
+}
+
+.times {
+    width: 60%;
+    text-align: center;
 }
 
 footer {
@@ -878,6 +1053,10 @@ footer {
     padding: 1rem;
 }
 
+.shwrapper:last-child {
+    padding-bottom: 4rem;
+}
+
 .team-wrapper3 {
     grid-template-columns: repeat(3, 1fr);
 }
@@ -895,6 +1074,30 @@ footer {
     padding-top: 2rem;
     padding-left: 2rem;
     overflow: hidden;
+}
+
+.contact-wrapper1, .contact-wrapper2 {
+    flex-direction: column;
+}
+
+.contact-1-left, .contact-1-center, .contact-1-right {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.contact-2-left {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.contact-2-left iframe {
+    width: 100%;
+    height: 300px;
+}
+
+.contact-1-left ul, .contact-1-center ul {
+    text-align: center;
+    width: 100%;
 }
 
 .button2 {
@@ -965,30 +1168,50 @@ body.nav-open footer {
 
 .left-portrait {
     width: 100%;
-    border: solid;
-    border-color: red;
 }
 
 .right-desc {
     width: 100%;
-    border: solid;
-    border-color: red;
 }
 
 .right-portrait {
     width: 100%;
-    border: solid;
-    border-color: red;
 }
 
 .left-desc {
     width: 100%;
-    border: solid;
-    border-color: red;
 }
 
 .team, .testimonials {
     margin: 4rem 0;
+}
+
+.contact-wrapper1, .contact-wrapper2 {
+    gap: 0rem;
+}
+
+.contact-1-left, .contact-1-center, .contact-1-right {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-1-right img {
+    width: 50px;
+    height: 50px;
+}
+
+.contact-2-left {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.contact-2-left iframe {
+    width: 100%;
+    height: 200px;
+}
+
+.contact-form {
+    padding: 1rem;
 }
 
 .button-container {
@@ -1025,6 +1248,6 @@ body.nav-open footer {
 
 .team-wrapper3 .team-portrait {
     max-width: 100%;
-    height: 300px;
+    aspect-ratio: 1 / 1;
 }
 }
