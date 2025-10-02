@@ -50,7 +50,7 @@ img, svg, li {
 
 .fade-in1 {
     opacity: 0;
-    transition: opacity 3s ease, transform 3s ease;
+    transition: opacity 2s ease, transform 2s ease;
 }
 
 .fade-in1.visible {
@@ -60,7 +60,7 @@ img, svg, li {
 .fade-in2 {
     opacity: 0;
     transform: translateY(10rem);
-    transition: opacity 3s ease, transform 3s ease;
+    transition: opacity 2s ease, transform 2s ease;
 }
 
 .fade-in2.visible {
@@ -127,10 +127,16 @@ body.nav-open .blur-overlay {
     z-index: -2;
 }
 
-.parallax1a,
-.parallax1b,
-.parallax1c {
+.parallax1a {
     min-height: 480px;
+}
+
+.parallax1b {
+    min-height: 864px;
+}
+
+.parallax1c {
+    min-height: 720px;
 }
 
 .parallax3 {
@@ -298,7 +304,6 @@ body.nav-open .blur-overlay {
     width: 100%;
 }
 
-/* REALLY IMPORTANT!!! */
 .main-content h1, 
 .main-content p,
 .test-section {
@@ -343,6 +348,7 @@ body.nav-open .test-section {
     font-weight: 300;
     line-height: 1.2;
     min-width: 1152px;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -1032,6 +1038,10 @@ footer {
 
 .parallax1 {
     min-height: 768px;
+}
+
+.parallax1c {
+    min-height: 360px;
 }
 
 .parallax1-content {

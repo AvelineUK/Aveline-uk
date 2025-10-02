@@ -25,8 +25,8 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    mask: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-    -webkit-mask: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    mask: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+    -webkit-mask: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
     background: transparent;
 }
 
