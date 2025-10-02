@@ -804,10 +804,10 @@ body.nav-open .main-content p {
 }
 
 .button1 {
-    width: 12.5rem;
+    width: 13rem;
     height: 3rem;
     font-family: "Raleway", sans-serif;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(.9rem, 2vw, 1.2rem);
     border-radius: .5rem;
     border-width: 0;
     background-color: black;
@@ -848,10 +848,10 @@ body.nav-open .main-content p {
 }
 
 .button2 {
-    width: 12.5rem;
+    width: 13rem;
     height: 3rem;
     font-family: "Raleway", sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(.9rem, 2vw, 1.2rem);
     border-radius: .5rem;
     border-width: 0;
     background-color: rgb(255, 255, 255);
@@ -868,6 +868,7 @@ body.nav-open .main-content p {
     color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     gap: 0.5rem;
     transition: color 0.5s ease;
@@ -1226,7 +1227,7 @@ body.nav-open footer {
     gap: 1rem;
 }
 
-.button1 {
+.button1, .button2 {
     width: 30%;
     min-width: 10rem;
     margin: 0 auto;
