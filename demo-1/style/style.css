@@ -108,7 +108,7 @@ body.nav-open .blur-overlay {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 864px;
+    min-height: 1024px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -386,7 +386,7 @@ body.nav-open .main-content p {
 .parallax1-content p {
     margin-bottom: 2rem;
     width: 70%;
-    font-size: clamp(.9rem, 3vw, 1.5rem);
+    font-size: clamp(.9rem, 3vw, 1.2rem);
 }
 
 .gallery-home {
@@ -543,14 +543,14 @@ body.nav-open .main-content p {
 
 .team-portrait-back h3 {
     color: white;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(.9rem, 2vw, 1.5rem);
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
 .team-portrait-back p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    color: rgba(255, 255, 255, 1);
+    font-size: clamp(0.6rem, 1.5vw, 1rem);
     text-align: center;
 }
 
@@ -1127,6 +1127,10 @@ footer li:nth-child(3) {
     min-height: 768px;
 }
 
+.parallax1b {
+    min-height: 360px;
+}
+
 .parallax1c {
     min-height: 360px;
 }
@@ -1151,7 +1155,7 @@ footer li:nth-child(3) {
 .shwrapper {
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .shwrapper:last-child {
@@ -1159,7 +1163,7 @@ footer li:nth-child(3) {
 }
 
 .services-home-content {
-    width: 90%;
+    width: 100%;
 }
 
 .team-wrapper3 {
@@ -1253,6 +1257,10 @@ body.nav-open footer {
     margin: 2rem;
 }
 
+.parallax1-content p {
+    width: 95%;
+}
+
 .about {
     margin-bottom: 4rem;
 }
@@ -1344,15 +1352,4 @@ body.nav-open footer {
     width: 50%;
 }
 
-}
-
-@media (max-width: 480px) {
-.team-wrapper3 {
-    grid-template-columns: 1fr;
-}
-
-.team-wrapper3 .team-portrait {
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-}
 }
