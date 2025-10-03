@@ -36,6 +36,11 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 /* ==========================================================================
    GENERAL UTILITY CLASSES
    ========================================================================== */
@@ -791,6 +796,59 @@ body.nav-open .main-content p {
     width: 60%;
 }
 
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.services-content {
+    width: 60%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 300px;
+}
+
+.services-content h3 {
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-family: "Poiret One", sans-serif;
+    padding-bottom: 1rem;
+}
+
+#HD, #F, #N {
+    scroll-margin-top: 100px;
+}
+
+.menu-item span {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.menu-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.item-name {
+    flex-shrink: 0;
+}
+
+.item-dots {
+    flex-grow: 1;
+    border-bottom: 2px dotted currentColor;
+    margin-bottom: 0.3em;
+}
+
+.item-price {
+    flex-shrink: 0;
+}
+
 /* ==========================================================================
    BUTTONS
    ========================================================================== */
@@ -934,6 +992,12 @@ body.nav-open .main-content p {
     border-radius: 0rem 0rem 1.25rem 1.25rem;
     transition: bottom 0.4s ease;
     text-align: center;
+    text-decoration: none;
+}
+
+.overlay-content a {
+    color: white;
+    text-decoration: none;
 }
 
 .services-home-content:hover .overlay-content {
@@ -1025,6 +1089,34 @@ footer {
     background: black;
 }
 
+footer a {
+    text-decoration: none;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+footer li {
+    list-style: none;
+    font-size: 0.8rem;
+    line-height: .5rem;
+}
+
+footer li:first-child::after {
+    content: " | ";
+    margin-left: 1rem;
+}
+
+footer li:nth-child(3) {
+    flex-basis: 100%;
+    text-align: center;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
@@ -1043,6 +1135,10 @@ footer {
     min-width: 90%;
     padding: 1rem;
     margin: 0 auto 2rem auto;
+}
+
+.parallax1-content h4 {
+    padding-bottom: .5rem;
 }
 
 .button-container {

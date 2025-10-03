@@ -158,7 +158,7 @@
 
     .scroller-track {
         animation-name: scroll-tablet;
-        animation-duration: 60s;
+        animation-duration: 30s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         width: calc(320px * 12); /* 6 original + 6 duplicates */
@@ -174,7 +174,7 @@
 
     .scroller-track {
         animation-name: scroll-mobile;
-        animation-duration: 60s;
+        animation-duration: 20s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         width: calc(225px * 12); /* 6 original + 6 duplicates */
