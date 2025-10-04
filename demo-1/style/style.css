@@ -103,7 +103,7 @@ body.nav-open .blur-overlay {
 .parallax1a,
 .parallax1b,
 .parallax1c {
-    background-image: url("../images/image1.jpg");
+    background-image: url("../images/image1.webp");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -118,7 +118,7 @@ body.nav-open .blur-overlay {
 }
 
 .parallaxT {
-    background-image: url("../images/obsidian.jpg");
+    background-image: url("../images/obsidian.webp");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -145,7 +145,7 @@ body.nav-open .blur-overlay {
 }
 
 .parallax3 {
-    background-image: url("../images/obsidian.jpg");
+    background-image: url("../images/obsidian.webp");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -390,7 +390,7 @@ body.nav-open .main-content p {
 }
 
 .gallery-home {
-    background-image: url(../images/obsidian.jpg);
+    background-image: url(../images/obsidian.webp);
 }
 
 .about, .team, .testimonials {
