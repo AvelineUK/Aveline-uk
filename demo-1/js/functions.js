@@ -14,27 +14,29 @@ function closeMenu() {
     body.classList.remove('nav-open');
 }
 
-hamburger.addEventListener('click', toggleMenu);
+if (hamburger && navSidebar) {
+    hamburger.addEventListener('click', toggleMenu);
 
-// Close menu when clicking on nav links
-const navLinks = document.querySelectorAll('.nav-menu a');
-navLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-});
+    // Close menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 
-// Hide sidebar when clicking outside
-document.addEventListener('click', (event) => {
-    if (navSidebar.classList.contains('active') && !navSidebar.contains(event.target) && !event.target.closest('#hamburger')) {
-        closeMenu();
-    }
-});
+    // Hide sidebar when clicking outside
+    document.addEventListener('click', (event) => {
+        if (navSidebar.classList.contains('active') && !navSidebar.contains(event.target) && !event.target.closest('#hamburger')) {
+            closeMenu();
+        }
+    });
 
-// Close menu when pressing Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && navSidebar.classList.contains('active')) {
-        closeMenu();
-    }
-});
+    // Close menu when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && navSidebar.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+}
 
 // Scroll-triggered fade-in
 const observer = new IntersectionObserver((entries) => {
@@ -64,7 +66,11 @@ class MasonryLightbox {
         this.galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
         this.currentIndex = 0;
         
-        this.init();
+        // Only initialize if all elements exist
+        if (this.lightbox && this.lightboxImg && this.lightboxClose && 
+            this.lightboxPrev && this.lightboxNext && this.galleryItems.length > 0) {
+            this.init();
+        }
     }
     
     init() {
@@ -149,7 +155,6 @@ class MasonryLightbox {
             this.lightboxImg.style.opacity = '1';
         }, 150);
     }
-    
 }
 
 // Initialize lightbox when DOM is loaded
@@ -158,19 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* Testimonial functionality */
-
-let currentTestimonial = 0;
 const testimonials = document.querySelectorAll('.testimonial-item');
-const testimonialInterval = 5000; // 5 seconds
 
-function rotateTestimonials() {
-    testimonials[currentTestimonial].classList.remove('active');
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    testimonials[currentTestimonial].classList.add('active');
-}
-
-// Start the rotation if testimonials exist
 if (testimonials.length > 0) {
+    let currentTestimonial = 0;
+    const testimonialInterval = 5000; // 5 seconds
+
+    function rotateTestimonials() {
+        testimonials[currentTestimonial].classList.remove('active');
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        testimonials[currentTestimonial].classList.add('active');
+    }
+
     setInterval(rotateTestimonials, testimonialInterval);
 }
 
@@ -179,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     const thankYouMessage = document.getElementById('thankYouMessage');
     
-    if (contactForm) {
+    if (contactForm && thankYouMessage) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             

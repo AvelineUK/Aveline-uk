@@ -108,7 +108,7 @@ body.nav-open .blur-overlay {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 1024px;
+    min-height: 960px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -410,6 +410,10 @@ body.nav-open .main-content p {
     margin: 70px 0;
 }
 
+.testimonials {
+    padding-bottom: 1rem;
+}
+
 .team2 {
     text-align: center;
     color: white;
@@ -567,7 +571,7 @@ body.nav-open .main-content p {
 
 .testimonial-carousel {
     position: relative;
-    min-height: 200px;
+    min-height: 12.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -859,6 +863,7 @@ body.nav-open .main-content p {
     justify-content: center;
     gap: .5rem;
     margin-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .button1 {
@@ -1166,6 +1171,10 @@ footer li:nth-child(3) {
     width: 100%;
 }
 
+.team, .testimonials {
+    padding-bottom: 0rem;
+}
+
 .team-wrapper3 {
     grid-template-columns: repeat(3, 1fr);
 }
@@ -1217,6 +1226,15 @@ footer li:nth-child(3) {
 
 @media (max-width: 768px) {
 
+.parallax1,
+.parallax1a,
+.parallax1b,
+.parallax1c,
+.parallaxT {
+    background-attachment: scroll;
+    background-position: center;
+}
+
 body.nav-open .main-content, .top-footer, footer {
     margin-left: 0 !important;
     width: 100% !important;
@@ -1254,11 +1272,16 @@ body.nav-open footer {
 }
 
 .parallax1-content {
-    margin: 2rem;
+    margin: 4rem;
+    padding: 2rem 0;
 }
 
 .parallax1-content p {
     width: 95%;
+}
+
+.button-container {
+    padding-bottom: 0rem;
 }
 
 .about {
@@ -1297,6 +1320,10 @@ body.nav-open footer {
 
 .team, .testimonials {
     margin: 4rem 0;
+}
+
+.testimonial-carousel {
+    min-height: 10.5rem;
 }
 
 .contact-wrapper1, .contact-wrapper2 {
