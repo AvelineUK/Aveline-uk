@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandSkaper Landscaping | Professional Garden & Landscape Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">🌿 LandSkaper</div>
+            <div class="mobile-menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <video id="hero-video" autoplay loop muted playsinline>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Transform Your Outdoor Space</h1>
+            <p>Professional landscaping services across the UK. From garden design to maintenance, we bring your vision to life.</p>
+            <a href="#contact" class="cta-button">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Garden Design</h3>
+                    <p>Bespoke garden designs tailored to your space, style, and budget. We create outdoor spaces that reflect your personality and enhance your property.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Landscaping</h3>
+                    <p>Complete landscaping solutions including patios, pathways, decking, and water features. Quality workmanship guaranteed.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Garden Maintenance</h3>
+                    <p>Regular maintenance services to keep your garden looking its best throughout the year. From mowing to pruning, we've got you covered.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌺</div>
+                    <h3>Planting & Borders</h3>
+                    <p>Expert plant selection and arrangement to create vibrant, sustainable borders that thrive in the UK climate.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Irrigation Systems</h3>
+                    <p>Efficient watering solutions to keep your garden healthy while conserving water and reducing maintenance time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌲</div>
+                    <h3>Tree Surgery</h3>
+                    <p>Professional tree care including pruning, removal, and health assessments by fully qualified arborists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose LandSkaper?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⭐</div>
+                    <h3>20+ Years Experience</h3>
+                    <p>Two decades of creating stunning outdoor spaces across the UK</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <h3>Fully Insured</h3>
+                    <p>Complete public liability insurance for your peace of mind</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💷</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden costs - clear quotes provided before work begins</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Award Winning</h3>
+                    <p>Recognised for excellence in landscaping design and service</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">♻️</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Sustainable practices and environmentally conscious solutions</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Satisfaction Guarantee</h3>
+                    <p>We're not happy until you're delighted with the results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <span>Modern Patio Design</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <span>Country Garden</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <span>Water Feature Installation</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <span>Contemporary Decking</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <span>Cottage Garden Border</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <span>Formal Garden Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <div class="lightbox-close" onclick="closeLightbox()">×</div>
+            <div id="lightboxBody"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <div class="lightbox-close" onclick="closeLightbox()">×</div>
+            <h3 id="lightboxTitle" style="color: var(--primary-green); margin-bottom: 1rem;"></h3>
+            <p>This is a demonstration lightbox. In a live site, this would display full-size project images with detailed descriptions of the landscaping work completed.</p>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">SM</div>
+                        <div class="review-author">
+                            <h4>Sarah Mitchell</h4>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Absolutely delighted with our new patio and garden redesign. The team was professional, punctual, and the quality of work exceeded our expectations. Our garden has been transformed into a beautiful outdoor living space."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">JT</div>
+                        <div class="review-author">
+                            <h4>James Thompson</h4>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"LandSkaper provided excellent service from start to finish. They listened to our ideas, offered expert advice, and delivered a stunning result. The ongoing maintenance service keeps our garden looking pristine year-round."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">EP</div>
+                        <div class="review-author">
+                            <h4>Emma Patel</h4>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"We've used LandSkaper for several projects over the years and they never disappoint. Their attention to detail and commitment to quality is outstanding. Highly recommended for any landscaping work."</p>
+                </div>
+                <div class="google-badge">
+                    <p><a href="#" style="color: var(--primary-green); font-weight: 600;">View all reviews on Google →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form onsubmit="handleSubmit(event)">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone Number" required>
+                        <textarea rows="5" placeholder="Tell us about your project..." required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>📞 <strong>Phone:</strong> 01234 567890</p>
+                    <p>📧 <strong>Email:</strong> info@example.co.uk</p>
+                    <p>📍 <strong>Address:</strong> 123 Garden Lane, Bristol, BS1 2AB</p>
+                    <p>🕐 <strong>Hours:</strong> Mon-Fri: 8am-6pm, Sat: 9am-4pm</p>
+                    <h3 style="margin-top: 2rem;">Service Areas</h3>
+                    <p>We provide landscaping services throughout Bristol, Bath, Somerset, and surrounding areas in the South West of England.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About LandSkaper</h4>
+                <p>Professional landscaping services across the UK, dedicated to creating beautiful, sustainable outdoor spaces for over 20 years.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Portfolio</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Health & Safety</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Accreditations</h4>
+                <ul>
+                    <li>✓ APL Registered</li>
+                    <li>✓ Trust Mark Approved</li>
+                    <li>✓ RHS Partner</li>
+                    <li>✓ £5M Public Liability Insurance</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 LandSkaper Landscaping Ltd. All rights reserved. Registered in England & Wales. Company No. 12345678</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">VAT Registration No. GB123456789</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Website designed by <a href="../index.html">Aveline Web Design</a></p>
+        </div>
+    </footer>
+    <script src="functions.js"></script>
+</body>
+</html>
