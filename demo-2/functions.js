@@ -2,7 +2,7 @@
 const galleryProjects = [
     {
         title: "Modern Patio Design",
-        image: "images/modern-patio.jpg",
+        image: "images/placeholder1.png",
         description: "A contemporary patio design featuring natural stone paving and integrated LED lighting. This project transformed an unused garden space into a stunning outdoor entertaining area.",
         details: {
             location: "Bristol, BS8",
@@ -12,7 +12,7 @@ const galleryProjects = [
     },
     {
         title: "Country Garden Transformation",
-        image: "images/country-garden.jpg",
+        image: "images/placeholder2.png",
         description: "Complete garden redesign for a rural property, incorporating traditional cottage garden planting with modern sustainable practices. Features include wildflower meadow areas and wildlife-friendly habitats.",
         details: {
             location: "Somerset",
@@ -22,7 +22,7 @@ const galleryProjects = [
     },
     {
         title: "Water Feature Installation",
-        image: "images/water-feature.jpg",
+        image: "images/placeholder3.png",
         description: "Bespoke water feature with natural stone surround and aquatic planting. Creates a tranquil focal point while supporting local wildlife and biodiversity.",
         details: {
             location: "Bath, BA1",
@@ -32,7 +32,7 @@ const galleryProjects = [
     },
     {
         title: "Contemporary Decking",
-        image: "images/contemporary-decking.jpg",
+        image: "images/placeholder4.png",
         description: "Multi-level composite decking with glass balustrades and built-in seating. Low maintenance solution that maximizes outdoor living space on a sloped garden.",
         details: {
             location: "Bristol, BS9",
@@ -42,7 +42,7 @@ const galleryProjects = [
     },
     {
         title: "Cottage Garden Border",
-        image: "images/cottage-border.jpg",
+        image: "images/placeholder5.png",
         description: "Traditional herbaceous border featuring a succession of blooms throughout the seasons. Carefully selected plants provide year-round interest and attract pollinators.",
         details: {
             location: "Wiltshire",
@@ -52,7 +52,7 @@ const galleryProjects = [
     },
     {
         title: "Formal Garden Design",
-        image: "images/formal-garden.jpg",
+        image: "images/placeholder6.png",
         description: "Classical formal garden with symmetrical box hedging, topiary features, and a central fountain. Combines historical design principles with modern irrigation technology.",
         details: {
             location: "Bath, BA2",
