@@ -915,7 +915,7 @@ img {
 }
 
 .tier-text li.cross::after {
-    content: "🛇";
+    content: "❌";
     position: absolute;
     right: 0;
     top: 0.5rem;
