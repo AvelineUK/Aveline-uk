@@ -465,13 +465,16 @@ img {
     box-sizing: border-box;
     transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease,
         transform 0.5s ease, box-shadow 0.5s ease;
+    transform-origin: center center;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .cards a:hover .card {
     background-color: #152e5c;
     color: #f9faf8;
     border: 3px solid #152e5c;
-    transform: translateY(-0.25rem) scale(1.02);
+    transform: translateY(-0.5rem) scale(1.02) translateZ(0);
     filter: drop-shadow(0.5rem 1rem 1.5rem rgba(0, 0, 0, 1));
 }
 
@@ -479,6 +482,9 @@ img {
     font-weight: 600;
     padding-top: 5rem;
     font-size: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
 }
 
 .card-text {
@@ -490,6 +496,9 @@ img {
 
 .card-text p {
     font-size: 1.0625rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
 }
 
 .speed {
@@ -497,7 +506,8 @@ img {
     transition: opacity 0.5s ease;
     padding: 0.75rem 0rem;
     width: 4rem;
-    height: auto;
+    height: 4rem;
+    object-fit: contain;
 }
 
 .speed.hover {
@@ -715,6 +725,10 @@ img {
     border-radius: 0.75rem;
     transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease,
         transform 0.5s ease, box-shadow 0.5s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    display: block;
 }
 
 .work-text img:hover {
@@ -816,7 +830,6 @@ img {
     font-size: clamp(2rem, 5vw, 3.5rem);
     color: #152e5c;
     font-weight: 700;
-    margin-top: -0.5rem;
 }
 
 .prices-title-text h4 {
@@ -864,10 +877,13 @@ img {
     text-wrap: nowrap;
     transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease,
         transform 0.5s ease, box-shadow 0.5s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    transform-origin: center center;
 }
 
 .tier:hover {
-    transform: translateY(-0.25rem) scale(1.02);
+    transform: translateY(-0.5rem) scale(1.02) translateZ(0);
     box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.5);
 }
 
@@ -885,6 +901,9 @@ img {
     font-weight: 700;
     margin-top: 0.75rem;
     line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
 }
 
 .tier-text ul {
@@ -1433,4 +1452,37 @@ textarea.form-input {
 
 .submit-btn.loading .btn-text {
     opacity: 0;
+}
+
+.card h3,
+.card-text p,
+.tier-text h2,
+.tier-text li,
+.tier-text p {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+@-moz-document url-prefix() {
+.card:hover,
+.tier:hover {
+    transform: translateY(-0.5rem) !important; /* disable scale */
+    box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
+  }
+}
+
+@-moz-document url-prefix() {
+.work-text img:hover {
+    transform: translateY(-0.5rem) !important; /* remove scale */
+    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.8);
+  }
+
+.work-text img {
+    transform: none !important;
+    backface-visibility: hidden;
+    image-rendering: -moz-crisp-edges;
+  }
 }
