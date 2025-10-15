@@ -1468,16 +1468,10 @@ textarea.form-input {
 
 @-moz-document url-prefix() {
 .card:hover,
-.tier:hover {
+.tier:hover,
+.work-text img:hover {
     transform: translateY(-0.5rem) !important; /* disable scale */
     box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
-  }
-}
-
-@-moz-document url-prefix() {
-.work-text img:hover {
-    transform: translateY(-0.5rem) !important; /* remove scale */
-    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.8);
   }
 
 .work-text img {
