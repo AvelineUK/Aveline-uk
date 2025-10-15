@@ -266,6 +266,10 @@
         text-align: center;
     }
 
+    .work-title-h {
+        padding-right: 0rem;
+    }
+
     .work-title-text p {
         text-align: left;
     }
@@ -274,6 +278,7 @@
         grid-template-columns: repeat(1, 1fr);
         width: 90%;
         max-width: 25rem;
+        margin-top: -3rem !important;
     }
 
     .work-text {
