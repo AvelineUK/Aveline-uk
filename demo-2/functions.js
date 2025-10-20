@@ -116,7 +116,3 @@ document.addEventListener('click', function(e) {
         menu.classList.remove('active');
     }
 });
-
-document.getElementById('hero-video').addEventListener('loadeddata', function() {
-    this.classList.add('loaded');
-});

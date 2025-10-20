@@ -78,7 +78,7 @@ nav a:hover {
     margin-top: 70px;
     height: 90vh;
     background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
-    background-image: url(images/bg.png);
+    background: url(images/bg.png);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -101,12 +101,6 @@ nav a:hover {
     transform: translate(-50%, -50%);
     z-index: 0;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-#hero-video.loaded {
-    opacity: 1;
 }
 
 #hero::before {
