@@ -16,6 +16,14 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -112,7 +120,7 @@ nav a:hover {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 600px;
     padding: 1rem;
     position: relative;
     z-index: 2;
