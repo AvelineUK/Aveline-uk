@@ -77,7 +77,8 @@ nav a:hover {
 #hero {
     margin-top: 70px;
     height: 90vh;
-    background: url(images/bg.png);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+    background-image: url(images/bg.png);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -100,6 +101,12 @@ nav a:hover {
     transform: translate(-50%, -50%);
     z-index: 0;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#hero-video.loaded {
+    opacity: 1;
 }
 
 #hero::before {
@@ -149,7 +156,7 @@ nav a:hover {
 
 .cta-button:hover {
     transform: translateY(-8px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 /* Section Styles */
