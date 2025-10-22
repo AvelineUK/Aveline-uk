@@ -3,28 +3,28 @@
 }
 
 /* Overall scrollbar */
+
 ::-webkit-scrollbar {
     width: 0.75rem;
-    /* width of the scrollbar */
 }
 
 /* Track (background) */
+
 ::-webkit-scrollbar-track {
     background: #152e5c;
-    /* color of the track */
     border-radius: 0.75rem;
 }
 
 /* Handle (scroll thumb) */
+
 ::-webkit-scrollbar-thumb {
     background-color: #3882f6;
-    /* color of the scroll thumb */
     border-radius: 0.75rem;
     border: 0.75rem solid #152e5c;
-    /* adds padding around thumb */
 }
 
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
     background-color: #2560b3;
 }
@@ -33,9 +33,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-width: auto;
     scrollbar-color: #3882f6 #152e5c;
-    /* thumb color, track color */
 }
 
 html,
@@ -1122,8 +1120,8 @@ a {
     text-transform: uppercase;
 }
 
-.legal-text h2 {
-    font-size: clamp(1rem, 2vw, 1.5rem);
+.legal-text h2, .dropdown-container-2 h2 {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
     color: #152e5c;
     font-weight: 500;
     letter-spacing: 0.125rem;
@@ -1178,7 +1176,7 @@ a {
 }
 
 .dropdown-header h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
@@ -1221,7 +1219,7 @@ a {
 
 .dropdown-inner p {
     margin-bottom: 1rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: #f9faf8;
 }
 
@@ -1244,16 +1242,16 @@ a {
 .pdropdown-title-text p {
     width: 90%;
     margin: 0 auto;
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-align: center;
 }
 
-.prices-title-text p,
-li {
-    font-size: 1.125rem;
+.prices-title-text p, li {
+    font-size: 1rem;
 }
 
 /* Smooth animation for opening/closing */
+
 .dropdown-content {
     transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
     opacity: 0;
@@ -1266,7 +1264,11 @@ li {
 .dropdown-container-2 {
     width: 60%;
     min-width: 18.75rem;
-    margin: 0 auto 6rem auto;
+    margin: 0 auto 2rem auto;
+}
+
+.dropdown-container-2:last-of-type {
+    margin-bottom: 7rem;
 }
 
 /* Services and Contact */
