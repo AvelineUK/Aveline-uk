@@ -29,6 +29,16 @@
     background-color: #2560b3;
 }
 
+::selection {
+    background-color: #152e5c;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #152e5c;
+    color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -292,6 +302,7 @@ img {
     transform: translateZ(500px);
     transition: opacity 3s ease, transform 3s ease;
     will-change: opacity, transform;
+    user-select: none;
 }
 
 /* Fade-in class */
@@ -855,6 +866,7 @@ img {
     padding: 0 1rem;
     grid-template-columns: repeat(auto-fit, 12.5rem);
     padding-bottom: .5rem;
+    user-select: none;
 }
 
 .tier {
