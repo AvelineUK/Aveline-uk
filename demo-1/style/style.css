@@ -181,6 +181,7 @@ body.nav-open .blur-overlay {
    ========================================================================== */
 
 /* Header */
+
 .header {
     position: fixed;
     top: 0;
@@ -196,6 +197,7 @@ body.nav-open .blur-overlay {
 }
 
 /* Hamburger Menu */
+
 .hamburger {
     width: 30px;
     height: 24px;
@@ -215,6 +217,7 @@ body.nav-open .blur-overlay {
 }
 
 /* Phone CTA Styling */
+
 .phone-cta {
     display: flex;
     flex-direction: column;
@@ -317,7 +320,6 @@ body.nav-open .blur-overlay {
    MAIN CONTENT LAYOUT
    ========================================================================== */
 
-/* Main Content */
 .main-content {
     flex: 1;
     margin-top: 70px;
@@ -731,8 +733,6 @@ body.nav-open .main-content p {
     overflow-y: auto;
     max-height: 640px;
 }
-
-/* Contact Form Styles */
 
 .contact-form {
     padding: 2rem;

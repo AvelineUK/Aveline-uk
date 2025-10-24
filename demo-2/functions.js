@@ -1,4 +1,5 @@
 // Gallery data
+
 const galleryProjects = [
     {
         title: "Modern Patio Design",
@@ -89,6 +90,8 @@ function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
 }
 
+// Contact form
+
 function handleSubmit(e) {
     e.preventDefault();
     alert('Thank you for your enquiry! We\'ll get back to you within 24 hours.');
@@ -96,6 +99,7 @@ function handleSubmit(e) {
 }
 
 // Smooth scrolling for navigation links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -109,6 +113,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Close mobile menu when clicking outside
+
 document.addEventListener('click', function(e) {
     const nav = document.querySelector('nav');
     const menu = document.getElementById('navMenu');

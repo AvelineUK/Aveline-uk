@@ -177,7 +177,6 @@
    ========================================================================== */
 
 @media (max-width: 64rem) {
-    /* Global Mobile Styles */
     .services-text h2,
     .details-right-title h2,
     .work-title-h h2,
@@ -212,7 +211,6 @@
         display: block;
     }
 
-    /* Services Section Mobile */
     .services {
         width: 90%;
         padding: 0.625rem;
@@ -222,7 +220,6 @@
         text-align: left;
     }
 
-    /* Cards Section Mobile */
     .cards a .card {
         background-color: #152e5c;
         color: #F9FAF8;
@@ -241,7 +238,6 @@
         text-align: center;
     }
 
-    /* Details Section Mobile */
     .details {
         margin-top: 4rem;
     }
@@ -250,7 +246,6 @@
         font-size: 1.25rem;
     }
 
-    /* Work Section Mobile */
     .work-title-h,
     .work-title,
     .work-title-text {
@@ -294,7 +289,6 @@
         padding: 1rem 2rem;
     }
 
-    /* Footer Mobile */
     .footer {
         grid-template-columns: minmax(17.5rem, 25rem);
         text-align: center;
@@ -328,7 +322,6 @@
    ========================================================================== */
 
 @media (min-width: 64.0625rem) {
-    /* Navigation Desktop */
     .logo-navigation {
         top: 1.25rem;
         left: 1.25rem;
@@ -342,13 +335,11 @@
         right: 0;
     }
 
-    /* Work Section Desktop */
     .works {
         grid-template-columns: repeat(3, 1fr);
         max-width: 90rem;
     }
 
-    /* Footer Desktop */
     .footer {
         grid-template-columns:
             minmax(25rem, 30rem)
@@ -362,7 +353,6 @@
    ========================================================================== */
 
 @media (max-width: 80rem) {
-    /* Navigation Mobile */
     .logo-navigation {
         top: 0 !important;
         left: 0 !important;
@@ -373,7 +363,6 @@
         animation: navFadeIn 0s ease forwards;
     }
 
-    /* Hero Section Mobile */
     .hero {
         margin: 0rem;
         transform: translateY(0rem);
@@ -429,7 +418,6 @@
         padding: 1rem 2rem;
     }
 
-    /* Details Section - Hide Left Image */
     .details-left {
         display: none;
     }

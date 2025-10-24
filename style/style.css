@@ -306,6 +306,7 @@ img {
 }
 
 /* Fade-in class */
+
 .hero.fade-in {
     opacity: 1;
     transform: translateY(0);
@@ -770,6 +771,7 @@ img {
 }
 
 /* Slide in (left → right) */
+
 .work-button::before,
 .work-button::after {
     content: "";
@@ -791,11 +793,13 @@ img {
 }
 
 /* Hover state = show the blue overlay */
+
 .work-button:hover::before {
     transform: scaleX(1);
 }
 
 /* On hover out = blue disappears right → left */
+
 .work-button:not(:hover)::after {
     transform: scaleX(1);
 }
@@ -1412,6 +1416,7 @@ textarea.form-input {
 }
 
 /* Form validation styles */
+
 .form-input.error {
     border-color: #ef4444;
     background: #fef2f2;
@@ -1430,6 +1435,7 @@ textarea.form-input {
 }
 
 /* Success state */
+
 .form-container.success {
     text-align: center;
 }

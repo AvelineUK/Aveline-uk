@@ -37,6 +37,7 @@ a {
 }
 
 /* Navigation */
+
 nav {
     position: fixed;
     top: 0;
@@ -82,6 +83,7 @@ nav a:hover {
 }
 
 /* Hero Section */
+
 #hero {
     margin-top: 70px;
     height: 90vh;
@@ -161,6 +163,7 @@ nav a:hover {
 }
 
 /* Section Styles */
+
 section {
     padding: 5rem 2rem;
 }
@@ -215,6 +218,7 @@ section {
 }
 
 /* Why Choose Us */
+
 #why-choose {
     background: white;
 }
@@ -251,6 +255,7 @@ section {
 }
 
 /* Gallery */
+
 #gallery {
     background: var(--light-bg);
 }
@@ -303,6 +308,7 @@ section {
 }
 
 /* Lightbox */
+
 .lightbox {
     display: none;
     position: fixed;
@@ -385,6 +391,7 @@ section {
 }
 
 /* Reviews */
+
 #reviews {
     background: white;
 }
@@ -447,6 +454,7 @@ section {
 }
 
 /* Contact */
+
 #contact {
     background: var(--light-bg);
 }
@@ -509,6 +517,7 @@ section {
 }
 
 /* Footer */
+
 footer {
     background: var(--primary-green);
     color: white;
@@ -555,6 +564,7 @@ footer {
 }
 
 /* Mobile Menu */
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;

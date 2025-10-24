@@ -149,6 +149,7 @@
 }
 
 /* Responsive */
+
 @media (max-width: 1280px) {
     .scroller-item {
         width: 300px;
