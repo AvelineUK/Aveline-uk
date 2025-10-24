@@ -1484,7 +1484,7 @@ textarea.form-input {
 .card:hover,
 .tier:hover,
 .work-text img:hover {
-    transform: translateY(-0.5rem) !important; /* disable scale */
+    transform: translateY(-0.5rem) !important;
     box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
   }
 
