@@ -865,7 +865,7 @@ img {
     max-width: 1000px;
     padding: 0 1rem;
     grid-template-columns: repeat(auto-fit, 12.5rem);
-    padding-bottom: .5rem;
+    padding-bottom: .5rem; /* Change this when offer is removed */
     user-select: none;
 }
 
