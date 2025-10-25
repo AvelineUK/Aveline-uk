@@ -2,28 +2,20 @@
     transition: none !important;
 }
 
-/* Overall scrollbar */
-
 ::-webkit-scrollbar {
     width: 0.75rem;
 }
-
-/* Track (background) */
 
 ::-webkit-scrollbar-track {
     background: #152e5c;
     border-radius: 0.75rem;
 }
 
-/* Handle (scroll thumb) */
-
 ::-webkit-scrollbar-thumb {
     background-color: #3882f6;
     border-radius: 0.75rem;
     border: 0.75rem solid #152e5c;
 }
-
-/* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #2560b3;

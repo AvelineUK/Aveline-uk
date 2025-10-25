@@ -103,12 +103,18 @@ function handleSubmit(e) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Close mobile menu if open
-            document.getElementById('navMenu').classList.remove('active');
+        const href = this.getAttribute('href');
+        
+        if (href === '#top') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
+        
+        document.getElementById('navMenu').classList.remove('active');
     });
 });
 
@@ -120,4 +126,16 @@ document.addEventListener('click', function(e) {
     if (!nav.contains(e.target) && menu.classList.contains('active')) {
         menu.classList.remove('active');
     }
+});
+
+// Progress Bar
+
+window.addEventListener('scroll', function() {
+    // Calculate scroll percentage
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+    
+    // Update progress bar width
+    document.getElementById('progressBar').style.width = scrollPercentage + '%';
 });
