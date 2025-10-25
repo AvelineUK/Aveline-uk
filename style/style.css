@@ -1085,11 +1085,16 @@ a {
 
 .bottom ul {
     font-family: "Source Sans M", "Lato", sans-serif;
+    flex-direction: column;
 }
 
 .bottom li {
     list-style: none;
     padding: 0.125rem 0rem;
+}
+
+.bottom ul li:first-child {
+    margin-bottom: 0.5rem;
 }
 
 .legal {

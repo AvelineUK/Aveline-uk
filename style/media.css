@@ -77,19 +77,6 @@
 }
 
 /* ==========================================================================
-   GLOBAL STYLES - ALL SCREEN SIZES
-   ========================================================================== */
-
-.bottom ul {
-    flex-direction: column;
-}
-
-.bottom ul li:first-child {
-    margin-bottom: 0.5rem;
-}
-
-
-/* ==========================================================================
    TABLET - 40.0625REM TO 80REM
    ========================================================================== */
 
@@ -201,6 +188,7 @@
     .services {
         width: 90%;
         padding: 0.625rem;
+        margin-top: 4rem
     }
 
     .services-text p{
@@ -354,8 +342,8 @@
         margin: 0rem;
         transform: translateY(0rem);
         padding: 0.625rem;
-        border-radius: 0 0 25% 25%;
-        animation: morph-bottom 15s linear infinite alternate;
+        border-radius: 0;
+        animation: morph-bottom 0s linear infinite alternate;
     }
 
     .hero,
@@ -398,7 +386,7 @@
     .cta1 {
         display: flex;
         justify-content: center;
-        padding-bottom: 6rem;
+        padding-bottom: 2rem;
     }
 
     .cta-b {
