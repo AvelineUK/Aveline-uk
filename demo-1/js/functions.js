@@ -59,6 +59,8 @@ class MasonryLightbox {
     constructor() {
         this.lightbox = document.getElementById('lightbox');
         this.lightboxImg = document.getElementById('lightbox-img');
+        this.lightboxTitle = document.getElementById('lightbox-title');
+        this.lightboxDescription = document.getElementById('lightbox-description');
         this.lightboxClose = document.getElementById('lightbox-close');
         this.lightboxPrev = document.getElementById('lightbox-prev');
         this.lightboxNext = document.getElementById('lightbox-next');
@@ -116,7 +118,14 @@ class MasonryLightbox {
         const item = this.galleryItems[index];
         const imgSrc = item.dataset.src;
         
+        // Get title and description from the gallery item
+        const title = item.querySelector('.gallery-overlay h3')?.textContent || '';
+        const description = item.querySelector('.gallery-overlay p')?.textContent || '';
+        
         this.lightboxImg.src = imgSrc;
+        this.lightboxTitle.textContent = title;
+        this.lightboxDescription.textContent = description;
+        
         this.lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -128,6 +137,8 @@ class MasonryLightbox {
         // Reset image src after animation
         setTimeout(() => {
             this.lightboxImg.src = '';
+            this.lightboxTitle.textContent = '';
+            this.lightboxDescription.textContent = '';
         }, 300);
     }
     
@@ -144,12 +155,16 @@ class MasonryLightbox {
     updateImage() {
         const item = this.galleryItems[this.currentIndex];
         const imgSrc = item.dataset.src;
+        const title = item.querySelector('.gallery-overlay h3')?.textContent || '';
+        const description = item.querySelector('.gallery-overlay p')?.textContent || '';
         
         // Fade out
         this.lightboxImg.style.opacity = '0';
         
         setTimeout(() => {
             this.lightboxImg.src = imgSrc;
+            this.lightboxTitle.textContent = title;
+            this.lightboxDescription.textContent = description;
             
             // Fade in
             this.lightboxImg.style.opacity = '1';
