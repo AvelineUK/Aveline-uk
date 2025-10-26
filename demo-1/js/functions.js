@@ -60,6 +60,7 @@ class MasonryLightbox {
         this.lightboxImg = document.getElementById('lightbox-img');
         this.lightboxTitle = document.getElementById('lightbox-title');
         this.lightboxDescription = document.getElementById('lightbox-description');
+        this.lightboxInfo = document.querySelector('.lightbox-info');
         this.lightboxClose = document.getElementById('lightbox-close');
         this.lightboxPrev = document.getElementById('lightbox-prev');
         this.lightboxNext = document.getElementById('lightbox-next');
@@ -70,7 +71,9 @@ class MasonryLightbox {
         // Touch swipe variables
         this.touchStartX = 0;
         this.touchEndX = 0;
+        this.touchCurrentX = 0;
         this.minSwipeDistance = 50;
+        this.isSwiping = false;
         
         // Only initialize if all elements exist
         if (this.lightbox && this.lightboxImg && this.lightboxClose && 
@@ -112,10 +115,26 @@ class MasonryLightbox {
         // Touch swipe events
         this.lightbox.addEventListener('touchstart', (e) => {
             this.touchStartX = e.changedTouches[0].screenX;
+            this.isSwiping = true;
+            this.lightboxImg.style.transition = 'none';
+            this.lightboxInfo.style.transition = 'none';
+        }, { passive: true });
+        
+        this.lightbox.addEventListener('touchmove', (e) => {
+            if (!this.isSwiping) return;
+            this.touchCurrentX = e.changedTouches[0].screenX;
+            const diff = this.touchCurrentX - this.touchStartX;
+            
+            // Move the image and info box with the finger
+            this.lightboxImg.style.transform = `translateX(${diff}px)`;
+            this.lightboxImg.style.opacity = 1 - Math.abs(diff) / 400;
+            this.lightboxInfo.style.transform = `translateX(${diff}px)`;
+            this.lightboxInfo.style.opacity = 1 - Math.abs(diff) / 400;
         }, { passive: true });
         
         this.lightbox.addEventListener('touchend', (e) => {
             this.touchEndX = e.changedTouches[0].screenX;
+            this.isSwiping = false;
             this.handleSwipe();
         }, { passive: true });
         
@@ -132,12 +151,71 @@ class MasonryLightbox {
         
         // Swipe left (next image)
         if (swipeDistance < -this.minSwipeDistance) {
-            this.nextImage();
+            this.slideToImage('next');
         }
         // Swipe right (previous image)
         else if (swipeDistance > this.minSwipeDistance) {
-            this.prevImage();
+            this.slideToImage('prev');
         }
+        // Not enough swipe distance - snap back
+        else {
+            this.lightboxImg.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+            this.lightboxImg.style.transform = 'translateX(0)';
+            this.lightboxImg.style.opacity = '1';
+            this.lightboxInfo.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+            this.lightboxInfo.style.transform = 'translateX(0)';
+            this.lightboxInfo.style.opacity = '1';
+        }
+    }
+    
+    slideToImage(direction) {
+        const slideDistance = direction === 'next' ? -window.innerWidth : window.innerWidth;
+        
+        // Slide current image and info out
+        this.lightboxImg.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        this.lightboxImg.style.transform = `translateX(${slideDistance}px)`;
+        this.lightboxImg.style.opacity = '0';
+        this.lightboxInfo.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        this.lightboxInfo.style.transform = `translateX(${slideDistance}px)`;
+        this.lightboxInfo.style.opacity = '0';
+        
+        // Update index
+        if (direction === 'next') {
+            this.currentIndex = this.currentIndex === this.galleryItems.length - 1 ? 0 : this.currentIndex + 1;
+        } else {
+            this.currentIndex = this.currentIndex === 0 ? this.galleryItems.length - 1 : this.currentIndex - 1;
+        }
+        
+        // Get new image data
+        const item = this.galleryItems[this.currentIndex];
+        const imgSrc = item.dataset.src;
+        const title = item.querySelector('.gallery-overlay h3')?.textContent || '';
+        const description = item.querySelector('.gallery-overlay p')?.textContent || '';
+        
+        // After slide out animation, load new image from opposite side
+        setTimeout(() => {
+            this.lightboxImg.src = imgSrc;
+            this.lightboxTitle.textContent = title;
+            this.lightboxDescription.textContent = description;
+            
+            // Position new image and info on opposite side
+            this.lightboxImg.style.transition = 'none';
+            this.lightboxImg.style.transform = `translateX(${-slideDistance}px)`;
+            this.lightboxImg.style.opacity = '0';
+            this.lightboxInfo.style.transition = 'none';
+            this.lightboxInfo.style.transform = `translateX(${-slideDistance}px)`;
+            this.lightboxInfo.style.opacity = '0';
+            
+            // Slide new image and info in
+            setTimeout(() => {
+                this.lightboxImg.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+                this.lightboxImg.style.transform = 'translateX(0)';
+                this.lightboxImg.style.opacity = '1';
+                this.lightboxInfo.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+                this.lightboxInfo.style.transform = 'translateX(0)';
+                this.lightboxInfo.style.opacity = '1';
+            }, 50);
+        }, 300);
     }
     
     openLightbox(index) {

@@ -99,6 +99,7 @@
 .lightbox img {
     max-width: 100%;
     max-height: 70vh;
+    max-width: 80vw;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -240,19 +241,6 @@ footer {
         max-height: 100vh;
         padding: 10px;
     }
-    
-    .lightbox img {
-        max-height: 70vh;
-    }
-    
-    .lightbox-info {
-        padding: 10px 15px;
-        max-height: 30vh;
-    }
-
-    .lightbox-nav {
-        display: none;
-    }
 }
 
 @media (max-height: 576px) {
@@ -266,5 +254,11 @@ footer {
         columns: 1;
         max-width: 300px;
         padding: 0;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .lightbox-nav {
+        display: none;
     }
 }
