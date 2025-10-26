@@ -676,8 +676,13 @@ footer {
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+        text-align: center;
     }
     
+    .features-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .lightbox-content {
         padding: 1.5rem;
     }

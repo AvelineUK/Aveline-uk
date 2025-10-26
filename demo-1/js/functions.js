@@ -1,5 +1,4 @@
 // Sidebar functionality    
-
 const hamburger = document.getElementById('hamburger');
 const navSidebar = document.getElementById('navSidebar');
 const body = document.body;
@@ -68,6 +67,11 @@ class MasonryLightbox {
         this.galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
         this.currentIndex = 0;
         
+        // Touch swipe variables
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.minSwipeDistance = 50;
+        
         // Only initialize if all elements exist
         if (this.lightbox && this.lightboxImg && this.lightboxClose && 
             this.lightboxPrev && this.lightboxNext && this.galleryItems.length > 0) {
@@ -105,12 +109,35 @@ class MasonryLightbox {
             }
         });
         
+        // Touch swipe events
+        this.lightbox.addEventListener('touchstart', (e) => {
+            this.touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        this.lightbox.addEventListener('touchend', (e) => {
+            this.touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe();
+        }, { passive: true });
+        
         // Click outside to close
         this.lightbox.addEventListener('click', (e) => {
             if (e.target === this.lightbox) {
                 this.closeLightbox();
             }
         });
+    }
+    
+    handleSwipe() {
+        const swipeDistance = this.touchEndX - this.touchStartX;
+        
+        // Swipe left (next image)
+        if (swipeDistance < -this.minSwipeDistance) {
+            this.nextImage();
+        }
+        // Swipe right (previous image)
+        else if (swipeDistance > this.minSwipeDistance) {
+            this.prevImage();
+        }
     }
     
     openLightbox(index) {
@@ -177,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new MasonryLightbox();
 });
 
-/* Testimonial functionality */
+// Testimonial functionality
 const testimonials = document.querySelectorAll('.testimonial-item');
 
 if (testimonials.length > 0) {
