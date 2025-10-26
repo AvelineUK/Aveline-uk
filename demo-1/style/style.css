@@ -1016,12 +1016,12 @@ body.nav-open .main-content p {
 }
 
 .services-home-content:hover .image-container img {
-    transform: scale(1.1);
+    transform: scale(108%);
     filter: brightness(0.3);
 }
 
 .rotate-zoom:hover img {
-    transform: scale(1.1);
+    transform: scale(108%);
     filter: brightness(0.3);
 }
 
@@ -1203,11 +1203,31 @@ footer li:nth-child(3) {
 }
 
 .shwrapper:last-child {
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
 }
 
 .services-home-content {
     width: 100%;
+    flex-direction: column;
+}
+
+.services-home-content:hover .image-container img {
+    transform: scale(108%);
+    filter: brightness(1);
+}
+
+.rotate-zoom:hover img {
+    transform: scale(108%);
+    filter: brightness(1);
+}
+
+.overlay-content {
+    display: none;
+}
+
+.mobile-h2 {
+    font-size: clamp(1.125rem, 5vw, 1.25rem);
+    padding-top: .75rem;
 }
 
 .team, .testimonials {
@@ -1266,6 +1286,13 @@ footer li:nth-child(3) {
     justify-content: center;
 }
 
+}
+
+@media (min-width: 1281px) {
+
+.mobile-h2 {
+    display: none;
+    }
 }
 
 @media (max-width: 768px) {
