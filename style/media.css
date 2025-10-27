@@ -280,16 +280,20 @@
     }
 
     .fc {
-    margin-top: 4rem;
+        margin-top: 4rem;
     }
 
     .sp h1 {
-    text-align: center;
+        text-align: center;
     }
 
     .spm {
-    width: 100%;
-}
+        width: 100%;
+    }
+
+    .dropdown-container-2:last-of-type {
+        margin-bottom: 4rem;
+    }
 }
 
 /* ==========================================================================

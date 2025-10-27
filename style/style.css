@@ -1135,12 +1135,17 @@ a {
 }
 
 .legal-text h2, .dropdown-container-2 h2 {
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
     color: #152e5c;
     font-weight: 500;
     letter-spacing: 0.125rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
+}
+
+.dropdown-container-2 h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
 }
 
 .legal-text p {
@@ -1190,7 +1195,7 @@ a {
 }
 
 .dropdown-header h3 {
-    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 400;
 }
 
