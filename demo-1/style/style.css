@@ -408,7 +408,18 @@ body.nav-open .main-content p {
 }
 
 .gallery-home {
-    background-image: url(../images/obsidian.webp);
+    background-image: url("../images/obsidian.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    z-index: -2;
 }
 
 .about, .team, .testimonials {
@@ -468,7 +479,7 @@ body.nav-open .main-content p {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: rgb(255, 255, 255);
-    padding: 2rem 0 1rem 0;
+    padding: 2rem 0 .5rem 0;
 }
 
 .shwrapper {
@@ -501,7 +512,7 @@ body.nav-open .main-content p {
 }
 
 .team-title {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
@@ -1058,6 +1069,10 @@ body.nav-open .main-content p {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.overlay-content p {
+    font-size: 1rem;
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
@@ -1228,6 +1243,10 @@ footer li:nth-child(3) {
 .mobile-h2 {
     font-size: clamp(1.125rem, 5vw, 1.25rem);
     padding-top: .75rem;
+}
+
+.mobile-h2 p {
+    font-size: 1rem;
 }
 
 .team, .testimonials {
