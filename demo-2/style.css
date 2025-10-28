@@ -105,7 +105,7 @@ nav a:hover {
 #hero {
     margin-top: 70px;
     height: 90vh;
-    background: url(images/bg.png);
+    background: url(images/bg.webp);
     background-size: cover;
     background-position: center;
     display: flex;
