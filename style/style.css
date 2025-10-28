@@ -1167,7 +1167,7 @@ a {
 }
 
 .dropdown {
-    margin-bottom: 1rem;
+    margin-bottom: .25rem;
     background: #f9faf8;
     overflow: hidden;
     transition: all 1s ease;
@@ -1199,19 +1199,6 @@ a {
     font-weight: 400;
 }
 
-.dropdown-arrow {
-    width: 0;
-    height: 0;
-    border-left: 0.5rem solid transparent;
-    border-right: 0.5rem solid transparent;
-    border-top: 0.5rem solid F9FAF8;
-    transition: transform 1s ease;
-}
-
-.dropdown.active .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
 .dropdown-content {
     max-height: 0;
     overflow: hidden;
@@ -1232,7 +1219,6 @@ a {
 
 .dropdown-inner {
     padding: 1.5rem;
-    color: #333;
     line-height: 1.5;
 }
 
