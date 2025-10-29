@@ -20,6 +20,7 @@ const handleResize = () => {
     hideSidebar();
   }
   setBodyPadding();
+  updateNavbarScrollState();
 };
 window.addEventListener('resize', handleResize);
 
