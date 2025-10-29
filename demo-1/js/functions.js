@@ -44,12 +44,20 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
         }
     });
+}, {
+    threshold: 0.1 // Trigger when 10% of the element is visible
 });
 
+// Observe all animation elements
 document.querySelectorAll('.fade-in1').forEach(el => {
     observer.observe(el);
 });
-document.querySelectorAll('.fade-in2').forEach(el => {
+
+document.querySelectorAll('.slide-left').forEach(el => {
+    observer.observe(el);
+});
+
+document.querySelectorAll('.slide-right').forEach(el => {
     observer.observe(el);
 });
 
