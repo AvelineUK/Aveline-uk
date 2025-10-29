@@ -235,7 +235,7 @@ img {
     height: 100vh;
     width: 15.625rem;
     z-index: 1;
-    background-color: rgba(30, 60, 114, 0.95);
+    background-color: rgba(21, 46, 92, 0.95);
     backdrop-filter: blur(0.625rem);
     box-shadow: -0.625rem 0rem 0.625rem rgba(0, 0, 0, 0.1);
     flex-direction: column;

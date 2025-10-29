@@ -428,6 +428,11 @@
    ========================================================================== */
 
 @media (min-width: 80.0625rem) {
+
+    .sidebar.active {
+        display: none;
+    }
+
     .cards {
         grid-template-columns: repeat(4, 18rem);
         max-width: 56.25rem;
