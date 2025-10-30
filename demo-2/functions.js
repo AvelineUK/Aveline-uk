@@ -139,3 +139,10 @@ window.addEventListener('scroll', function() {
     // Update progress bar width
     document.getElementById('progressBar').style.width = scrollPercentage + '%';
 });
+
+// Google Reviews link
+
+function handleGoogleReviews(e) {
+    e.preventDefault();
+    alert('If this were a live site, clicking this would take you to your Google Business reviews page.');
+}
