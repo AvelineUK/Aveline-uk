@@ -2,25 +2,6 @@
     transition: none !important;
 }
 
-::-webkit-scrollbar {
-    width: 0.75rem;
-}
-
-::-webkit-scrollbar-track {
-    background: #152e5c;
-    border-radius: 0.75rem;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #3882f6;
-    border-radius: 0.75rem;
-    border: 0.75rem solid #152e5c;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #2560b3;
-}
-
 ::selection {
     background-color: #152e5c;
     color: white;
@@ -35,7 +16,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-color: #3882f6 #152e5c;
 }
 
 html,
