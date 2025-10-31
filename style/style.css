@@ -741,7 +741,7 @@ img {
     position: relative;
     overflow: hidden;
     background: #152e5c;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     transform-origin: center center;
     will-change: transform;
     transform: translateZ(0);
@@ -1423,7 +1423,11 @@ textarea.form-input {
 @-moz-document url-prefix() {
   .card:hover,
   .tier:hover,
-  .work-text img:hover,
+  .work-text img:hover {
+    transform: translateY(-0.5rem) !important;
+    box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
+  }
+
   .work-button:hover {
     transform: translateY(-0.25rem) !important;
     box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
