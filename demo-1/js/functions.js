@@ -45,7 +45,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.1 // Trigger when 10% of the element is visible
+    threshold: 0.1 // % trigger of element visibility
 });
 
 // Observe all animation elements
@@ -323,3 +323,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function handleGoogleReviews(e) {
+    e.preventDefault();
+    alert('If this were a live site, clicking this would take you to your online booking page');
+}

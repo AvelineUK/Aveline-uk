@@ -94,7 +94,7 @@ function closeLightbox() {
 
 function handleSubmit(e) {
     e.preventDefault();
-    alert('Thank you for your enquiry! We\'ll get back to you within 24 hours.');
+    alert('Thank you for your enquiry! We\'ll get back to you within 24 hours');
     e.target.reset();
 }
 
@@ -144,5 +144,5 @@ window.addEventListener('scroll', function() {
 
 function handleGoogleReviews(e) {
     e.preventDefault();
-    alert('If this were a live site, clicking this would take you to your Google Business reviews page.');
+    alert('If this were a live site, clicking this would take you to your Google Business reviews page');
 }

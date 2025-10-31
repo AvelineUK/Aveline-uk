@@ -734,57 +734,22 @@ img {
     color: #f9faf8;
     padding: 1.25rem 2.5rem;
     border-radius: 2rem;
-    font-size: 1.0625rem;
+    font-size: 1.25rem;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     background: #152e5c;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center center;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
-/* Slide in (left → right) */
-
-.work-button::before,
-.work-button::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    transform: scaleX(0);
-    transition: transform 0.2s ease;
-}
-
-.work-button::before {
-    background: #43b7ff;
-    transform-origin: left;
-}
-
-.work-button::after {
-    background: #152e5c;
-    transform-origin: right;
-}
-
-/* Hover state = show the blue overlay */
-
-.work-button:hover::before {
-    transform: scaleX(1);
-}
-
-/* On hover out = blue disappears right → left */
-
-.work-button:not(:hover)::after {
-    transform: scaleX(1);
-}
-
-.work-button span {
-    position: relative;
-    z-index: 1;
-    transition: color 0.2s ease;
-}
-
-.work-button:hover span {
-    color: #152e5c;
+.work-button:hover {
+    transform: translateY(-0.25rem) scale(1.02) translateZ(0);
+    box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 1);
 }
 
 /* Pricing */
@@ -1456,14 +1421,15 @@ textarea.form-input {
 }
 
 @-moz-document url-prefix() {
-.card:hover,
-.tier:hover,
-.work-text img:hover {
-    transform: translateY(-0.5rem) !important;
+  .card:hover,
+  .tier:hover,
+  .work-text img:hover,
+  .work-button:hover {
+    transform: translateY(-0.25rem) !important;
     box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
   }
 
-.work-text img {
+  .work-text img {
     transform: none !important;
     backface-visibility: hidden;
     image-rendering: -moz-crisp-edges;
