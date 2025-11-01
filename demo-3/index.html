@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>Meridian Wealth | Independent Financial Advisors</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 1.75rem 3rem;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: normal;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            user-select: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #4a4a4a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+            user-select: none;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8b6f47;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #1a1a1a;
+        }
+
+        nav a.active {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: 0.3s;
+        }
+
+        /* Content Wrapper */
+        #content-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: calc(100vh - 100px);
+            overflow: hidden;
+        }
+
+        .page-content {
+            position: absolute;
+            width: 100%;
+            min-height: 100%;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+            top: 0;
+            left: 0;
+            display: none;
+            will-change: transform, opacity;
+        }
+
+        .page-content.slide-out-left {
+            transform: translateX(-100%);
+            opacity: 0;
+            display: block;
+        }
+
+        .page-content.slide-in-right {
+            transform: translateX(100%);
+            opacity: 0;
+            display: block;
+        }
+
+        .page-content.active {
+            transform: translateX(0);
+            opacity: 1;
+            position: relative;
+            display: block;
+        }
+
+        /* Decorative Elements */
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #8b6f47 0%, transparent 100%);
+            margin-bottom: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8e4c6 0%, #ffffff 100%);
+            padding: 8rem 0 6rem;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 111, 71, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            font-weight: normal;
+            line-height: 1.2;
+            color: #1a1a1a;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin-bottom: 3rem;
+            color: #4a4a4a;
+            line-height: 1.8;
+            font-family: sans-serif;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1a1a1a;
+            color: white;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #8b6f47;
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            border-color: #8b6f47;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #6a6a6a;
+            margin-bottom: 4rem;
+            line-height: 1.7;
+            font-family: sans-serif;
+            max-width: 800px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin: 4rem 0;
+        }
+
+        .column-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+            color: #1a1a1a;
+        }
+
+        .column-text p {
+            color: #4a4a4a;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-family: sans-serif;
+        }
+
+        /* Service List */
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            border-left: 2px solid #8b6f47;
+            padding-left: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-family: sans-serif;
+        }
+
+        .service-item p {
+            color: #6a6a6a;
+            line-height: 1.8;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* Stats Section */
+        .stats-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 4rem 3rem;
+            margin: 5rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0rem;
+        }
+
+        .stats-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 111, 71, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: #8b6f47;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Value Propositions */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .value-item {
+            text-align: left;
+            padding: 2rem;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            border-top: 3px solid #8b6f47;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Disable transform for Firefox*/
+        @-moz-document url-prefix() {
+            .value-item:hover {
+                transform: none;
+            }
+        }
+
+        .value-number {
+            font-size: 3rem;
+            color: #e5e5e5;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .value-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-family: sans-serif;
+        }
+
+        .value-item p {
+            color: #6a6a6a;
+            line-height: 1.8;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 3rem;
+        }
+
+        .contact-details {
+            padding-top: 2rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: normal;
+            color: #1a1a1a;
+        }
+
+        .detail-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            color: #8b6f47;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            font-family: sans-serif;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            font-family: sans-serif;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, #f9f7f4 0%, #fafafa 100%);
+            padding: 3rem;
+            border-top: 3px solid #8b6f47;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            color: #6a6a6a;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+            font-family: sans-serif;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            background: white;
+            font-size: 1rem;
+            font-family: sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b6f47;
+            box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: #1a1a1a;
+            color: white;
+            padding: 1.2rem 3rem;
+            border: 2px solid #1a1a1a;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #8b6f47;
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .submit-button:hover::before {
+            left: 0;
+        }
+
+        .submit-button:hover {
+            border-color: #8b6f47;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 100%);
+            padding: 5rem 3rem;
+            margin: 0rem 0 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20rem;
+            color: rgba(139, 111, 71, 0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .quote-section blockquote {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: #1a1a1a;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6a6a6a;
+            font-style: normal;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .quote-author::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background: #8b6f47;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        /* Accent Section */
+        .accent-section {
+            background: #8b6f47;
+            color: white;
+            padding: 4rem 3rem;
+            margin: 5rem 0;
+            text-align: center;
+        }
+
+        .accent-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+        }
+
+        .accent-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-family: sans-serif;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .accent-section .cta-button {
+            background: white;
+            color: #1a1a1a;
+            border-color: white;
+        }
+
+        .accent-section .cta-button::before {
+            background: #1a1a1a;
+        }
+
+        .accent-section .cta-button:hover {
+            color: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        .a1 {
+            margin-bottom: 12rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            font-family: sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #8b6f47;
+        }
+
+        .footer-section p {
+            opacity: 0.7;
+            line-height: 1.8;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: all 0.3s;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            opacity: 0.5;
+            font-size: 0.85rem;
+            font-family: sans-serif;
+        }
+
+        .footer-bottom p {
+            line-height: 1.5rem;
+        }
+
+        .footer-bottom a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .two-column,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .service-list {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 2rem;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid #e5e5e5;
+                max-height: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+                overflow: hidden;
+            }
+
+            nav.active {
+                max-height: 400px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem 3rem;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            header {
+                padding: 1.75rem 1.5rem;
+            }
+
+            .hero,
+            .content-section {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem 3rem;
+            }
+
+            .hero {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .hero-content {
+                padding: 0 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-banner {
+                padding: 3rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .quote-section blockquote {
+                font-size: 1.4rem;
+            }
+
+            .accent-section h2 {
+                font-size: 2rem;
+            }
+
+            .a1 {
+                margin-bottom: 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Force scroll to top immediately before anything renders
+        window.scrollTo(0, 0);
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+    <header>
+        <div class="header-container">
+            <span class="logo-text">Meridian Wealth</span>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="content-wrapper">
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="decorative-line"></div>
+                    <h1>Financial planning built on trust, transparency, and expertise.</h1>
+                    <p>For over two decades, we've helped individuals and families navigate complex financial decisions with confidence. Our independent approach means your interests always come first.</p>
+                    <a href="#contact" class="cta-button">Arrange a Consultation</a>
+                </div>
+            </div>
+
+            <div class="stats-banner">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">23</div>
+                        <div class="stat-label">Years Established</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">£1.8bn</div>
+                        <div class="stat-label">Assets Managed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">950+</div>
+                        <div class="stat-label">Client Families</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">97%</div>
+                        <div class="stat-label">Retention Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h2 class="section-title">Why work with Meridian?</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="value-number">01</div>
+                        <h3>Independent Expertise</h3>
+                        <p>As an independent firm, we're not tied to any financial institutions. This means we can recommend solutions from the entire market, ensuring you receive genuinely impartial advice tailored to your circumstances.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">02</div>
+                        <h3>Long-Term Partnerships</h3>
+                        <p>We don't believe in transactional relationships. Our approach is to build lasting partnerships with clients, understanding not just your financial situation but your life goals, values, and aspirations.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">03</div>
+                        <h3>Holistic Planning</h3>
+                        <p>Wealth management isn't just about investments. We consider tax efficiency, estate planning, protection needs, and retirement strategies to create comprehensive financial plans that work together seamlessly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>"The best financial plan is one that adapts to life's changes while staying true to your fundamental goals."</blockquote>
+                <div class="quote-author">Richard Carmichael, Founding Partner</div>
+            </div>
+
+            <div class="accent-section a1">
+                <h2>Ready to take control of your financial future?</h2>
+                <p>Book a complimentary consultation to discover how our independent approach can help you achieve your goals.</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page-content">
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h1 class="section-title">How we can help</h1>
+                <p class="section-subtitle">Our services are designed to address every aspect of your financial life, from building wealth to protecting what matters most.</p>
+
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>Investment Management</h3>
+                        <p>Bespoke portfolio construction and ongoing management aligned with your risk tolerance and objectives. We employ a disciplined, research-driven approach that looks beyond short-term market noise.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Retirement Planning</h3>
+                        <p>Comprehensive pension reviews, contribution strategies, and drawdown planning to help you achieve the retirement lifestyle you envision. We navigate complex regulations to optimize your outcomes.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Tax Planning</h3>
+                        <p>Proactive strategies to minimize your tax burden while remaining fully compliant. From capital gains planning to inheritance tax mitigation, we help you keep more of what you've earned.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Estate Planning</h3>
+                        <p>Thoughtful structuring of your estate to ensure your wealth passes to future generations efficiently and according to your wishes. We coordinate with legal professionals to implement robust solutions.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Protection Planning</h3>
+                        <p>Safeguarding you and your family against unforeseen circumstances through appropriate life assurance, critical illness cover, and income protection policies.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Business Owner Advisory</h3>
+                        <p>Specialized guidance for entrepreneurs and business owners, including exit planning, shareholder protection, and remuneration strategies that balance personal and business needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>"Investment success is not about timing the market—it's about time in the market with the right strategy."</blockquote>
+                <div class="quote-author">Elizabeth Thornton, Managing Partner</div>
+            </div>
+
+            <div class="content-section" style="padding-top: 3rem;">
+                <div class="two-column">
+                    <div class="column-text">
+                        <h3>Our investment philosophy</h3>
+                        <p>We believe successful investing requires discipline, patience, and a long-term perspective. Rather than chasing performance or timing markets, we focus on asset allocation, diversification, and cost control.</p>
+                        <p>Every portfolio we construct is unique, reflecting your individual circumstances, time horizon, and capacity for risk. We regularly review and rebalance to ensure your investments remain aligned with your goals.</p>
+                    </div>
+                    <div class="column-text">
+                        <h3>Fee structure</h3>
+                        <p>We operate on a transparent, fee-based model. Our charges are clearly explained before you become a client, with no hidden costs or commission-driven conflicts of interest.</p>
+                        <p>This alignment of interests ensures we're focused on what matters: helping you achieve your financial objectives. Many clients find that our advice more than pays for itself through improved outcomes and peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accent-section a1">
+                <h2>Let's discuss your financial goals</h2>
+                <p>Schedule a no-obligation consultation to explore how we can help you build and preserve wealth.</p>
+                <a href="#contact" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page-content">
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h1 class="section-title">About Meridian Wealth</h1>
+                <p class="section-subtitle">Founded in 2003, Meridian Wealth has grown from a single-office practice to one of the region's most respected independent financial advisory firms.</p>
+
+                <div class="two-column">
+                    <div class="column-text">
+                        <h3>Our story</h3>
+                        <p>Meridian Wealth was established with a clear vision: to provide financial advice that truly serves clients' best interests. Our founders, having worked within large financial institutions, recognized the conflicts inherent in commission-based models and set out to create something different.</p>
+                        <p>From day one, we committed to independence, transparency, and putting clients first. Today, we manage over £1.8 billion on behalf of more than 950 client families across the UK.</p>
+                    </div>
+                    <div class="column-text">
+                        <h3>Our team</h3>
+                        <p>Our advisors hold advanced qualifications including Chartered Financial Planner status and are committed to ongoing professional development. Many have specialized expertise in areas such as pension transfers, inheritance tax planning, or investment management.</p>
+                        <p>Behind every client relationship is a dedicated support team ensuring smooth administration and exceptional service. We believe expertise matters, which is why we invest heavily in our people.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-banner">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Chartered Advisors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">180+</div>
+                        <div class="stat-label">Years Combined Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Independent Advice</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9/5</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" style="padding-top: 3rem;">
+                <div class="decorative-line"></div>
+                <h2 class="section-title">Our principles</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="value-number">01</div>
+                        <h3>Independence</h3>
+                        <p>We're not owned by banks or insurance companies. This independence allows us to recommend solutions from across the entire market without bias or restriction.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">02</div>
+                        <h3>Integrity</h3>
+                        <p>We conduct our business with the highest ethical standards. Your trust is earned through consistent, honest advice and transparent communication.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">03</div>
+                        <h3>Excellence</h3>
+                        <p>We pursue excellence in everything we do, from the quality of our advice to the service you experience. Continuous improvement is part of our culture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>"Our success is measured not by assets under management, but by the confidence and peace of mind our clients enjoy."</blockquote>
+                <div class="quote-author">Elizabeth Thornton, Managing Partner</div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page-content">
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h1 class="section-title">Let's start a conversation</h1>
+                <p class="section-subtitle">Whether you're looking for a second opinion on your current arrangements or starting your financial planning journey, we're here to help.</p>
+
+                <div class="contact-container">
+                    <div class="contact-details">
+                        <h3>Get in touch</h3>
+                        
+                        <div class="detail-item">
+                            <div class="detail-label">Office</div>
+                            <div class="detail-value">Meridian House<br>45-47 Queen Square<br>Bristol BS1 4LH</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">Telephone</div>
+                            <div class="detail-value">0117 924 8000</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">Email</div>
+                            <div class="detail-value">enquiries@meridianwealth.co.uk</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">Office Hours</div>
+                            <div class="detail-value">Monday - Friday: 9:00 - 17:30<br>Evening appointments available by arrangement</div>
+                        </div>
+
+                        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e5e5;">
+                            <p style="font-size: 0.85rem; color: #6a6a6a; line-height: 1.7; font-family: sans-serif;">Meridian Wealth is authorised and regulated by the Financial Conduct Authority. FCA Number: 123456.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telephone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">How can we help?</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Submit Enquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>"The first step towards financial clarity is simply having the right conversation."</blockquote>
+                <div class="quote-author">Richard Carmichael, Founding Partner</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Meridian Wealth</h4>
+                <p>Independent financial advisors providing bespoke wealth management and financial planning services since 2003.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Investment Management</a></li>
+                    <li><a href="#services">Retirement Planning</a></li>
+                    <li><a href="#services">Tax Planning</a></li>
+                    <li><a href="#services">Estate Planning</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#about">Our Team</a></li>
+                    <li><a href="#about">Our Approach</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Business</a></li>
+                    <li><a href="#">Complaints</a></li>
+                    <li><a href="#">Regulatory Information</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Meridian Wealth Advisors Ltd. All rights reserved. Registered in England & Wales No. 04567890. Authorised and regulated by the Financial Conduct Authority.</p>
+            <p>Website designed by <a href="../index.html"><strong>Aveline Web Design</strong></a></p>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page-content');
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        let currentPage = 'home';
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetId = link.getAttribute('href').substring(1);
+                
+                if (targetId === currentPage) {
+                    mainNav.classList.remove('active');
+                    return;
+                }
+                
+                // Close mobile menu
+                mainNav.classList.remove('active');
+                
+                // Update active nav link
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Get current and target pages
+                const currentPageEl = document.getElementById(currentPage);
+                const targetPageEl = document.getElementById(targetId);
+                
+                // Slide out current page
+                currentPageEl.classList.remove('active');
+                currentPageEl.classList.add('slide-out-left');
+                
+                // Prepare target page
+                targetPageEl.classList.add('slide-in-right');
+                
+                // Small delay to ensure classes are applied
+                setTimeout(() => {
+                    // Slide in target page
+                    targetPageEl.classList.remove('slide-in-right');
+                    targetPageEl.classList.add('active');
+                    
+                    // Clean up after transition
+                    setTimeout(() => {
+                        currentPageEl.classList.remove('slide-out-left');
+                    }, 500);
+                }, 10);
+                
+                currentPage = targetId;
+                
+                // Update URL - use page path instead of hash to avoid auto-scroll
+                history.pushState({ page: targetId }, '', '?' + targetId);
+                
+                // Scroll to top immediately
+                window.scrollTo(0, 0);
+            });
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.page) {
+                const targetLink = document.querySelector(`a[href="#${e.state.page}"]`);
+                if (targetLink) {
+                    targetLink.click();
+                }
+            }
+        });
+
+        // Initialize first state
+        history.replaceState({ page: 'home' }, '', window.location.pathname);
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your enquiry. A member of our team will be in touch within one business day.');
+            e.target.reset();
+        });
+
+        // CTA button navigation
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                if (button.getAttribute('href') === '#contact') {
+                    e.preventDefault();
+                    const contactLink = document.querySelector('a[href="#contact"].nav-link');
+                    if (contactLink) {
+                        contactLink.click();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
