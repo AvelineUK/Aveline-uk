@@ -597,6 +597,132 @@ footer {
     transition: 0.3s;
 }
 
+/* Toast Notification Styles */
+
+.toast-container {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: white;
+    border-left: 4px solid var(--accent-green);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideInRight 0.3s ease-out;
+    opacity: 0;
+    transform: translateX(400px);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.hide {
+    animation: slideOutRight 0.3s ease-in forwards;
+}
+
+.toast-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.toast-message {
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.toast-close {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #999;
+    transition: color 0.2s;
+    flex-shrink: 0;
+    line-height: 1;
+    padding: 0 0.25rem;
+}
+
+.toast-close:hover {
+    color: var(--dark-text);
+}
+
+/* Toast types */
+.toast.success {
+    border-left-color: var(--accent-green);
+}
+
+.toast.info {
+    border-left-color: #6b9d3a;
+}
+
+.toast.warning {
+    border-left-color: #f59e0b;
+}
+
+.toast.error {
+    border-left-color: #ef4444;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .toast-container {
+        right: 10px;
+        left: 10px;
+        top: 80px;
+    }
+    
+    .toast {
+        min-width: auto;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 1280px) {
     #hero-video {
         display: none;

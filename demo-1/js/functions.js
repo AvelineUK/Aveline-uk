@@ -324,7 +324,86 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function handleGoogleReviews(e) {
+// Toast Notification System for Hair Salon
+
+function showToast(message, title = '', type = 'success', duration = 5000) {
+    // Create toast container if it doesn't exist
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    // Icon based on type
+    const icons = {
+        success: '✓',
+        info: 'ℹ',
+        warning: '⚠',
+        error: '✕'
+    };
+    
+    const icon = icons[type] || icons.success;
+    
+    // Build toast HTML
+    toast.innerHTML = `
+        <div class="toast-icon">${icon}</div>
+        <div class="toast-content">
+            ${title ? `<div class="toast-title">${title}</div>` : ''}
+            <div class="toast-message">${message}</div>
+        </div>
+        <div class="toast-close">×</div>
+    `;
+    
+    // Add to container
+    container.appendChild(toast);
+    
+    // Trigger animation
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+    
+    // Close button functionality
+    const closeBtn = toast.querySelector('.toast-close');
+    closeBtn.addEventListener('click', () => {
+        removeToast(toast);
+    });
+    
+    // Auto remove after duration
+    if (duration > 0) {
+        setTimeout(() => {
+            removeToast(toast);
+        }, duration);
+    }
+    
+    return toast;
+}
+
+function removeToast(toast) {
+    toast.classList.add('hide');
+    toast.classList.remove('show');
+    
+    setTimeout(() => {
+        toast.remove();
+        
+        // Remove container if empty
+        const container = document.querySelector('.toast-container');
+        if (container && container.children.length === 0) {
+            container.remove();
+        }
+    }, 300);
+}
+
+// Booking page function
+function handleBooking(e) {
     e.preventDefault();
-    alert('If this were a live site, clicking this would take you to your online booking page');
+    showToast(
+        'Clicking this would take you to your online booking page',
+        'Demo Notice',
+        'info'
+    );
 }
