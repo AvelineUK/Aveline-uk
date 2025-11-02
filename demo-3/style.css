@@ -4,6 +4,43 @@
     box-sizing: border-box;
 }
 
+/* cormorant-garamond-500italic - latin */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 500;
+    src: url('/fonts/cormorant-garamond-v21-latin-500italic.woff2') format('woff2');
+}
+
+/* inter-500 - latin */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+
+/* ==========================================================================
+   SCROLLER BEGIN!!!!
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+   SCROLLER END!!!!
+========================================================================== */
+
 :root {
     --primary-gold: #b8935f;
     --dark-gold: #8b6f47;
@@ -33,6 +70,7 @@ body {
 }
 
 /* Header & Navigation */
+
 header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -42,7 +80,7 @@ header {
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    padding: 2rem 3rem;
+    padding: 2rem 0;
     transition: all 0.3s ease;
 }
 
@@ -56,6 +94,7 @@ header:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 3rem;
 }
 
 .logo-text {
@@ -71,13 +110,12 @@ header:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: fadeInUp 0.8s ease;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 3.5rem;
+    gap: 2rem;
 }
 
 nav a {
@@ -88,7 +126,6 @@ nav a {
     font-weight: 500;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     user-select: none;
 }
@@ -138,6 +175,7 @@ nav a.active::after {
 }
 
 /* Content Wrapper */
+
 #content-wrapper {
     position: relative;
     width: 100%;
@@ -176,6 +214,7 @@ nav a.active::after {
 }
 
 /* Decorative Elements */
+
 .decorative-line {
     width: 80px;
     height: 3px;
@@ -185,6 +224,7 @@ nav a.active::after {
 }
 
 /* Hero Section */
+
 .hero {
     background: linear-gradient(135deg, #f5eadb 0%, #ffffff 50%, #fafafa 100%);
     padding: 10rem 0 8rem;
@@ -255,7 +295,7 @@ nav a.active::after {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -291,6 +331,7 @@ nav a.active::after {
 }
 
 /* Content Section */
+
 .content-section {
     max-width: 1400px;
     margin: 0 auto;
@@ -317,6 +358,7 @@ nav a.active::after {
 }
 
 /* Stats Section */
+
 .stats-banner {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
     color: white;
@@ -409,6 +451,7 @@ nav a.active::after {
 }
 
 /* Value Propositions */
+
 .value-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -480,6 +523,7 @@ nav a.active::after {
 }
 
 /* Quote Section */
+
 .quote-section {
     background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 50%, #f9f7f4 100%);
     padding: 7rem 3rem;
@@ -516,7 +560,6 @@ nav a.active::after {
 }
 
 .quote-author {
-    margin-top: 2.5rem;
     font-size: 0.85rem;
     color: #6a6a6a;
     font-style: normal;
@@ -526,17 +569,18 @@ nav a.active::after {
     text-transform: uppercase;
 }
 
-.quote-author::before {
+.quote-author-line {
     content: '';
     display: inline-block;
     width: 40px;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
-    margin-right: 20px;
     vertical-align: middle;
+    margin: 2rem 0;
 }
 
 /* Accent Section */
+
 .accent-section {
     background: linear-gradient(135deg, var(--dark-gold) 0%, var(--primary-gold) 100%);
     color: white;
@@ -598,6 +642,7 @@ nav a.active::after {
 }
 
 /* Two Column Layout */
+
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -622,6 +667,7 @@ nav a.active::after {
 }
 
 /* Service List */
+
 .service-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -678,6 +724,7 @@ nav a.active::after {
 }
 
 /* Contact Form */
+
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -818,6 +865,7 @@ nav a.active::after {
 }
 
 /* Footer */
+
 footer {
     background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
     color: white;
@@ -931,6 +979,7 @@ footer::before {
 }
 
 /* Toast Notification */
+
 .toast {
     position: fixed;
     bottom: 1.5rem;
@@ -972,6 +1021,7 @@ footer::before {
 }
 
 /* Keyframes */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1004,6 +1054,7 @@ footer::before {
 }
 
 /* Firefox exceptions */
+
 @-moz-document url-prefix() {
     .value-item:hover {
         transform: none;
@@ -1019,6 +1070,7 @@ footer::before {
 }
 
 /* Responsive Design */
+
 @media (max-width: 1024px) {
     .hero h1 {
         font-size: 3rem;
@@ -1105,8 +1157,16 @@ footer::before {
         display: none;
     }
 
+    nav a:hover {
+        transform: none;
+    }
+
     header {
-        padding: 1.75rem 1.5rem;
+        padding: 1.75rem 0;
+    }
+
+    .header-container {
+        padding: 0 1.5rem; 
     }
 
     .hero,
@@ -1126,6 +1186,10 @@ footer::before {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .cta-button {
+        padding: 1rem 1rem;
     }
 
     .section-title {
