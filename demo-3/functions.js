@@ -53,7 +53,7 @@ navLinks.forEach(link => {
         
         currentPage = targetId;
         
-        // Update URL - use page path instead of hash to avoid auto-scroll
+        // Update URL
         history.pushState({ page: targetId }, '', '?' + targetId);
         
         // Scroll to top immediately
@@ -77,7 +77,14 @@ history.replaceState({ page: 'home' }, '', window.location.pathname);
 // Form submission
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Thank you for your enquiry. A member of our team will be in touch within one business day.');
+    
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 4000);
+    
     e.target.reset();
 });
 
@@ -90,6 +97,18 @@ document.querySelectorAll('.cta-button').forEach(button => {
             if (contactLink) {
                 contactLink.click();
             }
+        }
+    });
+});
+
+// Footer navigation links
+document.querySelectorAll('footer a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetNavLink = document.querySelector(`a[href="#${targetId}"].nav-link`);
+        if (targetNavLink) {
+            targetNavLink.click();
         }
     });
 });
