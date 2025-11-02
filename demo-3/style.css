@@ -362,11 +362,12 @@ nav a.active::after {
 .stats-banner {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
     color: white;
-    padding: 4rem 3rem;
+    padding: 0rem 3rem;
     margin: 5rem 0;
     position: relative;
     overflow: hidden;
     margin-top: 0rem;
+    height: 100%;
 }
 
 .stats-banner::before {
@@ -400,11 +401,12 @@ nav a.active::after {
     grid-template-columns: repeat(4, 1fr);
     position: relative;
     z-index: 1;
+    align-items: stretch;
 }
 
 .stat-item {
     text-align: center;
-    padding: 2.5rem 0;
+    padding: 5rem 0;
     border-right: 1px solid rgba(255,255,255,0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -413,7 +415,10 @@ nav a.active::after {
 .stat-item::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(360deg, rgba(184, 147, 95, 0.25), transparent);
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -1092,15 +1097,19 @@ footer::before {
         gap: 3rem;
     }
 
+    .stats-banner {
+        padding: 0rem;
+    }
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 0rem;
     }
 
     .stat-item {
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding-bottom: 2rem;
+        padding: 2rem 0rem;
     }
 
     .stat-item:last-child {
@@ -1194,10 +1203,6 @@ footer::before {
 
     .section-title {
         font-size: 2rem;
-    }
-
-    .stats-banner {
-        padding: 0rem 1.5rem;
     }
 
     .stats-grid {
