@@ -69,7 +69,6 @@
 }
 
 .scroller-item:hover {
-    transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
@@ -105,8 +104,9 @@
 }
 
 .scroller-overlay p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-family: "Raleway", sans-serif;
+    color: black;
 }
 
 .scroller {
@@ -180,9 +180,5 @@
     .scroller-item:hover img {
         transform: scale(1);
         filter: brightness(1);
-    }
-
-    .scroller-item:hover {
-        transform: scale(1);
     }
 }
