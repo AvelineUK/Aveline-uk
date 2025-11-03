@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline of Rome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: #1a1a1a;
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .bg-layer.active {
+            opacity: 0.4;
+        }
+
+        .timeline-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .century-marker {
+            display: none;
+        }
+
+        .event-hover-popup {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            max-width: 450px;
+            background: rgba(26, 26, 26, 0.95);
+            border: 2px solid #cd853f;
+            border-radius: 10px;
+            padding: 25px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 20;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+        }
+
+        .event-hover-popup.visible {
+            opacity: 1;
+        }
+
+        .popup-date {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .popup-date.kingdom {
+            color: #ff7f7f;
+        }
+
+        .popup-date.republic {
+            color: #6495ed;
+        }
+
+        .popup-date.empire {
+            color: #b884b8;
+        }
+
+        .popup-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #f0e68c;
+            font-weight: 600;
+        }
+
+        .popup-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #d3d3d3;
+        }
+
+        .progress-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 15;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .progress-indicator.visible {
+            opacity: 1;
+        }
+
+        .progress-bar-container {
+            width: 6px;
+            height: 300px;
+            background: rgba(139, 69, 19, 0.3);
+            border-radius: 3px;
+            margin-left: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            width: 100%;
+            background: linear-gradient(to bottom, #cd853f, #8b4513);
+            box-shadow: 0 0 10px rgba(205, 133, 63, 0.5);
+            transition: height 0.3s ease;
+        }
+
+        .progress-year {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: #cd853f;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-weight: 600;
+        }
+
+        .event {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .event-content-minimal {
+            width: auto;
+            max-width: 80%;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            cursor: pointer;
+            pointer-events: auto;
+            display: inline-block;
+            position: relative;
+        }
+
+        .event-content-minimal::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            z-index: -1;
+        }
+
+        .event.visible .event-content-minimal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .event.fading .event-content-minimal {
+            opacity: 0.3;
+        }
+
+        .event.left .event-content-minimal {
+            text-align: right;
+            margin-right: calc(50% + 40px);
+            margin-left: auto;
+            padding-right: 20px;
+            padding-left: 10px;
+        }
+
+        .event.right .event-content-minimal {
+            text-align: left;
+            margin-left: calc(50% + 40px);
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+
+        .event-content-minimal:hover {
+            opacity: 1 !important;
+        }
+
+        .event-marker {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            border: 3px solid #1a1a1a;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .event-marker.kingdom {
+            background: #cd5c5c;
+            box-shadow: 0 0 20px rgba(205, 92, 92, 0.6);
+        }
+
+        .event-marker.republic {
+            background: #4169e1;
+            box-shadow: 0 0 20px rgba(65, 105, 225, 0.6);
+        }
+
+        .event-marker.empire {
+            background: #8b5a8b;
+            box-shadow: 0 0 20px rgba(139, 90, 139, 0.6);
+        }
+
+        .event.visible .event-marker {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .event.visible .event-marker.kingdom {
+            box-shadow: 0 0 30px rgba(205, 92, 92, 0.9);
+        }
+
+        .event.visible .event-marker.republic {
+            box-shadow: 0 0 30px rgba(65, 105, 225, 0.9);
+        }
+
+        .event.visible .event-marker.empire {
+            box-shadow: 0 0 30px rgba(139, 90, 139, 0.9);
+        }
+
+        .event-line {
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: 30px;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .event-line.kingdom {
+            background: #cd5c5c;
+            box-shadow: 0 0 5px rgba(205, 92, 92, 0.4);
+        }
+
+        .event-line.republic {
+            background: #4169e1;
+            box-shadow: 0 0 5px rgba(65, 105, 225, 0.4);
+        }
+
+        .event-line.empire {
+            background: #8b5a8b;
+            box-shadow: 0 0 5px rgba(139, 90, 139, 0.4);
+        }
+
+        .event.left .event-line {
+            right: 50%;
+            margin-right: 8px;
+        }
+
+        .event.right .event-line {
+            left: 50%;
+            margin-left: 8px;
+        }
+
+        .event-date {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .event-date.kingdom {
+            color: #ff7f7f;
+        }
+
+        .event-date.republic {
+            color: #6495ed;
+        }
+
+        .event-date.empire {
+            color: #b884b8;
+        }
+
+        .event-title {
+            font-size: clamp(1rem, 2vw, 2rem);
+            margin-bottom: 10px;
+            color: #f0e68c;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .event-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #d3d3d3;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        .emperor-portrait {
+            position: fixed;
+            top: 20px;
+            width: 320px;
+            height: 320px;
+            border-radius: 10px;
+            border: 4px solid #cd853f;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(205, 133, 63, 0.3);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            z-index: 10;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .emperor-portrait.left {
+            left: 20px;
+        }
+
+        .emperor-portrait.right {
+            right: 20px;
+        }
+
+        .emperor-portrait.active {
+            opacity: 1;
+        }
+
+        .emperor-name {
+            position: absolute;
+            bottom: -35px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #cd853f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .title-section {
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 102vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-section h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 5vw, 12rem);
+            font-weight: 700;
+            color: #cd853f;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .title-section p {
+            font-size: 22px;
+            color: #d3d3d3;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .event-content-minimal {
+                width: 100%;
+                max-width: none;
+            }
+
+            .emperor-portrait {
+                width: 150px;
+                height: 150px;
+            }
+
+            .progress-indicator {
+                right: 15px;
+            }
+
+            .progress-bar-container {
+                height: 150px;
+            }
+
+            .event-hover-popup {
+                max-width: 90%;
+                left: 5%;
+                right: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container" id="bgContainer"></div>
+    
+    <div class="event-hover-popup" id="eventHoverPopup">
+        <div class="popup-date" id="popupDate"></div>
+        <div class="popup-title" id="popupTitle"></div>
+        <div class="popup-description" id="popupDescription"></div>
+    </div>
+
+    <div class="progress-indicator" id="progressIndicator">
+        <div class="progress-year" id="progressYear">753 BCE</div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+    </div>
+
+    <div id="emperorPortraitLeft" class="emperor-portrait left"></div>
+    <div id="emperorPortraitRight" class="emperor-portrait right"></div>
+
+    <div class="timeline-container">
+        <div class="timeline-line" id="timelineLine"></div>
+        <div id="centuryMarkers"></div>
+        
+        <div class="title-section">
+            <h1>The story of Ancient Rome</h1>
+            <p>From founding to fall - scroll to explore</p>
+        </div>
+
+        <div id="timeline"></div>
+        <div style="max-width: 800px; margin: 0 auto; padding: 60px 40px; color: #d3d3d3; line-height: 1.8;">
+            <h2 style="font-family: 'Cinzel', serif; font-size: 36px; color: #cd853f; margin-bottom: 30px; text-align: center;">The Legacy of Rome</h2>
+            <p style="margin-bottom: 20px; font-size: 18px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. The fall of the Western Roman Empire in 476 CE marked the end of ancient history and the beginning of the Middle Ages. Yet Rome's influence continued for centuries through the Byzantine Empire in the East.
+            </p>
+            <p style="margin-bottom: 20px; font-size: 18px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Roman law, architecture, language, and culture formed the foundation of Western civilization. From aqueducts to roads, from Latin to Romance languages, Rome's legacy endures to this day.
+            </p>
+            
+            <h3 style="font-family: 'Cinzel', serif; font-size: 28px; color: #cd853f; margin: 40px 0 20px; text-align: center;">Further Reading</h3>
+            <p style="margin-bottom: 20px; font-size: 18px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placeholder text for additional resources, bibliography, or related content about Roman history.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Pixels per month for consistent scaling
+        const PIXELS_PER_MONTH = 3;
+
+        const events = [
+            {
+                date: "753 BCE",
+                title: "Founding of Rome",
+                description: "According to legend, Romulus founded Rome on the Palatine Hill. The city began as a small settlement of Latin and Sabine peoples along the Tiber River.",
+                bg: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1600",
+                yearsBCE: 753,
+                era: "kingdom"
+            },
+            {
+                date: "509 BCE",
+                title: "Roman Republic Established",
+                description: "The Roman monarchy was overthrown and the Republic was established. Two consuls were elected annually, marking the beginning of republican government.",
+                bg: "https://images.unsplash.com/photo-1548585744-6a5d87f63718?w=1600",
+                yearsBCE: 509,
+                era: "republic"
+            },
+            {
+                date: "264 BCE",
+                title: "First Punic War Begins",
+                description: "Rome and Carthage began their first conflict over Sicily. This war would last 23 years and establish Rome as a major Mediterranean power.",
+                bg: "https://images.unsplash.com/photo-1576020799627-aeac74d58064?w=1600",
+                yearsBCE: 264,
+                era: "republic"
+            },
+            {
+                date: "44 BCE",
+                title: "Assassination of Julius Caesar",
+                description: "On the Ides of March, Julius Caesar was assassinated by senators. This event plunged Rome into civil war and ultimately ended the Republic.",
+                bg: "https://images.unsplash.com/photo-1555992336-fb0d29498b13?w=1600",
+                yearsBCE: 44,
+                era: "republic"
+            },
+            {
+                date: "27 BCE",
+                title: "Augustus Becomes First Emperor",
+                description: "Octavian received the title Augustus, becoming Rome's first emperor and beginning the Pax Romana that would last two centuries.",
+                bg: "https://images.unsplash.com/photo-1548585744-6a5d87f63718?w=1600",
+                yearsBCE: 27,
+                era: "empire",
+                emperor: {
+                    name: "Augustus (27 BCE - 14 CE)",
+                    image: "https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=400",
+                    side: "left",
+                    reignStart: 27,
+                    reignEnd: -14
+                }
+            },
+            {
+                date: "14 CE",
+                title: "Death of Augustus",
+                description: "Augustus died after ruling for 41 years. His stepson Tiberius succeeded him, establishing the Julio-Claudian dynasty.",
+                bg: "https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1600",
+                yearsBCE: -14,
+                era: "empire",
+                emperor: {
+                    name: "Tiberius (14-37 CE)",
+                    image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400",
+                    side: "right",
+                    reignStart: -14,
+                    reignEnd: -37
+                }
+            },
+            {
+                date: "64 CE",
+                title: "Great Fire of Rome",
+                description: "A devastating fire burned for six days, destroying much of Rome. Nero blamed Christians and began their persecution.",
+                bg: "https://images.unsplash.com/photo-1525788339066-e0f29c13889f?w=1600",
+                yearsBCE: -64,
+                era: "empire",
+                emperor: {
+                    name: "Nero (54-68 CE)",
+                    image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400",
+                    side: "left",
+                    reignStart: -54,
+                    reignEnd: -68
+                }
+            },
+            {
+                date: "80 CE",
+                title: "Colosseum Completed",
+                description: "The Flavian Amphitheatre was completed under Titus. It could hold 50,000 spectators for gladiatorial contests and public spectacles.",
+                bg: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1600",
+                yearsBCE: -80,
+                era: "empire"
+            },
+            {
+                date: "98 CE",
+                title: "Trajan Becomes Emperor",
+                description: "Trajan began his reign, during which the empire would reach its greatest territorial extent. He was the first emperor born outside Italy.",
+                bg: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1600",
+                yearsBCE: -98,
+                era: "empire",
+                emperor: {
+                    name: "Trajan (98-117 CE)",
+                    image: "https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?w=400",
+                    side: "right",
+                    reignStart: -98,
+                    reignEnd: -117
+                }
+            },
+            {
+                date: "193 CE",
+                title: "Year of the Five Emperors",
+                description: "After Commodus was assassinated, five men claimed the imperial throne in a single year, including Didius Julianus who bought it at auction.",
+                bg: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1600",
+                yearsBCE: -193,
+                era: "empire",
+                emperor: {
+                    name: "Didius Julianus (193 CE)",
+                    image: "https://images.unsplash.com/photo-1583237804938-d82d94a02d56?w=400",
+                    side: "left",
+                    reignStart: -193,
+                    reignEnd: -193.2
+                }
+            },
+            {
+                date: "312 CE",
+                title: "Battle of Milvian Bridge",
+                description: "Constantine defeated Maxentius and attributed his victory to the Christian God, beginning the Christianization of the empire.",
+                bg: "https://images.unsplash.com/photo-1569425872934-5b62133cc07a?w=1600",
+                yearsBCE: -312,
+                era: "empire",
+                emperor: {
+                    name: "Constantine (306-337 CE)",
+                    image: "https://images.unsplash.com/photo-1583237804938-d82d94a02d56?w=400",
+                    side: "right",
+                    reignStart: -306,
+                    reignEnd: -337
+                }
+            },
+            {
+                date: "395 CE",
+                title: "Division of the Empire",
+                description: "Theodosius I divided the empire between his sons. The Western and Eastern Roman Empires would have very different fates.",
+                bg: "https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1600",
+                yearsBCE: -395,
+                era: "empire"
+            },
+            {
+                date: "476 CE",
+                title: "Fall of Western Rome",
+                description: "Romulus Augustulus was deposed by Odoacer. This date traditionally marks the fall of the Western Roman Empire.",
+                bg: "https://images.unsplash.com/photo-1531429318659-b177e157745f?w=1600",
+                yearsBCE: -476,
+                era: "empire"
+            }
+        ];
+
+        const timeline = document.getElementById('timeline');
+        const bgContainer = document.getElementById('bgContainer');
+        const timelineLine = document.getElementById('timelineLine');
+        const centuryMarkersContainer = document.getElementById('centuryMarkers');
+        let currentEmperorLeft = null;
+        let currentEmperorRight = null;
+        let eventPositions = [];
+        let titleHeight = 0;
+        let centuryMarkerPositions = [];
+
+        // Roman numeral converter
+        function toRoman(num) {
+            const romanNumerals = [
+                [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
+                [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
+                [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']
+            ];
+            let result = '';
+            for (let [value, numeral] of romanNumerals) {
+                while (num >= value) {
+                    result += numeral;
+                    num -= value;
+                }
+            }
+            return result;
+        }
+
+        // Create background layers
+        events.forEach((event, index) => {
+            if (event.bg) {
+                const bgLayer = document.createElement('div');
+                bgLayer.className = 'bg-layer';
+                bgLayer.style.backgroundImage = `url(${event.bg})`;
+                bgLayer.dataset.index = index;
+                bgContainer.appendChild(bgLayer);
+            }
+        });
+
+        // Calculate heights and create timeline events
+        let previousYear = events[0].yearsBCE;
+        let cumulativeTop = 0;
+        
+        events.forEach((event, index) => {
+            const yearsDiff = previousYear - event.yearsBCE;
+            const months = yearsDiff * 12;
+            let height = index === 0 ? 50 : Math.max(months * PIXELS_PER_MONTH, 50);
+
+            if (index === events.length - 1) {
+                height = 800;
+            }
+
+            const eventDiv = document.createElement('div');
+            eventDiv.className = `event ${index % 2 === 0 ? 'left' : 'right'}`;
+            eventDiv.style.height = `${height}px`;
+            eventDiv.dataset.index = index;
+            
+            eventDiv.innerHTML = `
+                <div class="event-content-minimal" data-event-index="${index}">
+                    <div class="event-date ${event.era}">${event.date}</div>
+                    <div class="event-title">${event.title}</div>
+                </div>
+                <div class="event-marker ${event.era}"></div>
+                <div class="event-line ${event.era}"></div>
+            `;
+            
+            timeline.appendChild(eventDiv);
+            cumulativeTop += height;
+            previousYear = event.yearsBCE;
+        });
+
+        // Create century markers
+        const startYear = 700;
+        const endYear = -500;
+        const centuryMarkers = [];
+        
+        for (let year = startYear; year >= endYear; year -= 100) {
+            if (year === 0) continue;
+            
+            const marker = {
+                year: year,
+                isBCE: year > 0,
+                century: Math.abs(Math.floor(year / 100))
+            };
+            centuryMarkers.push(marker);
+        }
+
+        centuryMarkers.forEach(marker => {
+            const markerDiv = document.createElement('div');
+            markerDiv.className = 'century-marker';
+            
+            const displayYear = marker.isBCE ? `${marker.year} BCE` : `${Math.abs(marker.year)} CE`;
+            const romanCentury = toRoman(marker.century);
+            const centuryLabel = marker.isBCE ? 
+                `Century ${romanCentury} BCE` : 
+                `Century ${romanCentury} CE`;
+            
+            markerDiv.innerHTML = `
+                <div class="century-marker-line"></div>
+                <div class="century-roman">${centuryLabel}</div>
+                <div class="century-arabic">${displayYear}</div>
+            `;
+            
+            centuryMarkersContainer.appendChild(markerDiv);
+        });
+
+        function updateTimeline() {
+            const scrollPos = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const scrollCenter = scrollPos + windowHeight / 2;
+
+            if (titleHeight === 0) {
+                const titleSection = document.querySelector('.title-section');
+                titleHeight = titleSection.offsetHeight;
+            }
+
+            if (eventPositions.length === 0) {
+                let cumulativeTop = titleHeight;
+                const eventElements = document.querySelectorAll('.event');
+                
+                eventElements.forEach((eventEl, index) => {
+                    const height = eventEl.offsetHeight;
+                    eventPositions.push({
+                        top: cumulativeTop,
+                        bottom: cumulativeTop + height,
+                        center: cumulativeTop + height / 2,
+                        index: index
+                    });
+                    cumulativeTop += height;
+                });
+            }
+
+            if (eventPositions.length > 0 && titleHeight > 0) {
+                const firstEventCenter = eventPositions[0].center;
+                const lastEventCenter = eventPositions[eventPositions.length - 1].center;
+                const totalHeight = lastEventCenter - firstEventCenter;
+                
+                timelineLine.style.top = `${firstEventCenter}px`;
+                timelineLine.style.height = `${totalHeight}px`;
+                
+                let kingdomEndPercent = 0;
+                let republicEndPercent = 100;
+                
+                events.forEach((event, idx) => {
+                    if (event.yearsBCE === 509 && eventPositions[idx]) {
+                        kingdomEndPercent = ((eventPositions[idx].center - firstEventCenter) / totalHeight * 100);
+                    }
+                    if (event.yearsBCE === 27 && eventPositions[idx]) {
+                        republicEndPercent = ((eventPositions[idx].center - firstEventCenter) / totalHeight * 100);
+                    }
+                });
+                
+                timelineLine.style.background = `linear-gradient(to bottom, 
+                    #cd5c5c 0%, 
+                    #cd5c5c ${kingdomEndPercent}%, 
+                    #4169e1 ${kingdomEndPercent}%, 
+                    #4169e1 ${republicEndPercent}%, 
+                    #8b5a8b ${republicEndPercent}%, 
+                    #8b5a8b 100%)`;
+            }
+
+            let activeEventIndex = -1;
+            eventPositions.forEach(pos => {
+                if (scrollCenter >= pos.top && scrollCenter < pos.bottom) {
+                    activeEventIndex = pos.index;
+                }
+            });
+
+            document.querySelectorAll('.bg-layer').forEach(layer => {
+                layer.classList.remove('active');
+            });
+            if (activeEventIndex >= 0) {
+                const activeLayer = bgContainer.querySelector(`[data-index="${activeEventIndex}"]`);
+                if (activeLayer) activeLayer.classList.add('active');
+            }
+
+            const eventElements = document.querySelectorAll('.event');
+            eventElements.forEach((eventEl, index) => {
+                const rect = eventEl.getBoundingClientRect();
+                const eventCenter = rect.top + rect.height / 2;
+                const distanceFromCenter = Math.abs(eventCenter - windowHeight / 2);
+                
+                if (distanceFromCenter < windowHeight * 0.5) {
+                    eventEl.classList.add('visible');
+                    eventEl.classList.remove('fading');
+                } else if (distanceFromCenter < windowHeight * 0.8) {
+                    eventEl.classList.add('visible');
+                    eventEl.classList.add('fading');
+                } else {
+                    eventEl.classList.remove('visible');
+                    eventEl.classList.remove('fading');
+                }
+            });
+
+            const progressIndicator = document.getElementById('progressIndicator');
+            if (eventPositions.length > 0) {
+                const firstEventCenter = eventPositions[0].center;
+                const lastEventCenter = eventPositions[eventPositions.length - 1].center;
+                
+                if (scrollCenter >= firstEventCenter - windowHeight * 0.3 && 
+                    scrollCenter <= lastEventCenter + windowHeight * 0.2) {
+                    progressIndicator.classList.add('visible');
+                } else {
+                    progressIndicator.classList.remove('visible');
+                }
+            }
+
+            let currentYear = events[0].yearsBCE;
+            if (eventPositions.length > 0) {
+                const totalHeight = eventPositions[eventPositions.length - 1].center - titleHeight;
+                const scrollCenterPos = Math.min(scrollCenter - titleHeight, totalHeight);
+                const currentProgress = Math.max(0, Math.min(1, scrollCenterPos / totalHeight));
+                
+                document.getElementById('progressBarFill').style.height = `${currentProgress * 100}%`;
+                
+                let beforeEvent = null;
+                let afterEvent = null;
+                
+                for (let i = 0; i < eventPositions.length - 1; i++) {
+                    if (scrollCenter >= eventPositions[i].center && scrollCenter < eventPositions[i + 1].center) {
+                        beforeEvent = { pos: eventPositions[i], event: events[i] };
+                        afterEvent = { pos: eventPositions[i + 1], event: events[i + 1] };
+                        break;
+                    }
+                }
+                
+                if (!beforeEvent && scrollCenter < eventPositions[0].center) {
+                    currentYear = events[0].yearsBCE;
+                } else if (!beforeEvent && scrollCenter >= eventPositions[eventPositions.length - 1].center) {
+                    currentYear = events[events.length - 1].yearsBCE;
+                } else if (beforeEvent && afterEvent) {
+                    const totalDistance = afterEvent.pos.center - beforeEvent.pos.center;
+                    const currentDistance = scrollCenter - beforeEvent.pos.center;
+                    const progress = currentDistance / totalDistance;
+                    
+                    const yearDiff = beforeEvent.event.yearsBCE - afterEvent.event.yearsBCE;
+                    currentYear = beforeEvent.event.yearsBCE - (yearDiff * progress);
+                }
+                
+                const displayYear = currentYear > 0 ? 
+                    `${Math.round(currentYear)} BCE` : 
+                    `${Math.round(Math.abs(currentYear))} CE`;
+                
+                document.getElementById('progressYear').textContent = displayYear;
+            }
+
+            const portraitLeft = document.getElementById('emperorPortraitLeft');
+            const portraitRight = document.getElementById('emperorPortraitRight');
+            
+            if (eventPositions.length > 0) {
+                let activeEmperor = null;
+                events.forEach(event => {
+                    if (event.emperor) {
+                        const reignStart = event.emperor.reignStart;
+                        const reignEnd = event.emperor.reignEnd;
+                        
+                        if (currentYear <= reignStart && currentYear >= reignEnd) {
+                            activeEmperor = event.emperor;
+                        }
+                    }
+                });
+                
+                if (activeEmperor) {
+                    if (activeEmperor.side === 'left') {
+                        if (currentEmperorLeft !== activeEmperor.name) {
+                            portraitLeft.style.backgroundImage = `url(${activeEmperor.image})`;
+                            portraitLeft.innerHTML = `<div class="emperor-name">${activeEmperor.name}</div>`;
+                            portraitLeft.classList.add('active');
+                            currentEmperorLeft = activeEmperor.name;
+                        }
+                        portraitRight.classList.remove('active');
+                        currentEmperorRight = null;
+                    } else {
+                        if (currentEmperorRight !== activeEmperor.name) {
+                            portraitRight.style.backgroundImage = `url(${activeEmperor.image})`;
+                            portraitRight.innerHTML = `<div class="emperor-name">${activeEmperor.name}</div>`;
+                            portraitRight.classList.add('active');
+                            currentEmperorRight = activeEmperor.name;
+                        }
+                        portraitLeft.classList.remove('active');
+                        currentEmperorLeft = null;
+                    }
+                } else {
+                    portraitLeft.classList.remove('active');
+                    portraitRight.classList.remove('active');
+                    currentEmperorLeft = null;
+                    currentEmperorRight = null;
+                }
+            }
+        }
+
+        const eventContents = document.querySelectorAll('.event-content-minimal');
+        const hoverPopup = document.getElementById('eventHoverPopup');
+        const popupDate = document.getElementById('popupDate');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupDescription = document.getElementById('popupDescription');
+
+        eventContents.forEach(content => {
+            content.addEventListener('mouseenter', function() {
+                const eventIndex = parseInt(this.dataset.eventIndex);
+                const event = events[eventIndex];
+                
+                popupDate.textContent = event.date;
+                popupDate.className = `popup-date ${event.era}`;
+                popupTitle.textContent = event.title;
+                popupDescription.textContent = event.description;
+                
+                hoverPopup.classList.add('visible');
+            });
+
+            content.addEventListener('mouseleave', function() {
+                hoverPopup.classList.remove('visible');
+            });
+        });
+
+        window.addEventListener('scroll', updateTimeline);
+        window.addEventListener('resize', () => {
+            eventPositions = [];
+            centuryMarkerPositions = [];
+            titleHeight = 0;
+            updateTimeline();
+        });
+        window.addEventListener('load', updateTimeline);
+        updateTimeline();
+    </script>
+</body>
+</html>
