@@ -72,7 +72,7 @@ body {
 .parallax-bg {
     position: fixed;
     top: 10%;
-    right: 10%;
+    right: 0%;
     width: 45%;
     height: 120%;
     pointer-events: none;
@@ -243,7 +243,7 @@ nav a.active::after {
 /* Hero Section */
 
 .hero {
-    background: linear-gradient(135deg, #f5eadb 0%, #ffffff 50%, #fafafa 100%);
+    background: linear-gradient(135deg, #f5eadb 00%, #ffffff 50%, #f5eadb 100%);
     padding: 10rem 0 8rem;
     text-align: left;
     position: relative;
@@ -320,6 +320,7 @@ nav a.active::after {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     animation: fadeInUp 1s ease 0.7s both;
+    text-align: center;
 }
 
 .cta-button::before {
@@ -607,7 +608,7 @@ nav a.active::after {
     background: linear-gradient(135deg, var(--dark-gold) 0%, var(--primary-gold) 100%);
     color: white;
     padding: 6rem 3rem;
-    margin: 3rem 0;
+    margin: 4rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -659,17 +660,13 @@ nav a.active::after {
     border-color: var(--charcoal);
 }
 
-.a1 {
-    margin-bottom: 12rem;
-}
-
 /* Two Column Layout */
 
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
-    margin: 4rem 0;
+    margin: 4rem 0rem 0rem 0rem;
 }
 
 .column-text h3 {
@@ -1171,12 +1168,13 @@ footer::before {
     nav ul {
         flex-direction: column;
         gap: 0;
-        padding: 1rem 0;
+        padding: 1rem 0 0rem 0rem;
     }
 
     nav a {
         display: block;
         padding: 1rem 3rem;
+        transition: background-color 0.3s ease;
     }
 
     nav a::after {
@@ -1185,6 +1183,7 @@ footer::before {
 
     nav a:hover {
         transform: none;
+        background-color: rgba(184, 147, 95, 0.08);
     }
 
     header {
@@ -1237,6 +1236,10 @@ footer::before {
         padding: 2rem;
     }
 
+    .submit-button {
+        padding: 1.3rem 1.5rem;
+    }
+
     .quote-section {
         padding: 0 3rem;
     }
@@ -1247,9 +1250,5 @@ footer::before {
 
     .accent-section h2 {
         font-size: 2rem;
-    }
-
-    .a1 {
-        margin-bottom: 8rem;
     }
 }

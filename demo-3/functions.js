@@ -5,8 +5,18 @@ const mainNav = document.getElementById('mainNav');
 let currentPage = 'home';
 
 // Mobile menu toggle
-menuToggle.addEventListener('click', () => {
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     mainNav.classList.toggle('active');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (mainNav.classList.contains('active') && 
+        !mainNav.contains(e.target) && 
+        !menuToggle.contains(e.target)) {
+        mainNav.classList.remove('active');
+    }
 });
 
 // Navigation
