@@ -490,6 +490,7 @@ nav a.active::after {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .value-item::before {
@@ -554,6 +555,7 @@ nav a.active::after {
     text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
 }
 
 .quote-section::before {
@@ -612,6 +614,7 @@ nav a.active::after {
     text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
 .accent-section::before {
@@ -699,6 +702,10 @@ nav a.active::after {
     padding-left: 2.5rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    background: white;
+    padding: 2rem 2.5rem;
+    margin-left: -2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 
 .service-item::before {
@@ -719,6 +726,7 @@ nav a.active::after {
 .service-item:hover {
     transform: translateX(10px);
     border-left-color: var(--dark-gold);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
 }
 
 .service-item h3 {
@@ -1113,6 +1121,7 @@ footer::before {
 
     .stats-banner {
         padding: 0rem;
+        box-shadow: 0 6px 25px rgba(0,0,0,0.15);
     }
 
     .stats-grid {
