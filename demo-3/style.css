@@ -626,7 +626,7 @@ nav a.active::after {
     background: linear-gradient(135deg, var(--dark-gold) 0%, var(--primary-gold) 100%);
     color: white;
     padding: 6rem 3rem;
-    margin: 4rem 0;
+    margin: 8rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1153,6 +1153,10 @@ footer::before {
 
     .stat-item:last-child {
         border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .accent-section {
+        margin: 4rem 0;
     }
 
     .toast {
