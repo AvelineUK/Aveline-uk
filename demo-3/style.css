@@ -72,12 +72,12 @@ body {
 .parallax-bg {
     position: fixed;
     top: 10%;
-    right: 0%;
-    width: 45%;
-    height: 120%;
+    right: -45%;
+    width: 200%;
+    height: 200%;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.1;
+    opacity: 0.2;
     background-image: url("data:image/svg+xml,%3Csvg width='800' height='1200' viewBox='0 0 800 1200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(25 400 600)'%3E%3Cg transform='translate(350, 100)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(270, 220)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(430, 220)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(190, 340)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(350, 340)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(510, 340)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(110, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(270, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(430, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(590, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(30, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(190, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(350, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(510, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(670, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: contain;
@@ -127,6 +127,10 @@ header:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.logo-text a {
+    text-decoration: none;
 }
 
 nav ul {
@@ -555,7 +559,7 @@ nav a.active::after {
     text-align: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
 .quote-section::before {
