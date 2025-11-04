@@ -325,7 +325,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Toast Notification System for Hair Salon
-
 function showToast(message, title = '', type = 'success', duration = 5000) {
     // Create toast container if it doesn't exist
     let container = document.querySelector('.toast-container');

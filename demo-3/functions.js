@@ -4,6 +4,9 @@ const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
 let currentPage = 'home';
 
+// Define page order
+const pageOrder = ['home', 'services', 'about', 'contact'];
+
 // Mobile menu toggle
 menuToggle.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -42,22 +45,27 @@ navLinks.forEach(link => {
         const currentPageEl = document.getElementById(currentPage);
         const targetPageEl = document.getElementById(targetId);
         
+        // Determine direction based on page order
+        const currentIndex = pageOrder.indexOf(currentPage);
+        const targetIndex = pageOrder.indexOf(targetId);
+        const goingRight = targetIndex > currentIndex;
+        
         // Slide out current page
         currentPageEl.classList.remove('active');
-        currentPageEl.classList.add('slide-out-left');
+        currentPageEl.classList.add(goingRight ? 'slide-out-left' : 'slide-out-right');
         
         // Prepare target page
-        targetPageEl.classList.add('slide-in-right');
+        targetPageEl.classList.add(goingRight ? 'slide-in-right' : 'slide-in-left');
         
         // Small delay to ensure classes are applied
         setTimeout(() => {
             // Slide in target page
-            targetPageEl.classList.remove('slide-in-right');
+            targetPageEl.classList.remove(goingRight ? 'slide-in-right' : 'slide-in-left');
             targetPageEl.classList.add('active');
             
             // Clean up after transition
             setTimeout(() => {
-                currentPageEl.classList.remove('slide-out-left');
+                currentPageEl.classList.remove('slide-out-left', 'slide-out-right');
             }, 500);
         }, 10);
         

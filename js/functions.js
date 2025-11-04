@@ -1,4 +1,4 @@
-/* Hiding & Showing Sidebar */
+// Hiding & Showing Sidebar
 
 const sidebar = document.querySelector('.sidebar');
 const navbar = document.querySelector('.logo-navigation');
@@ -6,15 +6,14 @@ const mainContent = document.querySelector('body');
 const showSidebar = () => sidebar.classList.add('active');
 const hideSidebar = () => sidebar.classList.remove('active');
 
-/* Navbar transition from "wide" to "narrow" */
+// Navbar transition from "wide" to "narrow"
 
 const setBodyPadding = () => {
   const navbarHeight = navbar.offsetHeight;
   mainContent.style.paddingTop = `${navbarHeight}px`;
 };
 
-/* Hide sidebar on desktop resize */
-
+// Hide sidebar on desktop resize
 const handleResize = () => {
   if (window.innerWidth > 1024) {
     hideSidebar();
@@ -24,7 +23,7 @@ const handleResize = () => {
 };
 window.addEventListener('resize', handleResize);
 
-/* Update navbar scroll state */
+// Update navbar scroll state
 
 const updateNavbarScrollState = () => {
   if (window.innerWidth > 1024) {
@@ -35,7 +34,7 @@ const updateNavbarScrollState = () => {
 
 window.addEventListener('scroll', updateNavbarScrollState);
 
-/* Ensure correct navbar state on Home click */
+// Ensure correct navbar state on Home click
 
 const homeLink = document.querySelector('.logo-navigation li:first-child a');
 if (homeLink) {
@@ -44,7 +43,7 @@ if (homeLink) {
   });
 }
 
-/* Hide sidebar when clicking outside */
+// Hide sidebar when clicking outside
 
 document.addEventListener('click', (event) => {
   if (sidebar.classList.contains('active') && !sidebar.contains(event.target) && !event.target.closest('.menu-button')) {
@@ -52,7 +51,7 @@ document.addEventListener('click', (event) => {
   }
 });
 
-/* Menu link behavior */
+// Menu link behavior
 
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a[href="#"]');
@@ -65,7 +64,7 @@ document.addEventListener('click', (e) => {
   }
 }, true);
 
-/* IMMEDIATE NAVBAR STATE CHECK - PREVENTS FLASH! */
+// IMMEDIATE NAVBAR STATE CHECK - PREVENTS FLASH!
 
 (function() {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -75,7 +74,7 @@ document.addEventListener('click', (e) => {
   }
 })();
 
-/* Initial fade-in on page load */
+// Initial fade-in on page load
 
 window.addEventListener('DOMContentLoaded', () => {
   document.documentElement.classList.add('no-transition');
@@ -94,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-/* Scroll-triggered Animation */
+// Scroll-triggered Animation
 
         const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -108,23 +107,23 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-/* Dropdown functionality */
+// Dropdown functionality
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            
-            dropdowns.forEach(dropdown => {
-                const header = dropdown.querySelector('.dropdown-header');
-                
-                header.addEventListener('click', function() {
-                    const currentDropdown = this.parentElement;
-                    const isCurrentlyActive = currentDropdown.classList.contains('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const header = dropdown.querySelector('.dropdown-header');
+        
+        header.addEventListener('click', function() {
+            const currentDropdown = this.parentElement;
+            const isCurrentlyActive = currentDropdown.classList.contains('active');
 
-                    dropdowns.forEach(d => d.classList.remove('active'));
+            dropdowns.forEach(d => d.classList.remove('active'));
 
-                    if (!isCurrentlyActive) {
-                        currentDropdown.classList.add('active');
-                    }
-                });
-            });
+            if (!isCurrentlyActive) {
+                currentDropdown.classList.add('active');
+            }
         });
+    });
+});

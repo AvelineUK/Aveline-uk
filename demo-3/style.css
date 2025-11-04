@@ -221,6 +221,18 @@ nav a.active::after {
     display: block;
 }
 
+.page-content.slide-out-right {
+    transform: translateX(100%);
+    opacity: 0;
+    display: block;
+}
+
+.page-content.slide-in-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    display: block;
+}
+
 .page-content.slide-in-right {
     transform: translateX(100%);
     opacity: 0;

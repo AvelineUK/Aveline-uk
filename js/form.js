@@ -62,7 +62,7 @@ form.querySelectorAll('.form-input').forEach(input => {
     });
 });
 
-// Form submission
+// Form submission - pre-launch version
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     

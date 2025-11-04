@@ -1,5 +1,4 @@
 // Gallery data
-
 const galleryProjects = [
     {
         title: "Modern Patio Design",
@@ -91,7 +90,6 @@ function closeLightbox() {
 }
 
 // Contact form
-
 function handleSubmit(e) {
     e.preventDefault();
     alert('Thank you for your enquiry! We\'ll get back to you within 24 hours');
@@ -99,7 +97,6 @@ function handleSubmit(e) {
 }
 
 // Smooth scrolling for navigation links
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -119,7 +116,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Close mobile menu when clicking outside
-
 document.addEventListener('click', function(e) {
     const nav = document.querySelector('nav');
     const menu = document.getElementById('navMenu');
@@ -129,7 +125,6 @@ document.addEventListener('click', function(e) {
 });
 
 // Progress Bar
-
 window.addEventListener('scroll', function() {
     // Calculate scroll percentage
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -141,7 +136,6 @@ window.addEventListener('scroll', function() {
 });
 
 // Toast Notification System
-
 function showToast(message, title = '', type = 'success', duration = 5000) {
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -214,7 +208,6 @@ function removeToast(toast) {
 }
 
 // Updated functions using toast notifications
-
 function handleSubmit(e) {
     e.preventDefault();
     showToast(
