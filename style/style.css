@@ -433,6 +433,7 @@ img {
     padding: 0rem 1rem;
     grid-template-columns: repeat(auto-fit, 12.5rem);
     color: #152e5c;
+    text-align: center;
 }
 
 .card {
