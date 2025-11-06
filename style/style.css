@@ -60,13 +60,12 @@ h4 {
     text-transform: uppercase;
 }
 
-p {
+p, ul {
     font-family: "Source Sans 3", "Lato", sans-serif;
-    font-size: 1.0625rem;
 }
 
-ul {
-    font-family: "Source Sans 3", "Lato", sans-serif;
+p {
+    font-size: 1.0625rem;
 }
 
 img {
@@ -393,6 +392,7 @@ img {
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 .services-text h2,
