@@ -1307,7 +1307,7 @@ a {
     font-size: 1rem;
     transition: all 0.3s ease;
     background: #fafbfc;
-    font-family: Source Sans M, Lato, sans-serif;
+    font-family: "Source Sans M", Lato, sans-serif;
 }
 
 .form-input:focus {
