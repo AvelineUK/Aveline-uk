@@ -24,23 +24,6 @@
     src: url('inter-v20-latin-500.woff2') format('woff2');
 }
 
-
-/* ==========================================================================
-   SCROLLER BEGIN!!!!
-
-html::-webkit-scrollbar {
-    display: none;
-}
-
-html {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-y: scroll;
-}
-
-   SCROLLER END!!!!
-========================================================================== */
-
 :root {
     --primary-gold: #b8935f;
     --dark-gold: #8b6f47;

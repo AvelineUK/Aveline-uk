@@ -10,22 +10,6 @@ img, svg, li {
     user-select: none;
 }
 
-/* ==========================================================================
-   SCROLLER BEGIN!!!!
-
-html::-webkit-scrollbar {
-    display: none;
-}
-
-html {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-y: scroll;
-}
-
-   SCROLLER END!!!!
-========================================================================== */
-
 body {
     min-height: 100vh;
     display: flex;
