@@ -1,5 +1,21 @@
 /* Global */
 
+/* ==========================================================================
+   SCROLLER BEGIN!!!!
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+   SCROLLER END!!!!
+========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
