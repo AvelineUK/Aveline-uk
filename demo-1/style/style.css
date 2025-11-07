@@ -1501,7 +1501,7 @@ footer li:nth-child(3) {
 }
 
 .mobile-h2 p {
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 .team, .testimonials {
@@ -1765,15 +1765,4 @@ body.nav-open footer {
     max-width: 100%;
 }
 
-}
-
-@supports (-moz-appearance: none) {
-    .scroller-item img {
-        transform: scale(1);
-    }
-    
-    .scroller-item:hover img {
-        transform: scale(1);
-        filter: brightness(0.3);
-    }
 }
