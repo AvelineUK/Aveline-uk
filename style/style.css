@@ -367,6 +367,10 @@ img {
     filter: drop-shadow(1rem 2rem 3rem rgba(0, 0, 0, 1));
 }
 
+.hero-right picture {
+    display: contents;
+}
+
 .services {
     width: 80%;
     display: flex;
