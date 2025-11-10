@@ -1,7 +1,7 @@
 /* Global */
 
 /* ==========================================================================
-   SCROLLER BEGIN!!!!
+   SIDEBAR DISAPPEAR BEGIN!!!!
 
 html::-webkit-scrollbar {
     display: none;
@@ -13,7 +13,7 @@ html {
     overflow-y: scroll;
 }
 
-   SCROLLER END!!!!
+   SIDEBAR DISAPPEAR END!!!!
 ========================================================================== */
 
 * {
@@ -446,19 +446,6 @@ body.nav-open .main-content p {
     min-height: calc(100vh - 70px);
     width: 75%;
     margin-bottom: 2rem;
-}
-
-.about {
-    margin: 0 auto 8rem auto;
-}
-
-.about-title {
-    text-align: center;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgb(255, 255, 255);
-    padding-bottom: 1rem;
 }
 
 .services-home-title {
