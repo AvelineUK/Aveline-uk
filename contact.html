@@ -16,39 +16,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://fonts.gstatic.com; font-src https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
 </head>
-<script>
-    (function() {
-        document.documentElement.classList.add('no-transition');
-        function setInitialNavbarState() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const navbar = document.querySelector('.logo-navigation');
-            if (navbar && window.innerWidth > 1024) {
-                if (scrollTop > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            }
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', setInitialNavbarState);
-        } else {
-            setInitialNavbarState();
-        }
-        window.addEventListener('pageshow', setInitialNavbarState);
-    })();
-</script>
+<script src="js/js.js"></script>
 <body>
     <header>
         <div class="nav-container">
             <nav class="logo-navigation">
                 <nav>
                     <ul class="sidebar">
-                        <li onclick=hideSidebar();>
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8">
+                        <li>
+                            <a href="#" aria-label="Open navigation menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8" alt="Menu icon">
                                     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                                 </svg>
                             </a>
@@ -60,13 +38,13 @@
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                     <ul>
-                        <li><a href="index.html"><img src="images/logo.png" height="32px" alt="Aveline Web Design logo"></a></li>
+                        <li><a href="/index.html"><img src="images/logo.png" height="32px" alt="Aveline Web Design logo" fetchpriority="high"></a></li>
                         <li class="hideOnMobile"><a href="/index.html">Home</a></li>
                         <li class="hideOnMobile"><a href="/services.html">Services</a></li>
                         <li class="hideOnMobile"><a href="/pricing.html">Pricing</a></li>
                         <li class="hideOnMobile"><a href="/faq.html">FAQ</a></li>
                         <li class="hideOnMobile"><a href="/contact.html">Contact</a></li>
-                        <li class="menu-button" onclick=showSidebar();>
+                        <li class="menu-button">
                             <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8">
                                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
