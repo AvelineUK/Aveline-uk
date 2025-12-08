@@ -812,7 +812,7 @@ img {
     max-width: 62.5rem;
     padding: 0 1rem;
     grid-template-columns: repeat(auto-fit, 12.5rem);
-    padding-bottom: .5rem; /* Change this when offer is removed */
+    padding-bottom: 4rem; /* Change this when offer is removed */
     user-select: none;
 }
 
@@ -925,20 +925,6 @@ img {
     padding: 1rem 0 2rem 0;
 }
 
-.offer {
-    text-align: center;
-    width: 30%;
-    padding-bottom: 6rem;
-    font-family: Source Sans M, Lato, sans-serif;
-    font-size: .75rem;
-    margin: 0 auto;
-    line-height: 1.5;
-}
-
-.offer a {
-    text-decoration: underline;
-}
-
 /* Footer */
 
 .footer {
@@ -989,8 +975,7 @@ img {
     font-size: 1.0625rem;
 }
 
-.footer-navigation li,
-a {
+.footer-navigation li, a {
     text-decoration: none;
     color: inherit;
 }
@@ -1019,32 +1004,39 @@ a {
     padding-bottom: 1rem;
     text-align: center;
     flex-direction: column;
-    font-size: 0.75rem;
 }
 
-.bottom li {
-    font-size: 0.75rem;
+.bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: "Source Sans M", "Lato", sans-serif;
+    flex-direction: row;
 }
 
 .bottom ul a {
     text-decoration: none;
     color: inherit;
     padding: 0 0.5rem;
-    font-family: "Source Sans M", "Lato", sans-serif;
-}
-
-.bottom ul {
-    font-family: "Source Sans M", "Lato", sans-serif;
-    flex-direction: column;
-}
-
-.bottom li {
-    list-style: none;
-    padding: 0.125rem 0rem;
 }
 
 .bottom ul li:first-child {
-    margin-bottom: 0.5rem;
+    flex: 0 0 100%;
+}
+
+.bottom li.full-width {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.bottom li {
+    font-size: 0.75rem;
+    list-style: none;
+    padding: 0.125rem 0rem;
 }
 
 .legal {
@@ -1152,12 +1144,14 @@ a {
 .dropdown-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #152e5c;
+    transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
+    opacity: 0;
 }
 
 .dropdown.active .dropdown-content {
     max-height: 32rem;
+    opacity: 1;
 }
 
 .dropdown.active .dropdown-header {
@@ -1204,16 +1198,6 @@ a {
 
 .prices-title-text p, li {
     font-size: 1rem;
-}
-
-/* Smooth animation for opening/closing */
-.dropdown-content {
-    transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
-    opacity: 0;
-}
-
-.dropdown.active .dropdown-content {
-    opacity: 1;
 }
 
 .dropdown-container-2 {

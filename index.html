@@ -7,11 +7,10 @@
     <meta name="description" content="Affordable, custom websites for small businesses with no upfront fees. Just £99 per month, fully managed, mobile-optimized, and secure.">
     <meta property="og:title" content="Small Business Web Design - No Upfront Fees | Aveline Web Design">
     <meta property="og:description" content="Affordable, custom websites for small businesses. No upfront fees, just £99/month.">
-    <meta property="og:image" content="https://example.com/images/preview.jpg">
     <meta property="og:url" content="https://example.com/">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://example.com/">
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,37 +18,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://fonts.gstatic.com; font-src https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
 </head>
-<script>
-    (function() {
-        document.documentElement.classList.add('no-transition');
-        function setInitialNavbarState() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const navbar = document.querySelector('.logo-navigation');
-            if (navbar && window.innerWidth > 1024) {
-                if (scrollTop > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            }
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', setInitialNavbarState);
-        } else {
-            setInitialNavbarState();
-        }
-        window.addEventListener('pageshow', setInitialNavbarState);
-    })();
-</script>
+<script src="js/js.js"></script>
 <body>
     <header>
         <div class="nav-container">
             <nav class="logo-navigation">
                 <nav>
                     <ul class="sidebar">
-                        <li onclick=hideSidebar();>
+                        <li>
                             <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8" alt="Menu icon">
                                     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                                 </svg>
                             </a>
@@ -61,13 +39,13 @@
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                     <ul>
-                        <li><a href="/index.html"><img src="images/logo.png" height="32px" alt="Aveline Web Design logo"></a></li>
+                        <li><a href="/index.html"><img src="images/logo.png" height="32px" alt="Aveline Web Design logo" fetchpriority="high"></a></li>
                         <li class="hideOnMobile"><a href="/index.html">Home</a></li>
                         <li class="hideOnMobile"><a href="/services.html">Services</a></li>
                         <li class="hideOnMobile"><a href="/pricing.html">Pricing</a></li>
                         <li class="hideOnMobile"><a href="/faq.html">FAQ</a></li>
                         <li class="hideOnMobile"><a href="/contact.html">Contact</a></li>
-                        <li class="menu-button" onclick=showSidebar();>
+                        <li class="menu-button">
                             <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#F9FAF8">
                                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
@@ -85,7 +63,7 @@
                 <div class="hero-left">
                     <h4>Focused on small businesses</h4>
                     <h1>Custom Web Design<br>No Upfront Fees</h1>
-                    <p>No website builders or templates. I build customized websites, tailored for your business, starting at just <strong>£49* per month</strong> and <strong>no upfront fees.</strong></p>
+                    <p>No website builders or templates. I build customized websites, tailored for your business, starting at just <strong>£49 per month</strong> and <strong>no upfront fees.</strong></p>
                     <div class="cta1">
                         <a href="/contact.html"><button class="cta-b">Get Started</button></a>
                     </div>
@@ -93,14 +71,14 @@
                 <div class="hero-right">
                     <picture>
                         <source srcset="images/image-m.webp" media="(max-width: 1024px)">
-                        <img src="images/image.webp" alt="A colourful laptop" fetchpriority="high">
+                        <img src="images/image.webp" alt="A colourful laptop" fetchpriority="high" loading="lazy">
                     </picture>
                 </div>
             </div>
         </section>
         <section class="services fade-in">
             <div class="services-text fade-in">
-                <h4>WHAT I DO</h4>
+                <h4 aria-hidden="true">WHAT I DO</h4>
                 <h2>Professional website design for small businesses</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic ad, repellendus consectetur enim nam modi animi natus, ea eius praesentium facere commodi dolor ipsa, temporibus rem odio aut perferendis earum?</p>
             </div>
@@ -138,7 +116,7 @@
                         <h3>RESPONSIVE DESIGN</h3>
                     </div>
                     <div class="card-text fade-in">
-                        <p>Some text goes here. Some text goes here. Some text goes here.</p>
+                        <p>Most people use their phones to browse the internet. I'll build your website so that it looks good and is easy to use, no matter which device people use when viewing it.</p>
                     </div>
                 </div>
             </a>
@@ -150,19 +128,19 @@
                         <h3>MAXIMUM SECURITY</h3>
                     </div>
                     <div class="card-text fade-in">
-                        <p>Some text goes here. Some text goes here. Some text goes here.</p>
+                        <p>Whether it's SSL certificates, Content Security Policies, or complex databases, my main focus above all is to ensure every site I make is as secure as possible.</p>
                     </div>
                 </div>
             </a>
         </div>
         <section class="details fade-in">
             <div class="details-left fade-in">
-                <img src="images/laptop.jpg" alt="A person typing on a laptop">
+                <img src="images/laptop.jpg" alt="A person typing on a laptop" loading="lazy">
             </div>
             <div class="details-right fade-in">
                 <div class="details-right-title fade-in">
-                    <h4>WHAT I OFFER</h4>
-                    <h2>Custom built websites for just £49* per month — and no upfront fees</h2>
+                    <h4 aria-hidden="true">WHAT I OFFER</h4>
+                    <h2>Custom built websites for just £49 per month — and no upfront fees</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum asperiores laudantium, ullam molestiae perspiciatis non cupiditate voluptatem illum aut maiores nostrum id facere commodi. Soluta corporis voluptate voluptatibus ad nemo.</p>
                 </div>
                 <div class="details-right-table fade-in">
@@ -203,7 +181,7 @@
         </section>
         <section class="work-title fade-in">
             <div class="work-title-h fade-in">
-                <h4>Portfolio</h4>
+                <h4 aria-hidden="true">Portfolio</h4>
                 <h2>Take a look at some of the work I've done</h2>
             </div>
             <div class="work-title-text fade-in">
@@ -212,7 +190,7 @@
         </section>
         <section class="works fade-in">
             <div class="work fade-in">
-                <div class="work-text fade-in"><a href="demo-1/index.html" target="_blank"><img src="images/demo-1.webp" width=100% alt="Preview of the Noir Hair Salon demo site"></a></div>
+                <div class="work-text fade-in"><a href="demo-1/index.html" target="_blank"><img src="images/demo-1.webp" width=100% alt="Preview of the Noir Hair Salon demo site" loading="lazy"></a></div>
                 <div class="work-text fade-in">
                     <h3>THe Hair Lab [DEMO]</h3>
                     <p>A modern, stylish multi-page website for a hair salon looking to grow their business.</p>
@@ -222,7 +200,7 @@
                 </div>
             </div>
             <div class="work">
-                <div class="work-text fade-in"><a href="demo-2/index.html" target="_blank"><img src="images/demo-2.webp" width=100% alt="Preview of the Green Fingers demo site"></a></div>
+                <div class="work-text fade-in"><a href="demo-2/index.html" target="_blank"><img src="images/demo-2.webp" width=100% alt="Preview of the Green Fingers demo site" loading="lazy"></a></div>
                 <div class="work-text fade-in">
                     <h3>Green Fingers [Demo]</h3>
                     <p>A colourful, one page website for a landscaper that gives potential customers all the information they need.</p>
@@ -232,7 +210,7 @@
                 </div>
             </div>
             <div class="work">
-                <div class="work-text fade-in"><a href="demo-3/index.html" target="_blank"><img src="images/demo-3.webp" width=100% alt="Preview of the Meridian Wealth demo site"></a></div>
+                <div class="work-text fade-in"><a href="demo-3/index.html" target="_blank"><img src="images/demo-3.webp" width=100% alt="Preview of the Meridian Wealth demo site" loading="lazy"></a></div>
                 <div class="work-text fade-in">
                     <h3>Meridian Wealth [Demo]</h3>
                     <p>A minimal, sophisticated site for a wealth management firm, looking to build trust with potential clients.</p>
@@ -244,7 +222,7 @@
         </section>
         <section class="prices-title fade-in">
             <div class="prices-title-text fade-in">
-                <h4>Pricing</h4>
+                <h4 aria-hidden="true">Pricing</h4>
                 <h2>Packages for any budget</h2>
             </div>
         </section>
@@ -262,7 +240,7 @@
                         <li class="tick fade-in">Ongoing Support</li>
                     </ul>
                 </div>
-                <div class="tier-text fade-in"><h2>£49*</h2><p>&nbsp;&nbsp;per month</p></div>
+                <div class="tier-text fade-in"><h2>£49</h2><p>&nbsp;&nbsp;per month</p></div>
                 <div class="tier-text fade-in"><button class="cta-b fade-in">Get Started</button></div>
             </div></a>
             <a href="/contact.html"><div class="tier fade-in">
@@ -278,11 +256,10 @@
                         <li class="tick fade-in">Ongoing Support</li>
                     </ul>
                 </div>
-                <div class="tier-text fade-in"><h2>£99*</h2><p>&nbsp;&nbsp;per month</p></div>
+                <div class="tier-text fade-in"><h2>£75</h2><p>&nbsp;&nbsp;per month</p></div>
                 <div class="tier-text fade-in"><button class="cta-b fade-in">Get Started</button></div>
             </div></a>
         </section>
-            <p class="offer">* Founder Discount for 12 months. Limited availability.<br>Please see <a href="/faq.html">FAQ</a> for more information.</p>
     </main>
         <section class="footer">
             <div class="footer-services">

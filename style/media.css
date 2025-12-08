@@ -437,4 +437,8 @@
         margin-right: 15%;
         margin-left: 15%;
     }
+
+    .bottom li {
+        padding-top: .5rem;
+    }
 }
