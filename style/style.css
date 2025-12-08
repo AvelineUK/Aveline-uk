@@ -1,3 +1,66 @@
+/* oswald-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/oswald-v57-latin-regular.woff2') format('woff2');
+}
+
+/* oswald-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/oswald-v57-latin-700.woff2') format('woff2');
+}
+
+/* lato-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lato-v25-latin-regular.woff2') format('woff2');
+}
+
+/* lato-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/lato-v25-latin-700.woff2') format('woff2');
+}
+
+/* lato-900 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/lato-v25-latin-900.woff2') format('woff2');
+}
+
+/* source-sans-3-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/source-sans-3-v19-latin-regular.woff2') format('woff2');
+}
+
+/* source-sans-3-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/source-sans-3-v19-latin-600.woff2') format('woff2');
+}
+
 .no-transition .logo-navigation {
     transition: none !important;
 }
@@ -91,8 +154,7 @@ img {
     right: 1.25rem;
     height: 4.6875rem;
     transform: translateZ(31.25rem);
-    opacity: 0;
-    animation: navFadeIn 3s ease forwards;
+    opacity: 1;
     user-select: none;
 }
 
@@ -269,8 +331,8 @@ img {
     z-index: 1;
     margin: 5% 0.25% 0% 0.25%;
     filter: drop-shadow(1rem 2rem 3rem rgba(0, 0, 0, 0.8));
-    opacity: 0;
-    transform: translateZ(31.25rem);
+    opacity: 1;
+    transform: translateZ(0);
     transition: opacity 3s ease, transform 3s ease;
     will-change: opacity, transform;
     user-select: none;
