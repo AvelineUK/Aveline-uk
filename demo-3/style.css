@@ -796,6 +796,11 @@ nav a.active::after {
     font-weight: 300;
 }
 
+.detail-value a {
+    text-decoration: none;
+    color: var(--charcoal);
+}
+
 .contact-form {
     background: linear-gradient(135deg, #f9f7f4 0%, #fafafa 100%);
     padding: 4rem;

@@ -1,5 +1,4 @@
 /* KEYFRAME ANIMATIONS */
-
 @keyframes slideInLeft {
     to {
         opacity: 1;
@@ -51,7 +50,6 @@
 }
 
 /* FORM - 30 REM */
-
 @media (max-width: 30rem) {
     .form-container {
         padding: 1.5rem 1.25rem;
@@ -73,7 +71,6 @@
 }
 
 /* PRICING - MOBILE (BELOW 43REM) - SINGLE COLUMN */
-
 @media (max-width: 42.9375rem) {
     .prices-title {
         width: 90%;
@@ -100,7 +97,6 @@
 }
 
 /* PRICING - TABLET (43REM TO 54REM) - TWO COLUMNS FLEXIBLE */
-
 @media (min-width: 43rem) and (max-width: 53.9375rem) {
     .prices {
         grid-template-columns: repeat(2, 20rem);
@@ -108,7 +104,6 @@
 }
 
 /* TIER TEXT SIZE - (54REM AND BELOW) */
-
 @media (max-width: 54rem) {
     .tier-text li {
         font-size: 1rem;
@@ -116,7 +111,6 @@
 }
 
 /* PRICING - DESKTOP (54REM AND UP) - TWO COLUMNS FIXED */
-
 @media (min-width: 54rem) {
     .prices {
         grid-template-columns: repeat(2, 25rem);
@@ -124,7 +118,6 @@
 }
 
 /* MOBILE/TABLET - MAX-WIDTH 64REM */
-
 @media (max-width: 64rem) {
     .services-text h2,
     .details-right-title h2,
@@ -264,6 +257,10 @@
 
     .spm {
         width: 100%;
+    }
+
+    .dropdown-inner p {
+        text-align: left !important;
     }
 }
 
